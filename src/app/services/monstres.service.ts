@@ -26,7 +26,7 @@ export class MonstresService {
 
     new Monstres(8, 'Minotaure', 'Un labyrinthe au centre de la Crête', 'Fils de l\'épouse du roi Minos et d\'un taureau blanc envoyé par Poséidon, on lui livrait tous les neuf ans sept filles et sept garçons pour qu\'il s\'en nourrisse. Il sera tué par Thésée qui ira dans le labyrinthe avec une pelote de fil afin de retrouver son chemin','minotaure.jpg'),
 
-    new Monstres(9, 'Sirènes', 'Detroit de Messin', 'Créatures mi-femmes mi-oiseaux, elles séduisaient les navigateurs afin de les faire s\'échouer et pouvoir dévorer leur corps. Ulysse résista à leur chant en se faisant attacher au mât de son navire et en faisant couler de la cire dans les oreilles de ses hommes','sirenes.jpg'),
+    new Monstres(9, 'Sirènes', 'Detroit de Messine', 'Créatures mi-femmes mi-oiseaux, elles séduisaient les navigateurs afin de les faire s\'échouer et pouvoir dévorer leur corps. Ulysse résista à leur chant en se faisant attacher au mât de son navire et en faisant couler de la cire dans les oreilles de ses hommes','sirenes.jpg'),
 
     new Monstres(10, 'Sphinx', 'Thèbes', 'Créature au visage de femme mais au corps de lion et aux ailes d\'aigles, il terrorisait Thèbes en tuant quiconque était incapable de résoudre son énigme. C\'est Oedipe qui le vaincra en trouvant la réponse, ce qui fera de lui le nouveau roi de Thèbes','sphinx.jpg'),
 

@@ -1,19 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    padding: 2rem;
-    background-image: url('/assets/images/montOlympe.jpg');
-    background-size: cover;
+  padding: 2rem;
+  background-image: url('/assets/images/montOlympe.jpg');
+  background-size: cover;
 }
 
-td, th {
-    margin: 1rem;
-    padding: 1rem;
+td,
+th {
+  margin: 1rem;
+  padding: 1rem;
 }
 
 .liste {
-    display: flex;
+  display: flex;
+  justify-content: space-around;
 }
 
 .card {
-    margin: 1rem;
+  margin: 1rem;
+}
+
+h4 {
+  margin-bottom: 1rem;
 }
