@@ -1,0 +1,9 @@
+td, th {
+    margin: 1rem;
+    padding: 1rem;
+}
+
+img {
+    width: 400px;
+    height: 520px;
+}

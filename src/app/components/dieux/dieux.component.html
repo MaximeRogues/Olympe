@@ -1,0 +1,26 @@
+<br>
+<h2 class="text-light">Les dieux et déesses de l'Olympe</h2>
+<!-- rend la div responsive -->
+<div class="liste row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+  <!-- boucle pour générer les cards -->
+  <div *ngFor="let dieu of this.listeDieux" class="card" style="width: 25rem;">
+
+    <a [routerLink]="['/dieux', dieu.id]"> <img src='../../../assets/images/{{dieu.image}}' class="card-img-top" alt=""></a>
+    <div class="card-body">
+      <!-- nom du dieu -->
+      <h4 class="font-weight-bold">{{dieu.nom}}</h4>
+      <!-- ses attributs -->
+      <p class="card-text"><span class="font-weight-bold"> Attributs :</span> {{dieu.attributs}} </p>
+      <!-- son domaine -->
+      <p class="card-text"><span class="font-weight-bold"> Domaine :</span> {{dieu.domaine}} </p>
+      <!-- ses caracteristiques -->
+      <p class="card-text"><span class="font-weight-bold">Description :</span> {{dieu.cara}} </p>
+
+      <!-- lien pour aller au component dieuDetail -->
+      <a [routerLink]="['/dieux', dieu.id]"> Détails du dieu</a>
+    </div>
+  </div>
+</div>
+
+
+

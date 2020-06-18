@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    padding: 2rem;
+    background-image: url('/assets/images/montOlympe.jpg');
+    background-size: cover;
+}
+
+td, th {
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.liste {
+    display: flex;
+}
+
+.card {
+    margin: 1rem;
+}

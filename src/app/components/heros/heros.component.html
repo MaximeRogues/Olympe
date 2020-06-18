@@ -1,0 +1,38 @@
+<br>
+<h2 class="text-light">Les héros et héroïnes</h2>
+<!-- rend la div responsive -->
+<div class="liste row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+  <!-- boucle qui génère les cards -->
+  <div *ngFor="let heros of this.listeHeros" class="card" style="width: 25rem;">
+
+   <a [routerLink]="['/heros', heros.id]"> <img src='../../../assets/images/{{heros.image}}' class="card-img-top" alt=""></a>
+    <div class="card-body">
+      <!-- nom du héros -->
+      <h4>{{heros.nom}}</h4>
+      <!-- ses origines -->
+      <p class="card-text"><span class="font-weight-bold">Origine :</span> {{heros.origine}} </p>
+      <!-- ses exploits  -->
+      <p class="card-text"><span class="font-weight-bold"> Exploits :</span> {{heros.exploits}} </p>
+      <!-- lien pour aller au component herosDetail -->
+      <a [routerLink]="['/heros', heros.id]">Détails du héros</a>
+    </div>
+  </div>
+</div>
+
+<!-- Sous forme de tableau -->
+<!-- <br>
+<h2 class="text-light">Les héros </h2>
+
+<table class="bg-light">
+    <thead class="text-light bg-dark">
+      <th>Nom</th>
+      <th>Origine</th>
+      <th>Exploits</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let heros of this.listeHeros" class="border-bottom">
+          <td>{{heros.nom}}</td>
+          <td>{{heros.origine}}</td>
+          <td>{{heros.exploits}}</td>
+    </tbody>
+  </table> -->
