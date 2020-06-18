@@ -1,0 +1,22 @@
+<br>
+<h2 class="text-light">Les monstres</h2>
+<!-- rend la div responsive -->
+<div class="liste row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+  <!-- boucle pour générer les cards -->
+  <div *ngFor="let monstre of this.listeMonstres" class="card" style="width: 25rem;">
+
+    <a [routerLink]="['/monstres', monstre.id]"> <img src='../../../assets/images/{{monstre.image}}' class="card-img-top" alt=""></a>
+    <div class="card-body">
+      <!-- nom du monstre -->
+      <h4 class="font-weight-bold">{{monstre.nom}}</h4>
+      <!-- son lieu -->
+      <p class="card-text"><span class="font-weight-bold"> Lieu :</span> {{monstre.lieu}} </p>
+      <!-- son domaine -->
+      <p class="card-text"><span class="font-weight-bold"> Histoire :</span> {{monstre.histoire}} </p>
+
+      <!-- lien pour aller au component monstreDetail -->
+      <a [routerLink]="['/monstres', monstre.id]"> Détails du monstre</a>
+    </div>
+  </div>
+</div>
+<a routerLink="/monstres/add"><h2>Ajouter un monstre</h2></a>

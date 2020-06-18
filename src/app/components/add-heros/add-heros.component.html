@@ -1,0 +1,44 @@
+<br>
+<div class="bg-light">
+  <h2>Ajouter un heros : </h2>
+
+  <form #herosForm="ngForm" (ngSubmit)="submitHeros()">
+
+    <!-- id -->
+    <label for="id">Id du héros :</label>
+    <input type="number" class="form-control" name="id" id="id" required [(ngModel)]="heros.id"  #id="ngModel"> <br>
+    <div [hidden]="id.valid" class="alert alert-danger">
+      L'id du heros est requis
+    </div>
+
+    <!-- nom -->
+    <label for="nom">Nom du héros : </label>
+    <input type="text" class="form-control" name="nom" id="nom" required [(ngModel)]="heros.nom" > <br>
+    <!-- <div [hidden]="nom.valid" class="alert alert-danger">
+    Le nom du héros est requis
+  </div> -->
+
+    <!-- origine -->
+    <label for="origine">Origine du heros : </label>
+    <input type="text" class="form-control" name="origine" id="origine" required [(ngModel)]="heros.origine" required> <br>
+    <!-- <div [hidden]="origine.valid" class="alert alert-danger">
+    Les origine du heros sont requis
+  </div> -->
+
+    <!-- exploits -->
+    <label for="exploits">Exploits du heros : </label>
+    <input type="text" class="form-control" name="exploits" id="exploits" required [(ngModel)]="heros.exploits" required> <br>
+    <!-- <div [hidden]="exploits.valid" class="alert alert-danger">
+    Le exploits du heros est requis
+  </div> -->
+
+    <!-- image -->
+    <label for="image">Image du heros : </label>
+    <input type="text" class="form-control" name="image" id="image" required [(ngModel)]="heros.image" > <br>
+    <!-- <div [hidden]="image.valid" class="alert alert-danger">
+    L'image du heros est requis
+  </div> -->
+
+    <input [disabled]="!herosForm.valid" type="submit" value="Envoyer"> 
+  </form>
+</div>

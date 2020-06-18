@@ -24,7 +24,7 @@ export class HerosService {
 
     new Heros(7, 'Atalante', 'Fille d\'Iasos (roi du Péloponnèse) et de Clymène (fille de Minyas)', 'Chasseuse redoutable, elle a abattu le sanglier de Calydon, ainsi que deux centaures qui teantaient d\abuser d\'elle. Elle fut la seule femme à faire partie des Argonautes', 'atalante.jpg'),
 
-    new Heros(8, 'Œdipe', 'Fils de Laïos et de Jocaste (roi et reine de Thèbes)', 'Un oracle ayant predit qu\'il tuerait son père avant d\'épouser sa mère, il est caché de ses parents très tôt. Il finira par vaincre le terrible Sphinx avant d\'accomplir l\'oracle en devenant roi de Thèbes à son tour.', 'oedipe.jpg' ),
+    new Heros(8, 'Œdipe', 'Fils de Laïos et de Jocaste (roi et reine de Thèbes)', 'Un oracle ayant predit qu\'il tuerait son père avant d\'épouser sa mère, il est caché de ses parents très tôt. Il finira par vaincre le terrible Sphinx avant d\'accomplir l\'oracle en devenant roi de Thèbes à son tour. Il est le père d\'Antigone', 'oedipe.jpg' ),
 
     new Heros(9, 'Bellérophon', 'Fils de Glaucos(donc petit-fils de Sisyphe) et de Eurynomé', 'Chassé de chez lui après avoir involontairement tué son frère lors d\'un lancer de disque (oui), il chevauchera Pégase pour tuer la chimère, en lui jetant une lance à la pointe de plomb dans la gueule, qui fit fondre ses entrailles', 'bellerophon.png')
   ];

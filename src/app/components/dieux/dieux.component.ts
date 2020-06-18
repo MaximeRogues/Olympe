@@ -12,9 +12,7 @@ export class DieuxComponent implements OnInit {
   // On déclare une liste de dieux vide
   listeDieux: Dieu[];
 
-  constructor(private dieuService: DieuxService) {
-    
-   }
+  constructor(private dieuService: DieuxService) { }
   
   ngOnInit(): void {
         

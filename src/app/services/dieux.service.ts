@@ -13,7 +13,7 @@ export class DieuxService {
 
     new Dieu(2, 'Héra', 'Le diadème, le sceptre', 'Le mariage, les femmes, les familles, les rois et les empires', 'Femme de Zeus, elle règne avec lui sur l\'Olympe', 'hera.jpg'),
 
-    new Dieu(3, 'Hadès', 'La fourche, la kunée (un casque qui rend son porteur invisible), Cerbère', 'Le monde souterrain, les enfers, les richesses cachées de la terre', 'Il règne sur les Enfers où il accueille l\âme des morts', 'hades.jpg'),
+    new Dieu(3, 'Hadès', 'La fourche, la kunée (un casque qui rend son porteur invisible), Cerbère', 'Le monde souterrain, les enfers, les richesses cachées de la terre', 'Il règne sur les Enfers où il accueille l\'âme des morts', 'hades.jpg'),
 
     new Dieu(4, 'Poséidon', 'Le trident, la conque', 'Les océans, les navigateurs, les tremblements de terre', 'Il règne sur les mers et les océans, sur son char tiré par des hippocampes', 'poseidon.jpg'),
 
@@ -32,6 +32,10 @@ export class DieuxService {
     new Dieu(11, 'Dionysos', 'Le raisin, les feuilles de vigne', 'La vigne, le vin et ses excès', 'Fils de Zeus et d\'une mortelle, il se mêle souvent aux humains lors de fêtes et d\'orgies', 'dionysos.jpg'),
 
     new Dieu(12, 'Héphaïstos', 'Le marteau, l\'enclume, le bouton d\'or', 'La forge, la fabrication d\'armes et d\'arumres', 'Fils de Zeus et d\Héra, c\'est lui qui fabriqua les armes et armures de nombreaux héros et dieux. C\'est aussi qui fabriqua Pandore, la première femme', 'hephaistos.jpg'),
+
+    new Dieu(13, 'Déméter', 'Les gerbes de blé, la faucille, le flambeau', 'L\'agriculture, les moissons', 'Elle est la mère de Perséphone, c\'est en allant chercher cette dernière aux Enfers que l\'hiver fut créé, sa fille passera chaque hiver aux Enfers en compagnie d\Hadès', 'demeter.jpg'),
+
+    new Dieu(14, 'Hestia', 'Le feu scaré, le foyer, la torche', 'Le foyer public et familial, la famille', 'Elle est la seule déesse à rester en permanence sur l\'Olympe, elle est décrite comme une déesse vierge et immuable. Elle est la première-née du Titan Cronos', 'hestia.jpg')
   ];
 
   constructor() { }

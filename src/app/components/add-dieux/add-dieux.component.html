@@ -1,0 +1,51 @@
+<br>
+<div class="bg-light">
+  <h2>Ajouter un dieu : </h2>
+
+  <form #dieuForm="ngForm" (ngSubmit)="submitDieux()">
+
+    <!-- id -->
+    <label for="id">Id du dieu :</label>
+    <input type="number" class="form-control" name="id" id="id" required [(ngModel)]="dieu.id" #id="ngModel"> <br>
+    <div [hidden]="id.valid" class="alert alert-danger">
+      L'id du dieu est requis
+    </div>
+
+    <!-- nom -->
+    <label for="nom">Nom du dieu : </label>
+    <input type="text" class="form-control" name="nom" id="nom" required [(ngModel)]="dieu.nom" #nom="ngModel"> <br>
+    <!-- <div [hidden]="nom.valid" class="alert alert-danger">
+    Le nom du dieu est requis
+  </div> -->
+
+    <!-- attributs -->
+    <label for="attributs">Attributs du dieu : </label>
+    <input type="text" class="form-control" name="attributs" id="attributs" required [(ngModel)]="dieu.attributs"> <br>
+    <!-- <div [hidden]="attributs.valid" class="alert alert-danger">
+    Les attributs du dieu sont requis
+  </div> -->
+
+    <!-- domaine -->
+    <label for="domaine">Domaine du dieu : </label>
+    <input type="text" class="form-control" name="domaine" id="domaine" required [(ngModel)]="dieu.domaine"> <br>
+    <!-- <div [hidden]="domaine.valid" class="alert alert-danger">
+    Le domaine du dieu est requis
+  </div> -->
+
+    <!-- caractéristiques -->
+    <label for="cara">Caractéristiques du dieu : </label>
+    <input type="text" class="form-control" name="cara" id="cara" required [(ngModel)]="dieu.cara"> <br>
+    <!-- <div [hidden]="cara.valid" class="alert alert-danger">
+    Les caractéristiques du dieu sont requises
+  </div> -->
+
+    <!-- image -->
+    <label for="image">Image du dieu : </label>
+    <input type="string" class="form-control" name="image" id="image" required [(ngModel)]="dieu.image"> <br>
+    <!-- <div [hidden]="image.valid" class="alert alert-danger">
+    L'image du dieu est requis
+  </div> -->
+
+    <input [disabled]='!dieuForm.valid' type="submit" value="Envoyer">
+  </form>
+</div>
