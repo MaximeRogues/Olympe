@@ -19,7 +19,7 @@ export class DieuxService {
 
     new Dieu(5, 'Arès', 'Le glaive, le bouclier, la lance...', 'Les guerres, la violence, la destruction', 'Dieu colérique, il déclencha des guerres à plusieurs reprises', 'ares.jpg'),
 
-    new Dieu(6, 'Athèna', 'L\'Egide, la chouette, l\'olivier', 'L\'intelligence, la stratégie, l\'artisanat', 'Sortie du front de Zeus, elle est la gardienne de la ville d\'Athènes', 'athena.jpg'),
+    new Dieu(6, 'Athéna', 'L\'Egide, la chouette, l\'olivier', 'L\'intelligence, la stratégie, l\'artisanat', 'Sortie du front de Zeus, elle est la gardienne de la ville d\'Athènes', 'athena.jpg'),
 
     new Dieu(7, 'Aphrodite', 'Le collier d\'or, la colombe, la ceinture magique', 'La fertilité, l\'amour, la séduction', 'On lui voue un culte basé sur la sexualité, elle est cependant surtout la déesse des activités des jeunes filles en général', 'aphrodite.jpg'),
 
@@ -35,7 +35,7 @@ export class DieuxService {
 
     new Dieu(13, 'Déméter', 'Les gerbes de blé, la faucille, le flambeau', 'L\'agriculture, les moissons', 'Elle est la mère de Perséphone, c\'est en allant chercher cette dernière aux Enfers que l\'hiver fut créé, sa fille passera chaque hiver aux Enfers en compagnie d\Hadès', 'demeter.jpg'),
 
-    new Dieu(14, 'Hestia', 'Le feu scaré, le foyer, la torche', 'Le foyer public et familial, la famille', 'Elle est la seule déesse à rester en permanence sur l\'Olympe, elle est décrite comme une déesse vierge et immuable. Elle est la première-née du Titan Cronos', 'hestia.jpg')
+    new Dieu(14, 'Hestia', 'Le feu sacré, le foyer, la torche', 'Le foyer public et familial, la famille', 'Elle est la seule déesse à rester en permanence sur l\'Olympe, elle est décrite comme une déesse vierge et immuable. Elle est la première-née du Titan Cronos', 'hestia.jpg')
   ];
 
   constructor() { }
@@ -49,5 +49,15 @@ export class DieuxService {
   //Fonction pour retourver un dieu par son nom
   getDieuByID (id: number): Dieu {
     return this.listeDieux.filter(dieu => dieu.id == id)[0]
+  }
+
+  // fonction pour ajouter un dieu au tableau listeDieux
+  addDieu(dieu: Dieu): void {
+    this.listeDieux.push(dieu);
+  }
+
+  deleteDieu(dieuToDelete: Dieu): Dieu[] {
+  this.listeDieux = this.listeDieux.filter(dieu => dieuToDelete !== dieu);
+  return this.listeDieux;
   }
 }

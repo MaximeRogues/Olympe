@@ -1,0 +1,25 @@
+<br>
+<div class="bg-light">
+  <form #quizForm="ngForm" (ngSubmit)="submitQuiz()">
+    <div *ngFor="let quiz of listeQuestions">
+      <h3>Question n°{{ quiz.id }}</h3>
+      <h3>{{ quiz.enonce }}</h3>
+      <br>
+      <input type="radio" [(ngModel)]="quiz.reponse" value="reponse1" name="reponse{{quiz.id}}">
+      <p>{{ quiz.q1 }}</p>
+      <br>
+      <input type="radio" [(ngModel)]="quiz.reponse" value="reponse2" name="reponse{{quiz.id}}">
+      <p>{{ quiz.q2 }}</p>
+      <br>
+      <input type="radio" [(ngModel)]="quiz.reponse" value="reponse3" name="reponse{{quiz.id}}">
+      <p>{{ quiz.q3 }}</p>
+      <br>
+      <input type="radio" [(ngModel)]="quiz.reponse" value="reponse4" name="reponse{{quiz.id}}">
+      <p>{{ quiz.q4 }}</p>
+
+
+    </div>
+    <input [disabled]='!quizForm.valid' type="submit" value="Envoyer">
+  </form>
+
+</div>

@@ -17,7 +17,14 @@ import {FormsModule} from '@angular/forms';
 
 import { AddDieuxComponent } from './components/add-dieux/add-dieux.component';
 import { AddHerosComponent } from './components/add-heros/add-heros.component';
-import { AddMonstresComponent } from './components/add-monstres/add-monstres.component'
+import { AddMonstresComponent } from './components/add-monstres/add-monstres.component';
+import { QuizComponent } from './components/quiz/quiz.component';
+import { ToastrModule } from 'ngx-toastr';
+import { MaPipePipe } from './pipes/ma-pipe.pipe';
+import { EditDieuComponent } from './components/edit-dieu/edit-dieu.component';
+import { EditMonstreComponent } from './components/edit-monstre/edit-monstre.component';
+import { EditHerosComponent } from './components/edit-heros/edit-heros.component';
+
 
 
 
@@ -35,13 +42,20 @@ import { AddMonstresComponent } from './components/add-monstres/add-monstres.com
     MonstreDetailComponent,
     AddDieuxComponent,
     AddHerosComponent,
-    AddMonstresComponent
+    AddMonstresComponent,
+    QuizComponent,
+    MaPipePipe,
+    EditDieuComponent,
+    EditMonstreComponent,
+    EditHerosComponent,
     ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    ToastrModule.forRoot() // ToastrModule added
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -15,7 +15,12 @@
       <p class="card-text"><span class="font-weight-bold"> Histoire :</span> {{monstre.histoire}} </p>
 
       <!-- lien pour aller au component monstreDetail -->
-      <a [routerLink]="['/monstres', monstre.id]"> Détails du monstre</a>
+      <a class="btn btn-secondary" [routerLink]="['/monstres', monstre.id]"> Détails du monstre</a>
+      <br>
+      <a class="btn btn-danger text-white" (click)="deleteMonstre(monstre)">Supprimer {{monstre.nom}}</a>
+      <br>
+      <a class="btn btn-info" [routerLink]="['/edit-monstres', monstre.id]">Modifier {{monstre.nom}} </a>
+
     </div>
   </div>
 </div>

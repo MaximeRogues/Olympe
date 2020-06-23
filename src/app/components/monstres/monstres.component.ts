@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Monstres } from 'src/app/models/monstres';
 import { MonstresService } from 'src/app/services/monstres.service';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-monstres',
@@ -9,10 +11,10 @@ import { MonstresService } from 'src/app/services/monstres.service';
 })
 export class MonstresComponent implements OnInit {
 
-  // On déclare une liste de dieux vide
+  // On déclare une liste de monstres vide
   listeMonstres: Monstres[];
 
-  constructor(private monstreService: MonstresService) { }
+  constructor(private monstreService: MonstresService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
 
@@ -20,4 +22,9 @@ export class MonstresComponent implements OnInit {
     this.listeMonstres = this.monstreService.getAllMonstres();
   }
 
+  deleteMonstre(monstre: Monstres) {
+    this.listeMonstres = this.monstreService.deleteMonstre(monstre);
+    this.toastr.success(monstre.nom + ' a été supprimé', 'Heraclès s\'ennuyait...');
+    
+  }
 }

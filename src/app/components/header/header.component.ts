@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { QuizService } from 'src/app/services/quiz.service';
+
 
 @Component({
   selector: 'app-header',
@@ -12,4 +14,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-}
+  todayDate = new Date();
+
+
+} 

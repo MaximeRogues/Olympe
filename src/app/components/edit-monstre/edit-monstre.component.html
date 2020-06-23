@@ -1,0 +1,38 @@
+<br>
+<div class="bg-light">
+  <h2>Modifier {{monstre.nom}} : </h2>
+
+  <form #monstreForm="ngForm" (ngSubmit)="updateMonstre(monstre)">
+
+
+    <!-- nom -->
+    <label for="nom">Nom du monstre : </label>
+    <input type="text" class="form-control" name="nom" id="nom" required [(ngModel)]="monstre.nom" > <br>
+    <!-- <div [hidden]="nom.valid" class="alert alert-danger">
+    Le nom du monstre est requis
+  </div> -->
+
+    <!-- origine -->
+    <label for="origine">Lieu du monstre : </label>
+    <input type="text" class="form-control" name="origine" id="origine" required [(ngModel)]="monstre.lieu" required> <br>
+    <!-- <div [hidden]="origine.valid" class="alert alert-danger">
+    Les origine du monstre sont requis
+  </div> -->
+
+    <!-- exploits -->
+    <label for="exploits">Histoire du monstre : </label>
+    <input type="text" class="form-control" name="exploits" id="exploits" required [(ngModel)]="monstre.histoire" required> <br>
+    <!-- <div [hidden]="exploits.valid" class="alert alert-danger">
+    Le exploits du monstre est requis
+  </div> -->
+
+    <!-- image -->
+    <label for="image">Image du monstre : </label>
+    <input type="text" class="form-control" name="image" id="image" required [(ngModel)]="monstre.image" > <br>
+    <!-- <div [hidden]="image.valid" class="alert alert-danger">
+    L'image du monstre est requis
+  </div> -->
+
+    <input [disabled]="!monstreForm.valid" type="submit" value="Envoyer"> 
+  </form>
+</div>

@@ -16,11 +16,11 @@ export class HerosService {
 
     new Heros(3, 'Thésée', 'Fils du roi Egée et d\'Ethra ', 'Il a vaincu le Minotaure qui terrorisait la Crête', 'thesee.jpg'),
 
-    new Heros(4, 'Persée', 'Fils de Danaé(fille du roi d\'Argos)', 'Il a vaincu la gorgone Méduse en lui tranchant la tête. Le sang qui se retrouva sur le sol donna naissance au cheval ailé Pégase. Il a également sauvé Andromède, en proie à un monstre marin envoyé par Poséidon', 'persee.jpg'),
+    new Heros(4, 'Persée', 'Fils de Danaé(fille du roi d\'Argos)', 'Il a vaincu la gorgone Méduse en lui tranchant la tête. Le sang qui se retrouva sur le sol donna naissance au cheval ailé Pégase. Il a également sauvé Andromède, en proie à un heros marin envoyé par Poséidon', 'persee.jpg'),
 
     new Heros(5, 'Ulysse', 'Fils de Laërte et d\'Anticlée', 'Roi d\'Ithaque, il est le héros de l\'Odyssée. Il a avaincu le cyclope Polyphème, résisté aux sirènes, il a affronté Circé et est même allé aux Enfers avant de rentrer et reprendre son trône', 'ulysse.jpg'),
 
-    new Heros(6, 'Achille', 'Fille de Pélée (roi de Phthie) et de le néréide Thétis', 'Sa mère le trempa dans le Styx en le tenant par le talon, afin de le rendre invincible. Il fut cependant tué d\'une flèche dans le talon par Pâris durant la guerre de Troie', 'achille.jpg'),
+    new Heros(6, 'Achille', 'Fils de Pélée (roi de Phthie) et de le néréide Thétis', 'Sa mère le trempa dans le Styx en le tenant par le talon, afin de le rendre invincible. Il fut cependant tué d\'une flèche dans le talon par Pâris durant la guerre de Troie', 'achille.jpg'),
 
     new Heros(7, 'Atalante', 'Fille d\'Iasos (roi du Péloponnèse) et de Clymène (fille de Minyas)', 'Chasseuse redoutable, elle a abattu le sanglier de Calydon, ainsi que deux centaures qui teantaient d\abuser d\'elle. Elle fut la seule femme à faire partie des Argonautes', 'atalante.jpg'),
 
@@ -39,4 +39,13 @@ export class HerosService {
   getHerosByID (id: number): Heros {
     return this.listeHeros.filter(heros => heros.id == id)[0]
   }
+
+  addHeros(heros: Heros) : void {
+    this.listeHeros.push(heros)
+  }
+
+  deleteHeros(herosToDelete: Heros): Heros[] {
+    this.listeHeros = this.listeHeros.filter(heros => herosToDelete !== heros);
+    return this.listeHeros;
+    }
 }

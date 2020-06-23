@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Heros } from 'src/app/models/heros';
 import { HerosService } from 'src/app/services/heros.service';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-heros',
@@ -12,7 +14,7 @@ export class HerosComponent implements OnInit {
   // on déclare une liste de héros vide
   listeHeros: Heros[];
 
-  constructor(private herosService: HerosService) { }
+  constructor(private herosService: HerosService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
 
@@ -20,5 +22,9 @@ export class HerosComponent implements OnInit {
     this.listeHeros = this.herosService.getAllHeros();
   }
 
-  
+  deleteHeros(heros: Heros) {
+    this.listeHeros = this.herosService.deleteHeros(heros);
+    this.toastr.success(heros.nom + ' est parti pour les Champs Élysées...', 'Préparez vos offrandes !');
+    
+  }
 }

@@ -14,7 +14,7 @@ export class MonstresService {
 
     new Monstres(2, 'Charybde', 'Détroit de Messine', 'A l\'origine une jeune fille, Charybde fut changé en gouffre marin par Zeus pour la punir d\'une mauvaise action. Avec Scylla, elle faillit engloutir le navire Argo de Jason durant sa quête pour la toison d\'or', 'charybde.jpg'),
 
-    new Monstres(3, 'Scylla', 'Détroit de Messine', 'Une nymphe changée en monstre marin par Circé pour avoir tenté de charmer le dieu Glaucos. Elle tua six marins de l\'équipage d\'Ulysse à l\'aide de ses six têtes pourvues de trios rangées de dents.', 'scylla.jpg'),
+    new Monstres(3, 'Scylla', 'Détroit de Messine', 'Une nymphe changée en monstre marin par Circé pour avoir tenté de charmer le monstre Glaucos. Elle tua six marins de l\'équipage d\'Ulysse à l\'aide de ses six têtes pourvues de trios rangées de dents.', 'scylla.jpg'),
 
     new Monstres(4, 'Lion de Némée', 'Région de Némée', 'Un immense lion à la peau impénétrable, que Héraclès devait tuer pour son premier travail, il y parviendra en étouffant la bête à mains nues','lion.jpg'),
 
@@ -32,14 +32,24 @@ export class MonstresService {
 
   ]
 
-  // on déclare un fonction qui return la liste de dieux , pour qu'elle soit accessible dans le component qui appelle la fonction
+  // on déclare un fonction qui return la liste de monstre , pour qu'elle soit accessible dans le component qui appelle la fonction
   getAllMonstres() : Monstres[] {
     return this.listeMonstres
   }
   
 
-  //Fonction pour retourver un dieu par son nom
+  //Fonction pour retourver un monstre par son nom
   getMonstreByID (id: number): Monstres {
     return this.listeMonstres.filter(monstre => monstre.id == id)[0]
   }
+
+  // fonction ajouter un monstre au tableau listeMonstres
+  addMonstre(monstre: Monstres) : void {
+    this.listeMonstres.push(monstre)
+  }
+
+  deleteMonstre(monstreToDelete: Monstres): Monstres[] {
+    this.listeMonstres = this.listeMonstres.filter(monstre => monstreToDelete !== monstre);
+    return this.listeMonstres;
+    }
 }

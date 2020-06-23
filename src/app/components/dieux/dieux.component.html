@@ -1,3 +1,5 @@
+
+
 <br>
 <h2 class="text-light">Les dieux et déesses de l'Olympe</h2>
 <!-- rend la div responsive -->
@@ -8,7 +10,7 @@
     <a [routerLink]="['/dieux', dieu.id]"> <img src='../../../assets/images/{{dieu.image}}' class="card-img-top" alt=""></a>
     <div class="card-body">
       <!-- nom du dieu -->
-      <h4 class="font-weight-bold">{{dieu.nom}}</h4>
+      <h4 class="font-weight-bold">{{dieu.nom | uppercase}}</h4>
       <!-- ses attributs -->
       <p class="card-text"><span class="font-weight-bold"> Attributs :</span> {{dieu.attributs}} </p>
       <!-- son domaine -->
@@ -16,12 +18,19 @@
       <!-- ses caracteristiques -->
       <p class="card-text"><span class="font-weight-bold">Description :</span> {{dieu.cara}} </p>
 
-      <!-- lien pour aller au component dieuDetail -->
-      <a [routerLink]="['/dieux', dieu.id]"> Détails du dieu</a>
+      <!-- bouton pour aller au component dieuDetail -->
+      <a class="btn btn-secondary" [routerLink]="['/dieux', dieu.id]"> Détails de {{dieu.nom}}</a>
+      <br>
+      <!-- Bouton supprimer ce dieu -->
+      <a class="btn btn-danger text-white" (click)="deleteDieu(dieu)">Supprimer {{dieu.nom}}</a>
+      <br>
+      <a class="btn btn-info" [routerLink]="['/edit-dieu', dieu.id]">Modifier {{dieu.nom}} </a>
     </div>
   </div>
 </div>
 <a routerLink="/dieux/add"><h2>Ajouter un dieu</h2></a>
+
+
 
 
 

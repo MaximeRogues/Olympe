@@ -14,7 +14,11 @@
       <!-- ses exploits  -->
       <p class="card-text"><span class="font-weight-bold"> Exploits :</span> {{heros.exploits}} </p>
       <!-- lien pour aller au component herosDetail -->
-      <a [routerLink]="['/heros', heros.id]">Détails du héros</a>
+      <a class="btn btn-secondary" [routerLink]="['/heros', heros.id]">Détails du héros</a>
+      <br>
+      <a class="btn btn-danger text-white" (click)="deleteHeros(heros)">Supprimer {{heros.nom}}</a>
+      <br>
+      <a class="btn btn-info" [routerLink]="['/edit-heros', heros.id]">Modifier {{heros.nom}} </a>
     </div>
   </div>
 </div>

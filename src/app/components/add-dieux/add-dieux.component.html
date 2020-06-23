@@ -2,7 +2,10 @@
 <div class="bg-light">
   <h2>Ajouter un dieu : </h2>
 
+  <!-- formulaire Angular, fonction à lancer au submit -->
   <form #dieuForm="ngForm" (ngSubmit)="submitDieux()">
+
+    <!-- [(ngModel)] pour attribuer la valeur à un attribut de l'objet, #truc pour  -->
 
     <!-- id -->
     <label for="id">Id du dieu :</label>
@@ -14,37 +17,37 @@
     <!-- nom -->
     <label for="nom">Nom du dieu : </label>
     <input type="text" class="form-control" name="nom" id="nom" required [(ngModel)]="dieu.nom" #nom="ngModel"> <br>
-    <!-- <div [hidden]="nom.valid" class="alert alert-danger">
+    <div [hidden]="nom.valid" class="alert alert-danger">
     Le nom du dieu est requis
-  </div> -->
+  </div>
 
     <!-- attributs -->
     <label for="attributs">Attributs du dieu : </label>
-    <input type="text" class="form-control" name="attributs" id="attributs" required [(ngModel)]="dieu.attributs"> <br>
-    <!-- <div [hidden]="attributs.valid" class="alert alert-danger">
+    <input type="text" class="form-control" name="attributs" id="attributs" required [(ngModel)]="dieu.attributs" #attributs="ngModel"> <br>
+    <div [hidden]="attributs.valid" class="alert alert-danger">
     Les attributs du dieu sont requis
-  </div> -->
+  </div>
 
     <!-- domaine -->
     <label for="domaine">Domaine du dieu : </label>
-    <input type="text" class="form-control" name="domaine" id="domaine" required [(ngModel)]="dieu.domaine"> <br>
-    <!-- <div [hidden]="domaine.valid" class="alert alert-danger">
+    <input type="text" class="form-control" name="domaine" id="domaine" required [(ngModel)]="dieu.domaine" #domaine="ngModel"> <br>
+    <div [hidden]="domaine.valid" class="alert alert-danger">
     Le domaine du dieu est requis
-  </div> -->
+  </div>
 
     <!-- caractéristiques -->
     <label for="cara">Caractéristiques du dieu : </label>
-    <input type="text" class="form-control" name="cara" id="cara" required [(ngModel)]="dieu.cara"> <br>
-    <!-- <div [hidden]="cara.valid" class="alert alert-danger">
+    <input type="text" class="form-control" name="cara" id="cara" required [(ngModel)]="dieu.cara" #cara="ngModel"> <br>
+    <div [hidden]="cara.valid" class="alert alert-danger">
     Les caractéristiques du dieu sont requises
-  </div> -->
+  </div>
 
     <!-- image -->
     <label for="image">Image du dieu : </label>
-    <input type="string" class="form-control" name="image" id="image" required [(ngModel)]="dieu.image"> <br>
-    <!-- <div [hidden]="image.valid" class="alert alert-danger">
+    <input type="string" class="form-control" name="image" id="image" required [(ngModel)]="dieu.image" #image="ngModel"> <br>
+    <div [hidden]="image.valid" class="alert alert-danger">
     L'image du dieu est requis
-  </div> -->
+  </div>
 
     <input [disabled]='!dieuForm.valid' type="submit" value="Envoyer">
   </form>
