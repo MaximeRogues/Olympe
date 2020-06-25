@@ -13,23 +13,24 @@ import { ToastrService } from 'ngx-toastr';
 export class AddDieuxComponent implements OnInit {
 
   dieu: Dieu;
+  isLoading: boolean;
 
   constructor(private dieuxService: DieuxService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
+    this.isLoading = true;
     // on déclare un dieu vide
-    this.dieu = new Dieu();
+    this.dieu = new Dieu();    
+    this.isLoading = false;
   }
 
-  submitDieux(): void {
-    //lance la fonction addDieu de dieux.service
-  this.dieuxService.addDieu(this.dieu);
-  // change l'url avec la route '/dieux'
-  this.router.navigate(['/dieux']);
-  
+  submitDieux() {
+  //lance la fonction addDieu de dieux.service
+  this.dieuxService.addDieu(this.dieu).subscribe(then => {
+    // change l'url avec la route '/dieux'
+    this.router.navigate(['/dieux']);
+  });
   this.toastr.success('Ajoutez un siège sur l\'Olympe !','Quoi ?! Un nouveau dieu !')
-  
-   }
-
+  }
   
 }

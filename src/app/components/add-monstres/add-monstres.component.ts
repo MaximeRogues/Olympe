@@ -13,21 +13,24 @@ import { ToastrService } from 'ngx-toastr';
 export class AddMonstresComponent implements OnInit {
 
   monstre: Monstres;
+  isLoading: boolean;
 
   constructor(private monstreService: MonstresService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
+    this.isLoading = true;
+    // on déclare un new Monstres vide
     this.monstre = new Monstres();
+    this.isLoading = true;
   }
 
-  submitMonstre(): void {
-    // fonction de monstre.service pour push un monstre dans la liste
-    this.monstreService.addMonstre(this.monstre);
+  submitMonstre() {
+  // fonction de monstre.service pour push un monstre dans la liste
+  this.monstreService.addMonstre(this.monstre).subscribe(then => {
     // naviguer vers la page monstres
-    this.router.navigate(['/monstres']);    
-
-    this.toastr.success('Aiguisez vos armes !','Un nouveau monstre sème la terreur !')
-
-     }
+    this.router.navigate(['/monstres']);   
+  })
+  this.toastr.success('Aiguisez vos armes !','Un nouveau monstre sème la terreur !')
+  }
 
 }

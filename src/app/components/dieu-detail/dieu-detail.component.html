@@ -1,7 +1,8 @@
+<br>
 
  <div class="card-body bg-light">
     <!-- nom du dieu -->
-    <img src="../../../assets/images/{{ dieu.image }}" alt="Illustration du dieu">
+    <img src="../../../assets/images/dieux/{{dieu.image}}" alt="Illustration du dieu">
     <br>
     <br>
     <h4 class="font-weight-bold">{{dieu.nom}}</h4>
@@ -11,4 +12,10 @@
     <p class="card-text"><span class="font-weight-bold"> Domaine :</span> {{dieu.domaine}}  </p>
     <!-- ses caracteristiques -->
     <p class="card-text"><span class="font-weight-bold">Description :</span>  {{dieu.cara}}  </p>
+    <br>
+    <!-- bouton modifer ce dieu -->
+    <a class="btn btn-info btn-sm w-50" [routerLink]="['/edit-dieu', dieu.id]">Modifier</a>
+
+    <!-- Bouton supprimer ce dieu -->
+    <a class="btn btn-danger btn-sm text-white w-50" (click)="deleteDieu(dieu.id)">Supprimer</a>
 </div>

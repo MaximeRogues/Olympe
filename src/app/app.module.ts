@@ -14,6 +14,7 @@ import { HerosDetailComponent } from './components/heros-detail/heros-detail.com
 import { MonstresComponent } from './components/monstres/monstres.component';
 import { MonstreDetailComponent } from './components/monstre-detail/monstre-detail.component';
 import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AddDieuxComponent } from './components/add-dieux/add-dieux.component';
 import { AddHerosComponent } from './components/add-heros/add-heros.component';
@@ -54,8 +55,8 @@ import { EditHerosComponent } from './components/edit-heros/edit-heros.component
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    ToastrModule.forRoot() // ToastrModule added
-
+    ToastrModule.forRoot(), // ToastrModule added
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,36 +1,33 @@
-
-
 <br>
 <h2 class="text-light">Les dieux et déesses de l'Olympe</h2>
-<!-- rend la div responsive -->
-<div class="liste row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-  <!-- boucle pour générer les cards -->
-  <div *ngFor="let dieu of this.listeDieux" class="card" style="width: 25rem;">
 
-    <a [routerLink]="['/dieux', dieu.id]"> <img src='../../../assets/images/{{dieu.image}}' class="card-img-top" alt=""></a>
-    <div class="card-body">
-      <!-- nom du dieu -->
-      <h4 class="font-weight-bold">{{dieu.nom | uppercase}}</h4>
-      <!-- ses attributs -->
-      <p class="card-text"><span class="font-weight-bold"> Attributs :</span> {{dieu.attributs}} </p>
-      <!-- son domaine -->
-      <p class="card-text"><span class="font-weight-bold"> Domaine :</span> {{dieu.domaine}} </p>
-      <!-- ses caracteristiques -->
-      <p class="card-text"><span class="font-weight-bold">Description :</span> {{dieu.cara}} </p>
+<!-- s'affiche au chargement -->
+<div *ngIf="isLoading">
+  <h3 class="text-center">Veuillez Patienter</h3>
+</div>
 
-      <!-- bouton pour aller au component dieuDetail -->
-      <a class="btn btn-secondary" [routerLink]="['/dieux', dieu.id]"> Détails de {{dieu.nom}}</a>
-      <br>
-      <!-- Bouton supprimer ce dieu -->
-      <a class="btn btn-danger text-white" (click)="deleteDieu(dieu)">Supprimer {{dieu.nom}}</a>
-      <br>
-      <a class="btn btn-info" [routerLink]="['/edit-dieu', dieu.id]">Modifier {{dieu.nom}} </a>
+<!-- s'affiche une fois le component chargé -->
+<div *ngIf="!isLoading">
+  <!-- rend la div responsive -->
+  <div class="liste row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+    <!-- boucle pour générer les cards -->
+    <div *ngFor="let dieu of this.listeDieux" class="card">
+
+      <a [routerLink]="['/dieux', dieu.id]"> <img src='../../../assets/images/dieux/{{dieu.image}}'
+          class="card-img-top img-fluid" alt=""></a>
+      <div class="card-body text-center">
+        <!-- nom du dieu -->
+        <h3 class="font-weight-bold">{{dieu.nom}}</h3>
+        <h5>{{dieu.titre}}</h5>
+        <!-- bouton pour aller au component dieuDetail -->
+        <a class="btn btn-secondary btn-sm w-100" [routerLink]="['/dieux', dieu.id]"> Détails </a>
+        <br>
+
+
+      </div>
     </div>
   </div>
+  <a routerLink="/dieux/add">
+    <h3 class="btn btn-primary">Ajouter un dieu</h3>
+  </a>
 </div>
-<a routerLink="/dieux/add"><h2>Ajouter un dieu</h2></a>
-
-
-
-
-

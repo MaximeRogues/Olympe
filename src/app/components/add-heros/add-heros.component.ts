@@ -14,19 +14,23 @@ import { ToastrService } from 'ngx-toastr';
 export class AddHerosComponent implements OnInit {
 
   heros: Heros;
+  isLoading: boolean;
 
   constructor(private herosService: HerosService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
+    this.isLoading = true;
+    // on déclare un new Heros vide
     this.heros = new Heros();
+    this.isLoading = false;
   }
 
   submitHeros() {
-    // fonction de heros.service pour push un héros dans la liste
-    this.herosService.addHeros(this.heros);
+  // fonction de heros.service pour push un héros dans la liste
+  this.herosService.addHeros(this.heros).subscribe(then => {
     // naviguer vers la page héros
     this.router.navigate(['/heros']);
-
-    this.toastr.success('Prenez garde si vous êtes un monstre...','Un nouveau héros s\'élève !')
-    }
+  })
+  this.toastr.success('Prenez garde si vous êtes un monstre...','Un nouveau héros s\'élève !')
+  }
 }

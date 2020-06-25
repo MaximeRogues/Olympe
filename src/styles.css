@@ -3,6 +3,7 @@ body {
   padding: 2rem;
   background-image: url('/assets/images/montOlympe.jpg');
   background-size: cover;
+  font-family: 'Cinzel', serif;
 }
 
 td,
@@ -23,6 +24,7 @@ th {
 h4 {
   margin-bottom: 1rem;
 }
+
 
 
 /* based on angular-toastr css https://github.com/Foxandxss/angular-toastr/blob/cb508fe6801d6b288d3afc525bb40fee1b101650/dist/angular-toastr.css */

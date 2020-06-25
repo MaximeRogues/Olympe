@@ -11,19 +11,24 @@ import { Heros } from 'src/app/models/heros';
 export class EditHerosComponent implements OnInit {
   id: number;
   heros: Heros;
+  isLoading: boolean;
 
   constructor(private route: ActivatedRoute, private router: Router, private herosService: HerosService) { }
 
   ngOnInit(): void {
-    this.id = +this.route.snapshot.paramMap.get('id');
+    this.isLoading = true;
+    this.herosService.getHerosByID(+this.route.snapshot.paramMap.get('id')).subscribe((data: Heros) => {
+      this.heros = data;
+      this.isLoading = false;
+    });  }
 
-    this.heros = this.herosService.getHerosByID(this.id);
-  }
 
-  updateHeros(Heros: Heros) {
-    this.heros = Heros;
-    this.router.navigate(['/heros']);
-
-  }
+  updateHeros() {
+    //lance la fonction updateHeros de heros.service
+    this.herosService.updateHeros(this.heros).subscribe(then => {
+      // change l'url avec la route '/heros'
+      this.router.navigate(['/heros']);
+      });
+    }
 
 }

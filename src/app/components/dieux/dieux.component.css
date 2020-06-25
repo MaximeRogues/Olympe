@@ -1,4 +1,17 @@
 img {
-    width: 400px;
-    height: 520px;
+    height: 20rem;
 }
+
+.card {
+    width: 17rem;
+    height: 30rem;
+}
+
+.card-body {
+    padding-bottom: 0.5rem;
+}
+
+/* .card:hover {
+    width: 18rem;
+    height: 31rem;
+} */

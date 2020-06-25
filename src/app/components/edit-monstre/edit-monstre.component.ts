@@ -11,19 +11,25 @@ import { Monstres } from 'src/app/models/monstres';
 export class EditMonstreComponent implements OnInit {
   id: number;
   monstre: Monstres;
+  isLoading: boolean;
 
   constructor(private route: ActivatedRoute, private router: Router, private monstreService: MonstresService) { }
 
   ngOnInit(): void {
-    this.id = +this.route.snapshot.paramMap.get('id');
 
-    this.monstre = this.monstreService.getMonstreByID(this.id);
-  }
+    this.isLoading = true;
+    this.monstreService.getMonstreByID(+this.route.snapshot.paramMap.get('id')).subscribe((data: Monstres) => {
+      this.monstre = data;
+      this.isLoading = false;
+    });  }
 
-  updateMonstre(monstre: Monstres) {
-    this.monstre = monstre;
-    this.router.navigate(['/monstres']);
 
-  }
+  updateMonstre() {
+    //lance la fonction updateMonstre de monstre.service
+    this.monstreService.updateMonstre(this.monstre).subscribe(then => {
+      // change l'url avec la route '/monstre'
+      this.router.navigate(['/monstres']);
+      });
+    }
 
 }

@@ -13,18 +13,19 @@ export class HerosComponent implements OnInit {
 
   // on déclare une liste de héros vide
   listeHeros: Heros[];
+  isLoading: boolean;
 
   constructor(private herosService: HerosService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
-
+    // on initialise isLoading à true, pour dire que la page charge
+    this.isLoading = true;
     // au chargement, on remplit la liste avec la fonction getAllHeros
-    this.listeHeros = this.herosService.getAllHeros();
-  }
+    this.herosService.getAllHeros().subscribe((data: Heros[]) => {
+      this.listeHeros = data;
+      this.isLoading = false
+})
+}
 
-  deleteHeros(heros: Heros) {
-    this.listeHeros = this.herosService.deleteHeros(heros);
-    this.toastr.success(heros.nom + ' est parti pour les Champs Élysées...', 'Préparez vos offrandes !');
-    
-  }
+ 
 }

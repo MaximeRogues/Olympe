@@ -1,4 +1,12 @@
 img {
-    width: 400px;
-    height: 520px;
+    height: 20rem;
+}
+
+.card-body {
+    padding-bottom: 0.5rem;
+}
+
+.card {
+    width: 17rem;
+    height: 30rem;
 }

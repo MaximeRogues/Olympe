@@ -1,8 +1,8 @@
-
+<br>
 
  <div class="card-body bg-light">
     <!-- nom du heros -->
-    <img src="../../../assets/images/{{ heros.image }}" alt="Illustration du heros">
+    <img src="../../../assets/images/heros/{{ heros.image }}" alt="Illustration du heros">
     <br>
     <br>
     <h4 class="font-weight-bold">{{heros.nom}}</h4>
@@ -10,5 +10,11 @@
     <p class="card-text"><span class="font-weight-bold"> Origine :</span> {{heros.origine}}  </p>
     <!-- son domaine -->
     <p class="card-text"><span class="font-weight-bold"> Exploits :</span> {{heros.exploits}}  </p>
-    
+    <br>
+    <!-- bouton modifier -->
+    <a class="btn btn-info btn-sm w-50 " [routerLink]="['/edit-heros', heros.id]">Modifier </a>
+
+    <!-- bouton supprimer -->
+    <a class="btn btn-danger btn-sm  text-white w-50 " (click)="deleteHeros(heros.id)">Supprimer</a>
+
 </div>

@@ -1,44 +1,65 @@
-<br>
-<div class="bg-light">
-  <h2>Modifier {{dieu.nom}} : </h2>
+<!-- s'affiche au chargement -->
+<div *ngIf="isLoading">
+  <h3 class="text-center">Veuillez Patienter</h3>
+</div>
 
-  <form #dieuForm="ngForm" (ngSubmit)="updateDieu(dieu)">
+<!-- s'affiche une fois le component chargé -->
+<div *ngIf="!isLoading">
+  <br>
+  <div class="bg-light">
+    <h2>Modifier {{dieu.nom}} : </h2>
 
-    <!-- nom -->
-    <label for="nom">Nom du dieu : </label>
-    <input type="text" class="form-control" name="nom" id="nom" required [(ngModel)]="dieu.nom" #nom="ngModel" > <br>
-    <!-- <div [hidden]="nom.valid" class="alert alert-danger">
-    Le nom du dieu est requis
-  </div> -->
+    <form #dieuForm="ngForm" (ngSubmit)="updateDieu()">
 
-    <!-- attributs -->
-    <label for="attributs">Attributs du dieu : </label>
-    <input type="text" class="form-control" name="attributs" id="attributs" required [(ngModel)]="dieu.attributs"> <br>
-    <!-- <div [hidden]="attributs.valid" class="alert alert-danger">
-    Les attributs du dieu sont requis
-  </div> -->
+      <!-- nom -->
+      <label for="nom">Nom du dieu : </label>
+      <input type="text" class="form-control" name="nom" id="nom" required [(ngModel)]="dieu.nom" #nom="ngModel"> <br>
+      <div [hidden]="nom.valid" class="alert alert-danger">
+        Le nom du dieu est requis
+      </div>
 
-    <!-- domaine -->
-    <label for="domaine">Domaine du dieu : </label>
-    <input type="text" class="form-control" name="domaine" id="domaine" required [(ngModel)]="dieu.domaine"> <br>
-    <!-- <div [hidden]="domaine.valid" class="alert alert-danger">
-    Le domaine du dieu est requis
-  </div> -->
+      <!-- titre -->
+      <label for="titre">Titre du dieu : </label>
+      <input type="text" class="form-control" name="titre" id="titre" required [(ngModel)]="dieu.titre"
+        #titre="ngModel"> <br>
+      <div [hidden]="titre.valid" class="alert alert-danger">
+        Le titre du dieu est requis
+      </div>
 
-    <!-- caractéristiques -->
-    <label for="cara">Caractéristiques du dieu : </label>
-    <input type="text" class="form-control" name="cara" id="cara" required [(ngModel)]="dieu.cara"> <br>
-    <!-- <div [hidden]="cara.valid" class="alert alert-danger">
-    Les caractéristiques du dieu sont requises
-  </div> -->
+      <!-- attributs -->
+      <label for="attributs">Attributs du dieu : </label>
+      <input type="text" class="form-control" name="attributs" id="attributs" required [(ngModel)]="dieu.attributs"
+        #attributs="ngModel">
+      <br>
+      <div [hidden]="attributs.valid" class="alert alert-danger">
+        Les attributs du dieu sont requis
+      </div>
 
-    <!-- image -->
-    <label for="image">Image du dieu : </label>
-    <input type="string" class="form-control" name="image" id="image" required [(ngModel)]="dieu.image"> <br>
-    <!-- <div [hidden]="image.valid" class="alert alert-danger">
-    L'image du dieu est requis
-  </div> -->
+      <!-- domaine -->
+      <label for="domaine">Domaine du dieu : </label>
+      <input type="text" class="form-control" name="domaine" id="domaine" required [(ngModel)]="dieu.domaine"
+        #domaine="ngModel"> <br>
+      <div [hidden]="domaine.valid" class="alert alert-danger">
+        Le domaine du dieu est requis
+      </div>
 
-    <input [disabled]='!dieuForm.valid' type="submit" value="Envoyer">
-  </form>
+      <!-- caractéristiques -->
+      <label for="cara">Caractéristiques du dieu : </label>
+      <input type="text" class="form-control" name="cara" id="cara" required [(ngModel)]="dieu.cara" #cara="ngModel">
+      <br>
+      <div [hidden]="cara.valid" class="alert alert-danger">
+        Les caractéristiques du dieu sont requises
+      </div>
+
+      <!-- image -->
+      <label for="image">Image du dieu : </label>
+      <input type="string" class="form-control" name="image" id="image" required [(ngModel)]="dieu.image"
+        #image="ngModel"> <br>
+      <div [hidden]="image.valid" class="alert alert-danger">
+        L'image du dieu est requis
+      </div>
+
+      <input [disabled]='!dieuForm.valid' type="submit" value="Envoyer">
+    </form>
+  </div>
 </div>

@@ -1,45 +1,33 @@
 <br>
 <h2 class="text-light">Les héros et héroïnes</h2>
-<!-- rend la div responsive -->
-<div class="liste row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-  <!-- boucle qui génère les cards -->
-  <div *ngFor="let heros of this.listeHeros" class="card" style="width: 25rem;">
 
-   <a [routerLink]="['/heros', heros.id]"> <img src='../../../assets/images/{{heros.image}}' class="card-img-top" alt=""></a>
-    <div class="card-body">
-      <!-- nom du héros -->
-      <h4>{{heros.nom}}</h4>
-      <!-- ses origines -->
-      <p class="card-text"><span class="font-weight-bold">Origine :</span> {{heros.origine}} </p>
-      <!-- ses exploits  -->
-      <p class="card-text"><span class="font-weight-bold"> Exploits :</span> {{heros.exploits}} </p>
-      <!-- lien pour aller au component herosDetail -->
-      <a class="btn btn-secondary" [routerLink]="['/heros', heros.id]">Détails du héros</a>
-      <br>
-      <a class="btn btn-danger text-white" (click)="deleteHeros(heros)">Supprimer {{heros.nom}}</a>
-      <br>
-      <a class="btn btn-info" [routerLink]="['/edit-heros', heros.id]">Modifier {{heros.nom}} </a>
-    </div>
-  </div>
+<!-- s'affiche au chargement -->
+<div *ngIf="isLoading">
+  <h3 class="text-center">Veuillez Patienter</h3>
 </div>
 
-<a routerLink="/heros/add"><h2>Ajouter un héros</h2></a>
 
+<div *ngIf="!isLoading">
+  <!-- rend la div responsive -->
+  <div class="liste row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+    <!-- boucle qui génère les cards -->
+    <div *ngFor="let heros of this.listeHeros" class="card">
 
-<!-- Sous forme de tableau -->
-<!-- <br>
-<h2 class="text-light">Les héros </h2>
+      <a [routerLink]="['/heros', heros.id]"> <img src='../../../assets/images/heros/{{heros.image}}'
+          class="card-img-top img-fluid" alt=""></a>
+      <div class="card-body text-center">
+        <!-- nom du héros -->
+        <h3 class="font-weight-bold ">{{heros.nom}}</h3>
+        <h5>{{heros.titre}}</h5>
+        <!-- bouton vers heros-detail -->
+        <a class="btn btn-secondary btn-sm w-100 " [routerLink]="['/heros', heros.id]">Détails </a>
+        
+        
+      </div>
+    </div>
+  </div>
 
-<table class="bg-light">
-    <thead class="text-light bg-dark">
-      <th>Nom</th>
-      <th>Origine</th>
-      <th>Exploits</th>
-    </thead>
-    <tbody>
-      <tr *ngFor="let heros of this.listeHeros" class="border-bottom">
-          <td>{{heros.nom}}</td>
-          <td>{{heros.origine}}</td>
-          <td>{{heros.exploits}}</td>
-    </tbody>
-  </table> -->
+  <a routerLink="/heros/add">
+    <h3 class="btn btn-primary">Ajouter un héros</h3>
+  </a>
+</div>

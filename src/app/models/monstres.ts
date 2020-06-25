@@ -4,10 +4,12 @@ export class Monstres {
     lieu: string;
     histoire: string;
     image: string;
+    titre: string;
 
-    constructor(id: number = null, nom: string = null, lieu: string = null, histoire: string = null, image: string = null ) {
+    constructor(id: number = null, nom: string = null, titre:string =null, lieu: string = null, histoire: string = null, image: string = null ) {
         this.id = id;
         this.nom = nom;
+        this.titre = titre;
         this.lieu = lieu;
         this.histoire = histoire;
         this.image= image;

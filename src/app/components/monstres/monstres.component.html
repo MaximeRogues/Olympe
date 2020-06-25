@@ -1,27 +1,31 @@
 <br>
 <h2 class="text-light">Les monstres</h2>
-<!-- rend la div responsive -->
-<div class="liste row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-  <!-- boucle pour générer les cards -->
-  <div *ngFor="let monstre of this.listeMonstres" class="card" style="width: 25rem;">
 
-    <a [routerLink]="['/monstres', monstre.id]"> <img src='../../../assets/images/{{monstre.image}}' class="card-img-top" alt=""></a>
-    <div class="card-body">
-      <!-- nom du monstre -->
-      <h4 class="font-weight-bold">{{monstre.nom}}</h4>
-      <!-- son lieu -->
-      <p class="card-text"><span class="font-weight-bold"> Lieu :</span> {{monstre.lieu}} </p>
-      <!-- son domaine -->
-      <p class="card-text"><span class="font-weight-bold"> Histoire :</span> {{monstre.histoire}} </p>
+<!-- s'affiche au chargement -->
+<div *ngIf="isLoading">
+  <h3 class="text-center">Veuillez Patienter</h3>
+</div>
 
-      <!-- lien pour aller au component monstreDetail -->
-      <a class="btn btn-secondary" [routerLink]="['/monstres', monstre.id]"> Détails du monstre</a>
-      <br>
-      <a class="btn btn-danger text-white" (click)="deleteMonstre(monstre)">Supprimer {{monstre.nom}}</a>
-      <br>
-      <a class="btn btn-info" [routerLink]="['/edit-monstres', monstre.id]">Modifier {{monstre.nom}} </a>
+<div *ngIf="!isLoading">
+  <!-- rend la div responsive -->
+  <div class="liste row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+    <!-- boucle pour générer les cards -->
+    <div *ngFor="let monstre of this.listeMonstres" class="card" >
 
+      <a [routerLink]="['/monstres', monstre.id]"> <img src='../../../assets/images/monstres/{{monstre.image}}'
+          class="card-img-top img-fluid" alt=""></a>
+      <div class="card-body text-center">
+        <!-- nom du monstre -->
+        <h3 class="font-weight-bold">{{monstre.nom}}</h3>
+        <h5>{{monstre.titre}}</h5>
+        <!-- Bouton aller au component monstreDetail -->
+        <a class="btn btn-secondary btn-sm w-100 " [routerLink]="['/monstres', monstre.id]"> Détails</a>
+        
+        
+      </div>
     </div>
   </div>
+  <a routerLink="/monstres/add">
+    <h3 class="btn btn-primary">Ajouter un monstre</h3>
+  </a>
 </div>
-<a routerLink="/monstres/add"><h2>Ajouter un monstre</h2></a>

@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Dieu } from 'src/app/models/dieu';
 import { DieuxService } from 'src/app/services/dieux.service';
 
-
 @Component({
   selector: 'app-edit-dieu',
   templateUrl: './edit-dieu.component.html',
@@ -12,19 +11,24 @@ import { DieuxService } from 'src/app/services/dieux.service';
 export class EditDieuComponent implements OnInit {
   id: number;
   dieu: Dieu;
+  isLoading: boolean;
 
   constructor(private route: ActivatedRoute, private router: Router, private dieuService: DieuxService) { }
 
   ngOnInit(): void {
-    this.id = +this.route.snapshot.paramMap.get('id');
-
-    this.dieu = this.dieuService.getDieuByID(this.id);
+    this.isLoading = true;
+    this.dieuService.getDieuByID(+this.route.snapshot.paramMap.get('id')).subscribe((data: Dieu) => {
+      this.dieu = data;
+      this.isLoading = false;
+    });
   }
 
-  updateDieu(dieu: Dieu) {
-    this.dieu = dieu;
-    this.router.navigate(['/dieux']);
-
+  updateDieu() {
+     //lance la fonction updateDieu de dieu.service
+     this.dieuService.updateDieu(this.dieu).subscribe(then => {
+      // change l'url avec la route '/dieu'
+      this.router.navigate(['/dieux']);
+      });
+    }
   }
 
-}

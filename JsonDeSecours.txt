@@ -1,0 +1,238 @@
+{
+  "dieux": [
+    {
+      "id": 1,
+      "nom": "Zeus",
+      "titre": "Le roi des dieux",
+      "attributs": "Le foudre, l'aigle, l'égide",
+      "domaine": "Les cieux, il est le roi de l'Olympe",
+      "cara": "C'est lui qui libéra ses frères et soeurs de Cronos et enferma la plupart des Titans dans le Tartare. Il est le père de nombreux héros après s'être mêlé à des humaines",
+      "image": "zeus.jpg"
+    },
+    {
+      "id": 2,
+      "nom": "Héra",
+      "titre": "La reine des dieux",
+      "attributs": "Le diadème, le sceptre, le paon sdfdsf",
+      "domaine": "Le mariage, les femmes, les familles, les rois et les empires",
+      "cara": "Femme de Zeus, elle règne avec lui sur l'Olympe et persécute les partenaires extraconjugales de son mari. C'est elle qui a organisé la folie meurtrière de Héraclès, qui tire son nom de Héra, car ses travaux doivent servir la gloire de la reine des dieux. Elle a posé les cent yeux du géant Argos sur le paon qui est son animal favori",
+      "image": "hera.jpg"
+    },
+    {
+      "id": 3,
+      "nom": "Hadès",
+      "titre": "Roi des Enfers",
+      "attributs": "La fourche, la kunée (un casque qui rend son porteur invisible), Cerbère",
+      "domaine": "Le monde souterrain, les enfers, les richesses cachées de la terre",
+      "cara": "Il règne sur les Enfers où il accueille l\\'âme des morts. Il a enlevé Perséphone pour qu'elle reste avec lui aux Enfers mais l\\'autorisa à sortir 6 mois par an pour rejoindre sa mère Déméter",
+      "image": "hades.jpg"
+    },
+    {
+      "id": 4,
+      "nom": "Poséidon",
+      "attributs": "Le trident, la conque",
+      "domaine": "Les océans, les navigateurs, les tremblements de terre",
+      "cara": "Il règne sur les mers et les océans, sur son char tiré par des hippocampes. Il empêche Ulysse de rentrer chez lui car il avait crevé l'oeil de son fils, le cyclope Polyphème",
+      "image": "poseidon.jpg",
+      "titre": "Le roi des océans"
+    },
+    {
+      "id": 5,
+      "nom": "Arès",
+      "attributs": "Le glaive, le bouclier, la lance...",
+      "domaine": "Les guerres, la violence, la destruction",
+      "cara": "Dieu colérique, il déclencha des guerres à plusieurs reprises. Il a une relation adultère avec Aphrodite, qui est mariée à Héphaïstos",
+      "image": "ares.jpg",
+      "titre": "Le dieu de la guerre"
+    },
+    {
+      "id": 6,
+      "nom": "Athéna",
+      "attributs": "L'égide, la chouette, l'olivier",
+      "domaine": "L'intelligence, la stratégie, l'artisanat",
+      "cara": "Sortie du front de Zeus, elle est la gardienne de la ville d'Athènes après s\\'être confronté à Poséidon pour la possession de l'Attique",
+      "image": "athena.jpg",
+      "titre": "La déesse de la sagesse"
+    },
+    {
+      "id": 7,
+      "nom": "Hermès",
+      "attributs": "Le caducée, le chapeau et les chaussures ailés",
+      "domaine": "Les voyageurs, les routes et carrefours, le commerce, les messagers",
+      "cara": "Il est le messager des dieux et conduit les âmes aux Enfers. Il est le dieu le plus proche des humains et le plus bienveillant à leur égard, comme quand il a donné la parole à Pandore avant de la présenter aux hommes",
+      "image": "hermes.jpg",
+      "titre": "Le dieu messager"
+    },
+    {
+      "id": 8,
+      "nom": "Aphrodite",
+      "attributs": "Le collier d'or, la colombe, la ceinture magique",
+      "domaine": "'La fertilité, l'amour, la séduction",
+      "cara": "On lui voue un culte basé sur la sexualité, elle est cependant surtout la déesse des activités des jeunes filles en général",
+      "image": "aphrodite.jpg",
+      "titre": "La déesse de l'amour"
+    },
+    {
+      "id": 9,
+      "nom": "Apollon",
+      "attributs": "La lyre, la flûte, le laurier, l'arc",
+      "domaine": "La poésie, la musique, et les arts en général",
+      "cara": "Associé au Soleil, il est le frère d\\'Artémis, et un des principaux dieux capables de divination, qu\\'il exerce en rendant ses oracles à travers la Pythie de Delphes",
+      "image": "apollon.jpg",
+      "titre": "Le dieu de la musique"
+    },
+    {
+      "id": 10,
+      "nom": "Artémis",
+      "attributs": "L'arc et les flèches d'argent, la biche, le cerf",
+      "domaine": "La nature, la chasse, les accouchements",
+      "cara": "'Associée à la Lune, elle est la sœur d'Apollon, elle a le pouvoir de déclencher les épidémies mais aussi de les arrêter",
+      "image": "artemis.jpg",
+      "titre": "La déesse de la chasse"
+    },
+    {
+      "id": 11,
+      "nom": "Dionysos",
+      "attributs": "Le raisin, les feuilles de vigne",
+      "domaine": "La vigne, le vin et ses excès",
+      "cara": "Fils de Zeus et d'une mortelle, il se mêle souvent aux humains lors de fêtes et d'orgies",
+      "image": "dionysos.jpg",
+      "titre": "Le dieu du vin"
+    },
+    {
+      "id": 12,
+      "nom": "Héphaïstos",
+      "attributs": "Le marteau, l'enclume, le bouton d'or",
+      "domaine": "La forge, la fabrication d'armes et d'armures",
+      "cara": "Fils de Zeus et d'Héra, c'est lui qui fabriqua les armes et armures de nombreux héros et dieux. C'est aussi qui fabriqua Pandore, la première femme",
+      "image": "hephaistos.jpg",
+      "titre": "Le dieu forgeron"
+    },
+    {
+      "id": 13,
+      "nom": "Déméter",
+      "attributs": "Les gerbes de blé, la faucille, le flambeau",
+      "domaine": "L'agriculture, les moissons",
+      "cara": "Elle est la mère de Perséphone, c'est en allant chercher cette dernière aux Enfers que l'hiver fut créé, sa fille passera chaque hiver aux Enfers en compagnie d'Hadès",
+      "image": "demeter.jpg",
+      "titre": "La déesse des moissons"
+    },
+    {
+      "id": 14,
+      "nom": "Hestia",
+      "attributs": "Le feu sacré, le foyer, la torche",
+      "domaine": "Le foyer public et familial, la famille",
+      "cara": "Elle est la seule déesse à rester en permanence sur l'Olympe, elle est décrite comme une déesse vierge et immuable. Elle est la première-née du Titan Cronos",
+      "image": "hestia.jpg",
+      "titre": "La déesse du foyer"
+    }
+  ],
+  "heros": [
+    {
+      "nom": "Héraclès",
+      "titre": "La gloire d'Héra",
+      "origine": "Fils de Zeus et d'Alcmène",
+      "exploits": "Les douzes Travaux qui portent son nom: Il a tué l'hydre de Lerne, le lion de Némée, capturé le sanglier d'Erymanthe, vaincu la biche de Cérynie, tué les oiseaux du lac Stymphale, capturé le taureau de Minos, dompté les juments de Diomède, ramené la ceinture d'or d'Hippolyte, nettoyé les écuries d'Augias (en détournant un fleuve...), volé les oeufs de Géryon ainsi que les pommes d'or du jardin des Hespérides et sorti Cerbère des Enfers ",
+      "image": "heracles.jpg",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "nom": "Circé",
+      "origine": "Fille d'Hélios et de l\\'océanide Perséis",
+      "exploits": "Experte en potions et en poisons, elle a accueilli l'équipage d'Ulysse et les a transformé en animaux. Elle hébergea Ulysse pendant un an sur son île et l'aida à préparer la suite de son voyage",
+      "image": "circe.jpg",
+      "titre": "La magicienne"
+    },
+    {
+      "id": 3,
+      "nom": "Thésée",
+      "origine": "Fils du roi Egée et d'Ethra",
+      "exploits": "Il a vaincu le Minotaure qui terrorisait la Crête à l\\'aide d'une pelote de fil confiée par Ariane pour qu'il puisse se retrouver dans le labyrinthe. Il devient le roi d'Athènes après cet exploit",
+      "image": "thesee.jpg",
+      "titre": "Le roi mythique d'Athènes"
+    },
+    {
+      "id": 4,
+      "nom": "Persée",
+      "origine": "Fils de Zeus et de Danaé (fille du roi d'Argos)",
+      "exploits": "Il a vaincu la gorgone Méduse en lui tranchant la tête. Le sang qui se retrouva sur le sol donna naissance au cheval ailé Pégase. Il a également sauvé Andromède, en proie à un monstre marin envoyé par Poséidon",
+      "image": "persee.jpg",
+      "titre": "Le tueur de gorgone"
+    },
+    {
+      "id": 5,
+      "nom": "Ulysse",
+      "origine": "Fils de Laërte et d'Anticlée",
+      "exploits": "Roi d'Ithaque, il est le héros de l'Odyssée. Il a vaincu le cyclope Polyphème, résisté aux sirènes, il a affronté Circé et est même allé aux Enfers avant de rentrer et reprendre son trône",
+      "image": "ulysse.jpg",
+      "titre": "Le roi d'Ithaque"
+    },
+    {
+      "id": 6,
+      "nom": "Achille",
+      "origine": "Fils de Pélée (roi de Phthie) et de le néréide Thétis",
+      "exploits": "Sa mère le trempa dans le Styx en le tenant par le talon, afin de le rendre invincible. Il fut cependant tué d'une flèche dans le talon par Pâris durant la guerre de Troie",
+      "image": "achille.jpg",
+      "titre": "Héros de la guerre de Troie"
+    },
+    {
+      "id": 7,
+      "nom": "Atalante",
+      "origine": "Fille d'Iasos (roi du Péloponnèse) et de Clymène (fille de Minyas)",
+      "exploits": "Chasseuse redoutable, elle a abattu le sanglier de Calydon, ainsi que deux centaures qui tentaient d'abuser d'elle. Elle fut la seule femme à faire partie des Argonautes",
+      "image": "atalante.jpg",
+      "titre": "La chasseuse redoutable"
+    },
+    {
+      "id": 8,
+      "nom": "Œdipe",
+      "origine": "Fils de Laïos et de Jocaste (roi et reine de Thèbes)",
+      "exploits": "Un oracle ayant prédit qu'il tuerait son père avant d'épouser sa mère, il est caché de ses parents à la naissance. Il finira par vaincre le terrible Sphinx et accomplir l\\'oracle en tuant son père et en devenant roi de Thèbes à son tour. Il est le père d'Antigone",
+      "image": "oedipe.jpg",
+      "titre": "Le héros parricide"
+    },
+    {
+      "id": 9,
+      "nom": "Bellérophon",
+      "origine": "Fils de Glaucos (donc petit-fils de Sisyphe) et d'Eurynomé",
+      "exploits": "Chassé de chez lui après avoir involontairement tué son frère lors d'un lancer de disque (oui), il chevauchera Pégase pour tuer la chimère, en lui jetant une lance à la pointe de plomb dans la gueule, qui fit fondre ses entrailles",
+      "image": "bellerophon.png",
+      "titre": "Qui chevaucha Pégase"
+    },
+    {
+      "id": 10,
+      "nom": "Orphée",
+      "origine": "Fils du roi Œagre et de la muse Calliope",
+      "exploits": "Après que sa fiancée Eurydice soit descendue aux Enfers après s'être fait mordre par un serpent, Orphée part la chercher en endormant Cerbère à l'aide de sa musique et convainc Hadès de lui rendre Eurydice, à la condition qu'il ne la regarde pas avant d'être ressorti, Orphée ne résiste pas à la tentation et se retourne pour la voir, de peur qu'elle ait disparu, et la perd pour toujours",
+      "image": "orphee.jpg",
+      "titre": "Le héros musicien"
+    },
+    {
+      "id": 11,
+      "nom": "Jason",
+      "origine": "Fils d'Eson (roi d'Iolcos) et de Polymédé",
+      "exploits": "Elevé par le centaure Chiron, il se lança dans la quête de la toison d'or avec un équipage de fiers guerriers, après de rudes épreuves, il déroba la toison au dragon qui la gardait avec l'aide de la magicienne Médée",
+      "image": "jason.jpg",
+      "titre": "Le premier argonaute"
+    },
+    {
+      "id": 12,
+      "nom": "Médée",
+      "origine": "Fille d'Eétès (roi de Colchide) et de l'océanide Idyie, elle est la nièce de Circé",
+      "exploits": "Magicienne aux grands pouvoirs, elle fournit une pommade à Jason pour le rendre invincible et qu'il puisse réussir les épreuves que le roi lui a imposé pour obtenir la toison d'or. Elle tend un piège aux filles du roi d'Iolcos qui le tueront par mégarde, permettant à Jason de reprendre le trône",
+      "image": "medee.jpg",
+      "titre": "La savante"
+    }
+  ],
+  "monstres": [
+    {
+      "id": 1,
+      "nom": "Cerbère",
+      "titre": "Le gardien des Enfers",
+      "lieu": "Les Enfers",
+      "histoire": "Enorme chien à trois têtes, il est le gardien des Enfers, empêchant les vivants d'entrer et les morts de sortir. Il se tient aux côtés d'Hadès mais sera capturé vivant par Héraclès lors de son douzième travail.",
+      "image": "cerbere.jpg"
+    }
+  ]
+}
