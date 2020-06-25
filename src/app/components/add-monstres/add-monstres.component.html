@@ -5,42 +5,44 @@
   <!-- formulaire Angular, fonction à lancer au submit -->
   <form #monstreForm="ngForm" (ngSubmit)="submitMonstre()">
 
-    <!-- id -->
-    <label for="id">Id du monstre :</label>
-    <input type="number" class="form-control" name="id" id="id" required [(ngModel)]="monstre.id" #id="ngModel"> <br>
-    <div [hidden]="id.valid" class="alert alert-danger">
-      L'id du monstre est requis
-    </div>
-
     <!-- nom -->
     <label for="nom">Nom du monstre : </label>
     <input type="text" class="form-control" name="nom" id="nom" required [(ngModel)]="monstre.nom" #nom="ngModel"> <br>
     <div [hidden]="nom.valid" class="alert alert-danger">
-    Le nom du monstre est requis
-  </div>
+      Le nom du monstre est requis
+    </div>
+
+    <!-- titre -->
+    <label for="titre">Titre du monstre : </label>
+    <input type="text" class="form-control" name="titre" id="titre" required [(ngModel)]="monstre.titre"
+      #titre="ngModel"> <br>
+    <div [hidden]="titre.valid" class="alert alert-danger">
+      Le titre du monstre est requis
+    </div>
 
     <!-- lieu -->
     <label for="lieu">Lieu du monstre : </label>
-    <input type="text" class="form-control" name="lieu" id="lieu" required [(ngModel)]="monstre.lieu" #lieu="ngModel" >
+    <input type="text" class="form-control" name="lieu" id="lieu" required [(ngModel)]="monstre.lieu" #lieu="ngModel">
     <br>
     <div [hidden]="lieu.valid" class="alert alert-danger">
-    Le lieu du monstre sont requis
-  </div>
+      Le lieu du monstre sont requis
+    </div>
 
     <!-- histoire -->
     <label for="histoire">Histoire du monstre : </label>
     <input type="text" class="form-control" name="histoire" id="histoire" required [(ngModel)]="monstre.histoire"
-    #histoire="ngModel"> <br>
+      #histoire="ngModel"> <br>
     <div [hidden]="histoire.valid" class="alert alert-danger">
-    Le histoire du monstre est requis
-  </div>
+      Le histoire du monstre est requis
+    </div>
 
     <!-- image -->
     <label for="image">Image du monstre : </label>
-    <input type="text" class="form-control" name="image" id="image" required [(ngModel)]="monstre.image" #image="ngModel"> <br>
+    <input type="text" class="form-control" name="image" id="image" required [(ngModel)]="monstre.image"
+      #image="ngModel"> <br>
     <div [hidden]="image.valid" class="alert alert-danger">
-    L'image du monstre est requis
-  </div>
+      L'image du monstre est requis
+    </div>
 
     <input [disabled]="!monstreForm.valid" type="submit" value="Envoyer">
   </form>

@@ -2,11 +2,11 @@ img {
     height: 20rem;
 }
 
-.card-body {
-    padding-bottom: 0.5rem;
+.card {
+    width: 19rem;
+    height: 30rem;
 }
 
-.card {
-    width: 17rem;
-    height: 30rem;
+.card-body {
+    padding-bottom: 0.5rem;
 }

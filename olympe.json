@@ -21,7 +21,7 @@
     {
       "id": 3,
       "nom": "Hadès",
-      "titre": "Roi des Enfers",
+      "titre": "Le dieu des Enfers",
       "attributs": "La fourche, la kunée (un casque qui rend son porteur invisible), Cerbère",
       "domaine": "Le monde souterrain, les enfers, les richesses cachées de la terre",
       "cara": "Il règne sur les Enfers où il accueille l\\'âme des morts. Il a enlevé Perséphone pour qu'elle reste avec lui aux Enfers mais l\\'autorisa à sortir 6 mois par an pour rejoindre sa mère Déméter",
@@ -34,7 +34,7 @@
       "domaine": "Les océans, les navigateurs, les tremblements de terre",
       "cara": "Il règne sur les mers et les océans, sur son char tiré par des hippocampes. Il empêche Ulysse de rentrer chez lui car il avait crevé l'oeil de son fils, le cyclope Polyphème",
       "image": "poseidon.jpg",
-      "titre": "Le roi des océans"
+      "titre": "Le dieu des océans"
     },
     {
       "id": 5,
@@ -233,6 +233,86 @@
       "lieu": "Les Enfers",
       "histoire": "Enorme chien à trois têtes, il est le gardien des Enfers, empêchant les vivants d'entrer et les morts de sortir. Il se tient aux côtés d'Hadès mais sera capturé vivant par Héraclès lors de son douzième travail.",
       "image": "cerbere.jpg"
+    },
+    {
+      "id": 2,
+      "nom": "Charybde",
+      "titre": "Le gouffre sans fond",
+      "lieu": "Détroit de Messine",
+      "histoire": "A l\\'origine une jeune fille, Charybde fut changée en gouffre marin par Zeus pour la punir d'avoir volé une partie du troupeau de Géryon. Avec Scylla, elle faillit engloutir le navire de Jason durant sa quête pour la toison d'or",
+      "image": "charybde.jpg"
+    },
+    {
+      "id": 3,
+      "nom": "Scylla",
+      "titre": "Le  monstre aux six têtes",
+      "lieu": "Détroit de Messine",
+      "histoire": "Une nymphe changée en monstre marin par Circé pour avoir tenté de charmer le monstre Glaucos. Elle tua six marins de l'équipage d'Ulysse à l'aide de ses six têtes pourvues de trois rangées de dents",
+      "image": "scylla.jpg"
+    },
+    {
+      "id": 4,
+      "nom": "Lion de némée",
+      "titre": "A la peau invincible",
+      "lieu": "Région de Némée",
+      "histoire": "Un immense lion à la peau impénétrable, que Héraclès devait tuer pour son premier travail, il y parviendra en étouffant la bête à mains nues",
+      "image": "lion.jpg"
+    },
+    {
+      "id": 5,
+      "nom": "Hydre de Lerne",
+      "titre": "Le monstre des marais",
+      "lieu": "Marais de Lerne",
+      "histoire": "Un monstre à plusieurs têtes au souffle toxique qui repoussent den double quand on les tranche. Elle sera tuée lors du deuxième travail de Héraclès, qui brûlait les plaies au fur et à mesure qu'il tranchait ses têtes",
+      "image": "hydre.jpg"
+    },
+    {
+      "id": 6,
+      "nom": "Chimère",
+      "titre": "La bête mélangée",
+      "lieu": "Région de Lycie",
+      "histoire": "Créature au corps de lion, avec une tête de chèvre cracheuse de feu sur le dos et une queue à tête de serpent. Elle fut tuée par Bellérophon chevauchant Pégase",
+      "image": "chimere.jfif"
+    },
+    {
+      "id": 7,
+      "nom": "Gorgones",
+      "titre": "Les sœurs serpents",
+      "lieu": "Mont Hélicon",
+      "histoire": "Elles étaient trois soeurs, des monstres aux cheveux de serpents, et dont le regard changeait en pierre. La plus célèbre, Méduse, fut tuée par Persée, il offrit la tête à Athéna, qui la posa sur son bouclier (l'égide), afin qu'il pétrifie ses adversaires",
+      "image": "gorgones.jpg"
+    },
+    {
+      "id": 8,
+      "nom": "Minotaure",
+      "titre": "L'homme-taureau",
+      "lieu": "Un labyrinthe au centre de la Crête",
+      "histoire": "Fils de l'épouse du roi Minos et d'un taureau blanc envoyé par Poséidon, on lui livrait tous les neuf ans sept filles et sept garçons pour qu'il s'en nourrisse. Il sera tué par Thésée qui ira dans le labyrinthe avec une pelote de fil afin de retrouver son chemin",
+      "image": "minotaure.jpg"
+    },
+    {
+      "id": 9,
+      "nom": "Sirènes",
+      "titre": "Mi-femmes mi-oiseaux",
+      "lieu": "Détroit de Messine",
+      "histoire": "Créatures mi-femmes mi-oiseaux, elles séduisaient les navigateurs afin de les faire s'échouer et pouvoir dévorer leur corps. Ulysse résista à leur chant en se faisant attacher au mât de son navire et en faisant couler de la cire dans les oreilles de ses hommes",
+      "image": "sirenes.jpg"
+    },
+    {
+      "id": 10,
+      "nom": "Sphynx",
+      "titre": "Le poseur d'énigmes",
+      "lieu": "Thèbes",
+      "histoire": "Créature au visage de femme mais au corps de lion et aux ailes d'aigles, il terrorisait Thèbes en tuant quiconque était incapable de résoudre son énigme. C'est Œdipe qui le vaincra en trouvant la réponse, ce qui fera de lui le nouveau roi de Thèbes",
+      "image": "sphinx.jpg"
+    },
+    {
+      "id": 11,
+      "nom": "Polyphème",
+      "titre": "Le cyclope bavard",
+      "lieu": "Pays des Cyclopes en Sicile",
+      "histoire": "Il enferma Ulysse et ses hommes dans sa grotte après qu'ils aient mangé sa nourriture sans se poser de question. Il mangea plusieurs hommes avant de se faire crever l'œil par Ulysse, qui réussit à s'échapper en s'accrochant sous les moutons du cyclope lorsqu'il les mène au pâturage",
+      "image": "polypheme.jpg"
     }
   ]
 }

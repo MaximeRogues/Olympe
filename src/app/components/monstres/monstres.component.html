@@ -16,11 +16,10 @@
           class="card-img-top img-fluid" alt=""></a>
       <div class="card-body text-center">
         <!-- nom du monstre -->
-        <h3 class="font-weight-bold">{{monstre.nom}}</h3>
-        <h5>{{monstre.titre}}</h5>
+        <h3 class="font-weight-bold card-title">{{monstre.nom}}</h3>
+        <h5 class="card-text">{{monstre.titre}}</h5>
         <!-- Bouton aller au component monstreDetail -->
         <a class="btn btn-secondary btn-sm w-100 " [routerLink]="['/monstres', monstre.id]"> Détails</a>
-        
         
       </div>
     </div>
