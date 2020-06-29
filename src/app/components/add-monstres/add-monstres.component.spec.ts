@@ -2,13 +2,15 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddMonstresComponent } from './add-monstres.component';
 
+
 describe('AddMonstresComponent', () => {
   let component: AddMonstresComponent;
   let fixture: ComponentFixture<AddMonstresComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddMonstresComponent ]
+      declarations: [ AddMonstresComponent ],
+
     })
     .compileComponents();
   }));

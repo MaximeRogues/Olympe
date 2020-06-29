@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Quiz } from '../models/quiz';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -7,8 +8,6 @@ import { Quiz } from '../models/quiz';
 export class QuizService {
   
   question = Quiz;
-
-  constructor() { }
 
   listeQuestions = [
 
@@ -22,6 +21,10 @@ export class QuizService {
 
     new Quiz(5, 'Quel est le point faible d\'Achille ?', 'Son talon', 'Son épaule', 'Un de ses doigts', 'Son menton', 'q1'),
   ]
+
+  constructor(private http: HttpClient) { }
+
+  
 
   getAllQuestions() {
     return this.listeQuestions

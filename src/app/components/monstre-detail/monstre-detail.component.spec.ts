@@ -8,7 +8,8 @@ describe('MonstreDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MonstreDetailComponent ]
+      declarations: [ MonstreDetailComponent ],
+
     })
     .compileComponents();
   }));
