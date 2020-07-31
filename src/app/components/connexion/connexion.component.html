@@ -1,0 +1,16 @@
+
+<br>
+<div class="bg-light">
+    <h2>Se connecter :</h2>
+
+    <form #connexionForm="ngForm" (ngSubmit)="connexion()">
+        <label for="pseudo">Votre pseudo : </label>
+        <input type="text" class="form-control" name="pseudo" id="pseudo" required > <br>
+        
+        <label for="password">Votre mot de passe : </label>
+        <input type="password" class="form-control" name="password" id="password" required > <br>
+
+        <input type="submit" value="Connexion" class="btn btn-primary">
+    </form>
+
+</div>

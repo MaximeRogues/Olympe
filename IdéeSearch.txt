@@ -1,0 +1,11 @@
+models: marque, vehicule
+
+<select (change)=fonctionTri() >
+	<option value="no-data">Toutes les marques 
+	<option ngFOr marques>
+</select>
+
+getAll() pour récuperer les marques et les véhicules
+
+fonctionTri() qui fait un filter sur la liste de véhicules et getVoitureByMarque
+sinon, getAllVoitures

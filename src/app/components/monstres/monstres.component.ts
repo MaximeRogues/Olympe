@@ -20,7 +20,7 @@ export class MonstresComponent implements OnInit {
   ngOnInit(): void {
     // on initialise isLoading à true, pour dire que la page charge
     this.isLoading = true;
-    // au chargement, on remplit la liste avec la fonction getAllHeros
+    // au chargement, on remplit la liste avec la fonction getAllMonstres
     this.monstreService.getAllMonstres().subscribe((data: Monstres[]) => {
       this.listeMonstres = data;
       this.isLoading = false

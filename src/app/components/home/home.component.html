@@ -1,7 +1,141 @@
 <br>
+<div class="bg-light text-center">
 
-<app-dieux></app-dieux>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="filterDiv">
+    <a class="navbar-brand" href="#"><i class="fa fa-bolt" aria-hidden="true"></i>
+      Filtrer
+    </a>
 
-<app-heros></app-heros>
+    <!-- bouton burger pour collapser -->
+    <button class="navbar-toggler btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation" (click)="filtreIsCollapsed = !filtreIsCollapsed"
+      [attr.aria-expanded]="!filtreIsCollapsed" aria-controls="navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<app-monstres></app-monstres>
+    <!-- liste de filtres -->
+    <div class="collapse navbar-collapse" id="navbarNav" [ngbCollapse]="filtreIsCollapsed">
+
+      <a class="nav-link">Type de personnage
+        <!-- faire un (change)=fonctionTri(valeur) qui change le SELECT * FROM *** WHERE type == 'valeur' -->
+        <select (change)=rangDieu() class="filter" name="typePersoFilter" id="typePersoFilter">
+          <option value="noData">Tous les types</option>
+          <option *ngFor="let type of typePerso" value="{{type}}">{{type}}</option>
+        </select>
+      </a>
+
+      <a *ngIf="filtreDieu" class="nav-link">Rang du dieu
+        <!-- faire un (change)=fonctionTri(valeur) qui change le SELECT * FROM *** WHERE type == 'valeur' -->
+        <select class="filter" name="rangDieuFilter" id="rangDieuFilter">
+          <option value="noData">Tous les rangs</option>
+          <option *ngFor="let rang of rangsDieu" value="{{rang}}">{{rang}}</option>
+        </select>
+      </a>
+
+      <a class="nav-link">Panthéon
+        <!-- faire un (change)=fonctionTri(valeur) qui change le SELECT * FROM *** WHERE pantheon == 'valeur' -->
+        <select class="filter" name="pantheonFilter" id="pantheonFilter">
+          <option value="noData">Tous les panthéons</option>
+          <option *ngFor="let pantheon of pantheons" value="{{pantheon}}">{{pantheon}}</option>
+        </select>
+      </a>
+
+      <a class="nav-link">Genre
+        <!-- faire un (change)=fonctionTri(valeur) qui change le SELECT * FROM *** WHERE genre == 'valeur' -->
+        <select class="filter" name="genreFilter" id="genreFilter">
+          <option value="noData">Tous les genres</option>
+          <option *ngFor="let genre of genres" value="{{genre}}">{{genre}}</option>
+        </select>
+      </a>
+
+      <a class="nav-link btn btn-sm btn-info text-light" (click)="unsetFilters()"> Retirer les filtres</a>
+
+      <a class="nav-link btn btn-sm btn-danger text-light" (click)="tri()"> trier de A à Z</a>
+
+
+    </div>
+  </nav>
+</div>
+
+<br>
+
+<div class="bg-light">
+  <h3 class="text-center">Le dernier personnage ajouté :</h3>
+
+  <div class="bg-light" id="dernierPerso">
+    <div id="divImgDernierPerso">
+      <!-- image avec lien vers dieu-detail -->
+    <a [routerLink]="['/dieux', this.listeDieux[0].id]"> <img id="imgDernierPerso"
+        src='../../../assets/images/dieux/{{this.listeDieux[0].image}}' class="card-img-top img-fluid" alt=""></a>
+    </div>
+    
+    
+    <div id="infosDernierPerso">
+      <br>
+      <h3 class="font-weight-bold">{{this.listeDieux[0].nom}}</h3>
+      <br>
+
+      <p class="card-text"><span class="font-weight-bold"> Panthéon :</span> {{this.listeDieux[0].pantheon}} </p>
+      <!-- ses attributs -->
+      <p class="card-text"><span class="font-weight-bold"> Attributs :</span> {{this.listeDieux[0].attributs}} </p>
+      <!-- son domaine -->
+      <p class="card-text"><span class="font-weight-bold"> Domaine :</span> {{this.listeDieux[0].domaine}} </p>
+      <!-- ses caracteristiques -->
+      <p class="card-text"><span class="font-weight-bold">Description :</span> {{this.listeDieux[0].cara}} </p>
+    </div>
+
+  </div>
+
+</div>
+
+<br>
+
+<div class="bg-light" id="listePersos">
+  <h2 class="text-center">Cliquez sur l'image d'un personnage pour plus d'infos</h2>
+
+  <!-- rend la div responsive -->
+  <div class="liste row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+    <!-- boucle pour générer les cards -->
+    <div *ngFor="let dieu of this.listeDieux" class="card {{dieu.nom}}">
+
+      <a [routerLink]="['/dieux', dieu.id]"> <img src='../../../assets/images/dieux/{{dieu.image}}'
+          class="card-img-top img-fluid" alt=""></a>
+      <div class="card-body text-center">
+        <!-- nom du perso -->
+        <h6 class="font-weight-bold">{{dieu.nom}}</h6>
+        <!-- bouton pour aller au component persoDetail -->
+        <br>
+
+
+      </div>
+    </div>
+
+    <!-- boucle pour générer les cards -->
+    <div *ngFor="let heros of this.listeHeros" class="card {{heros.nom}}">
+
+      <a [routerLink]="['/heros', heros.id]"> <img src='../../../assets/images/heros/{{heros.image}}'
+          class="card-img-top img-fluid" alt=""></a>
+      <div class="card-body text-center">
+        <!-- nom du perso -->
+        <h6 class="font-weight-bold">{{heros.nom}}</h6>
+        <!-- bouton pour aller au component persoDetail -->
+        <br>
+
+
+      </div>
+    </div>
+
+    <!-- boucle pour générer les cards -->
+    <div *ngFor="let monstres of this.listeMonstres" class="card {{monstres.nom}}">
+
+      <a [routerLink]="['/monstres', monstres.id]"> <img src='../../../assets/images/monstres/{{monstres.image}}'
+          class="card-img-top img-fluid" alt=""></a>
+      <div class="card-body text-center">
+        <!-- nom du perso -->
+        <h6 class="font-weight-bold">{{monstres.nom}}</h6>
+        <!-- bouton pour aller au component persoDetail -->
+        <br>
+
+      </div>
+    </div>
+  </div>

@@ -1,4 +1,20 @@
+#divPerso {
+    display: flex;
+    flex-flow: row;
+}
+
+#divImgPerso {
+    width: 50%;
+    height: 100%;
+    margin-right: 1rem;
+}
+
+#infosPerso {
+    width: 50%;
+
+}
+
 img {
-    width: 450px;
-    height: 650px;
+    height: 100%;
+    width: 25rem;
 }

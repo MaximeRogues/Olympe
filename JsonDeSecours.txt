@@ -1,9 +1,26 @@
 {
+  "pantheons": [
+    {
+      "id": 1,
+      "nom" : "Grec"
+    },
+    {
+      "id": 2,
+      "nom" : "Egyptien"
+    },
+    {
+      "id": 3,
+      "nom" : "Nordique"
+    }
+  ],
+
   "dieux": [
     {
       "id": 1,
       "nom": "Zeus",
+      "pantheon": "Grec",
       "titre": "Le roi des dieux",
+      "genre": "Masculin",
       "attributs": "Le foudre, l'aigle, l'égide",
       "domaine": "Les cieux, il est le roi de l'Olympe",
       "cara": "C'est lui qui libéra ses frères et soeurs de Cronos et enferma la plupart des Titans dans le Tartare. Il est le père de nombreux héros après s'être mêlé à des humaines",
@@ -12,8 +29,10 @@
     {
       "id": 2,
       "nom": "Héra",
+      "pantheon": "Grec",
       "titre": "La reine des dieux",
-      "attributs": "Le diadème, le sceptre, le paon sdfdsf",
+      "genre": "Féminin",
+      "attributs": "Le diadème, le sceptre, le paon ",
       "domaine": "Le mariage, les femmes, les familles, les rois et les empires",
       "cara": "Femme de Zeus, elle règne avec lui sur l'Olympe et persécute les partenaires extraconjugales de son mari. C'est elle qui a organisé la folie meurtrière de Héraclès, qui tire son nom de Héra, car ses travaux doivent servir la gloire de la reine des dieux. Elle a posé les cent yeux du géant Argos sur le paon qui est son animal favori",
       "image": "hera.jpg"
@@ -21,15 +40,19 @@
     {
       "id": 3,
       "nom": "Hadès",
+      "pantheon": "Grec",
       "titre": "Le dieu des Enfers",
+      "genre": "Masculin",
       "attributs": "La fourche, la kunée (un casque qui rend son porteur invisible), Cerbère",
       "domaine": "Le monde souterrain, les enfers, les richesses cachées de la terre",
-      "cara": "Il règne sur les Enfers où il accueille l\\'âme des morts. Il a enlevé Perséphone pour qu'elle reste avec lui aux Enfers mais l\\'autorisa à sortir 6 mois par an pour rejoindre sa mère Déméter",
+      "cara": "Il règne sur les Enfers où il accueille l'âme des morts. Il a enlevé Perséphone pour qu'elle reste avec lui aux Enfers mais l'autorisa à sortir 6 mois par an pour rejoindre sa mère Déméter",
       "image": "hades.jpg"
     },
     {
       "id": 4,
       "nom": "Poséidon",
+      "pantheon": "Grec",
+      "genre": "Masculin",
       "attributs": "Le trident, la conque",
       "domaine": "Les océans, les navigateurs, les tremblements de terre",
       "cara": "Il règne sur les mers et les océans, sur son char tiré par des hippocampes. Il empêche Ulysse de rentrer chez lui car il avait crevé l'oeil de son fils, le cyclope Polyphème",
@@ -39,6 +62,8 @@
     {
       "id": 5,
       "nom": "Arès",
+      "pantheon": "Grec",
+      "genre": "Masculin",
       "attributs": "Le glaive, le bouclier, la lance...",
       "domaine": "Les guerres, la violence, la destruction",
       "cara": "Dieu colérique, il déclencha des guerres à plusieurs reprises. Il a une relation adultère avec Aphrodite, qui est mariée à Héphaïstos",
@@ -48,15 +73,19 @@
     {
       "id": 6,
       "nom": "Athéna",
+      "pantheon": "Grec",
+      "genre": "Féminin",
       "attributs": "L'égide, la chouette, l'olivier",
       "domaine": "L'intelligence, la stratégie, l'artisanat",
-      "cara": "Sortie du front de Zeus, elle est la gardienne de la ville d'Athènes après s\\'être confronté à Poséidon pour la possession de l'Attique",
+      "cara": "Sortie du front de Zeus, elle est la gardienne de la ville d'Athènes après s'être confronté à Poséidon pour la possession de l'Attique",
       "image": "athena.jpg",
       "titre": "La déesse de la sagesse"
     },
     {
       "id": 7,
       "nom": "Hermès",
+      "pantheon": "Grec",
+      "genre": "Masculin",
       "attributs": "Le caducée, le chapeau et les chaussures ailés",
       "domaine": "Les voyageurs, les routes et carrefours, le commerce, les messagers",
       "cara": "Il est le messager des dieux et conduit les âmes aux Enfers. Il est le dieu le plus proche des humains et le plus bienveillant à leur égard, comme quand il a donné la parole à Pandore avant de la présenter aux hommes",
@@ -66,6 +95,8 @@
     {
       "id": 8,
       "nom": "Aphrodite",
+      "pantheon": "Grec",
+      "genre": "Féminin",
       "attributs": "Le collier d'or, la colombe, la ceinture magique",
       "domaine": "'La fertilité, l'amour, la séduction",
       "cara": "On lui voue un culte basé sur la sexualité, elle est cependant surtout la déesse des activités des jeunes filles en général",
@@ -75,15 +106,19 @@
     {
       "id": 9,
       "nom": "Apollon",
+      "pantheon": "Grec",
+      "genre": "Masculin",
       "attributs": "La lyre, la flûte, le laurier, l'arc",
       "domaine": "La poésie, la musique, et les arts en général",
-      "cara": "Associé au Soleil, il est le frère d\\'Artémis, et un des principaux dieux capables de divination, qu\\'il exerce en rendant ses oracles à travers la Pythie de Delphes",
+      "cara": "Associé au Soleil, il est le frère d'Artémis, et un des principaux dieux capables de divination, qu'il exerce en rendant ses oracles à travers la Pythie de Delphes",
       "image": "apollon.jpg",
       "titre": "Le dieu de la musique"
     },
     {
       "id": 10,
       "nom": "Artémis",
+      "pantheon": "Grec",
+      "genre": "Féminin",
       "attributs": "L'arc et les flèches d'argent, la biche, le cerf",
       "domaine": "La nature, la chasse, les accouchements",
       "cara": "'Associée à la Lune, elle est la sœur d'Apollon, elle a le pouvoir de déclencher les épidémies mais aussi de les arrêter",
@@ -93,6 +128,8 @@
     {
       "id": 11,
       "nom": "Dionysos",
+      "pantheon": "Grec",
+      "genre": "Masculin",
       "attributs": "Le raisin, les feuilles de vigne",
       "domaine": "La vigne, le vin et ses excès",
       "cara": "Fils de Zeus et d'une mortelle, il se mêle souvent aux humains lors de fêtes et d'orgies",
@@ -102,6 +139,8 @@
     {
       "id": 12,
       "nom": "Héphaïstos",
+      "pantheon": "Grec",
+      "genre": "Masculin",
       "attributs": "Le marteau, l'enclume, le bouton d'or",
       "domaine": "La forge, la fabrication d'armes et d'armures",
       "cara": "Fils de Zeus et d'Héra, c'est lui qui fabriqua les armes et armures de nombreux héros et dieux. C'est aussi qui fabriqua Pandore, la première femme",
@@ -111,6 +150,8 @@
     {
       "id": 13,
       "nom": "Déméter",
+      "pantheon": "Grec",
+      "genre": "Féminin",
       "attributs": "Les gerbes de blé, la faucille, le flambeau",
       "domaine": "L'agriculture, les moissons",
       "cara": "Elle est la mère de Perséphone, c'est en allant chercher cette dernière aux Enfers que l'hiver fut créé, sa fille passera chaque hiver aux Enfers en compagnie d'Hadès",
@@ -120,6 +161,8 @@
     {
       "id": 14,
       "nom": "Hestia",
+      "pantheon": "Grec",
+      "genre": "Féminin",
       "attributs": "Le feu sacré, le foyer, la torche",
       "domaine": "Le foyer public et familial, la famille",
       "cara": "Elle est la seule déesse à rester en permanence sur l'Olympe, elle est décrite comme une déesse vierge et immuable. Elle est la première-née du Titan Cronos",
@@ -130,6 +173,8 @@
   "heros": [
     {
       "nom": "Héraclès",
+      "pantheon": "Grec",
+      "genre": "Masculin",
       "titre": "La gloire d'Héra",
       "origine": "Fils de Zeus et d'Alcmène",
       "exploits": "Les douzes Travaux qui portent son nom: Il a tué l'hydre de Lerne, le lion de Némée, capturé le sanglier d'Erymanthe, vaincu la biche de Cérynie, tué les oiseaux du lac Stymphale, capturé le taureau de Minos, dompté les juments de Diomède, ramené la ceinture d'or d'Hippolyte, nettoyé les écuries d'Augias (en détournant un fleuve...), volé les oeufs de Géryon ainsi que les pommes d'or du jardin des Hespérides et sorti Cerbère des Enfers ",
@@ -139,6 +184,8 @@
     {
       "id": 2,
       "nom": "Circé",
+      "genre": "Féminin",
+      "pantheon": "Grec",
       "origine": "Fille d'Hélios et de l'océanide Perséis",
       "exploits": "Experte en potions et en poisons, elle a accueilli l'équipage d'Ulysse et les a transformé en animaux. Elle hébergea Ulysse pendant un an sur son île et l'aida à préparer la suite de son voyage",
       "image": "circe.jpg",
@@ -147,14 +194,18 @@
     {
       "id": 3,
       "nom": "Thésée",
+      "genre": "Masculin",
+      "pantheon": "Grec",
       "origine": "Fils du roi Egée et d'Ethra",
-      "exploits": "Il a vaincu le Minotaure qui terrorisait la Crête à l\\'aide d'une pelote de fil confiée par Ariane pour qu'il puisse se retrouver dans le labyrinthe. Il devient le roi d'Athènes après cet exploit",
+      "exploits": "Il a vaincu le Minotaure qui terrorisait la Crête à l'aide d'une pelote de fil confiée par Ariane pour qu'il puisse se retrouver dans le labyrinthe. Il devient le roi d'Athènes après cet exploit",
       "image": "thesee.jpg",
       "titre": "Le roi mythique d'Athènes"
     },
     {
       "id": 4,
       "nom": "Persée",
+      "genre": "Masculin",
+      "pantheon": "Grec",
       "origine": "Fils de Zeus et de Danaé (fille du roi d'Argos)",
       "exploits": "Il a vaincu la gorgone Méduse en lui tranchant la tête. Le sang qui se retrouva sur le sol donna naissance au cheval ailé Pégase. Il a également sauvé Andromède, en proie à un monstre marin envoyé par Poséidon",
       "image": "persee.jpg",
@@ -163,6 +214,8 @@
     {
       "id": 5,
       "nom": "Ulysse",
+      "genre": "Masculin",
+      "pantheon": "Grec",
       "origine": "Fils de Laërte et d'Anticlée",
       "exploits": "Roi d'Ithaque, il est le héros de l'Odyssée. Il a vaincu le cyclope Polyphème, résisté aux sirènes, il a affronté Circé et est même allé aux Enfers avant de rentrer et reprendre son trône",
       "image": "ulysse.jpg",
@@ -171,6 +224,8 @@
     {
       "id": 6,
       "nom": "Achille",
+      "genre": "Masculin",
+      "pantheon": "Grec",
       "origine": "Fils de Pélée (roi de Phthie) et de le néréide Thétis",
       "exploits": "Sa mère le trempa dans le Styx en le tenant par le talon, afin de le rendre invincible. Il fut cependant tué d'une flèche dans le talon par Pâris durant la guerre de Troie",
       "image": "achille.jpg",
@@ -179,6 +234,8 @@
     {
       "id": 7,
       "nom": "Atalante",
+      "genre": "Féminin",
+      "pantheon": "Grec",
       "origine": "Fille d'Iasos (roi du Péloponnèse) et de Clymène (fille de Minyas)",
       "exploits": "Chasseuse redoutable, elle a abattu le sanglier de Calydon, ainsi que deux centaures qui tentaient d'abuser d'elle. Elle fut la seule femme à faire partie des Argonautes",
       "image": "atalante.jpg",
@@ -187,14 +244,18 @@
     {
       "id": 8,
       "nom": "Œdipe",
+      "genre": "Masculin",
+      "pantheon": "Grec",
       "origine": "Fils de Laïos et de Jocaste (roi et reine de Thèbes)",
-      "exploits": "Un oracle ayant prédit qu'il tuerait son père avant d'épouser sa mère, il est caché de ses parents à la naissance. Il finira par vaincre le terrible Sphinx et accomplir l\\'oracle en tuant son père et en devenant roi de Thèbes à son tour. Il est le père d'Antigone",
+      "exploits": "Un oracle ayant prédit qu'il tuerait son père avant d'épouser sa mère, il est caché de ses parents à la naissance. Il finira par vaincre le terrible Sphinx et accomplir l'oracle en tuant son père et en devenant roi de Thèbes à son tour. Il est le père d'Antigone",
       "image": "oedipe.jpg",
       "titre": "Le héros parricide"
     },
     {
       "id": 9,
       "nom": "Bellérophon",
+      "genre": "Masculin",
+      "pantheon": "Grec",
       "origine": "Fils de Glaucos (donc petit-fils de Sisyphe) et d'Eurynomé",
       "exploits": "Chassé de chez lui après avoir involontairement tué son frère lors d'un lancer de disque (oui), il chevauchera Pégase pour tuer la chimère, en lui jetant une lance à la pointe de plomb dans la gueule, qui fit fondre ses entrailles",
       "image": "bellerophon.png",
@@ -203,6 +264,8 @@
     {
       "id": 10,
       "nom": "Orphée",
+      "genre": "Masculin",
+      "pantheon": "Grec",
       "origine": "Fils du roi Œagre et de la muse Calliope",
       "exploits": "Après que sa fiancée Eurydice soit descendue aux Enfers après s'être fait mordre par un serpent, Orphée part la chercher en endormant Cerbère à l'aide de sa musique et convainc Hadès de lui rendre Eurydice, à la condition qu'il ne la regarde pas avant d'être ressorti, Orphée ne résiste pas à la tentation et se retourne pour la voir, de peur qu'elle ait disparu, et la perd pour toujours",
       "image": "orphee.jpg",
@@ -211,6 +274,8 @@
     {
       "id": 11,
       "nom": "Jason",
+      "genre": "Masculin",
+      "pantheon": "Grec",
       "origine": "Fils d'Eson (roi d'Iolcos) et de Polymédé",
       "exploits": "Elevé par le centaure Chiron, il se lança dans la quête de la toison d'or avec un équipage de fiers guerriers, après de rudes épreuves, il déroba la toison au dragon qui la gardait avec l'aide de la magicienne Médée",
       "image": "jason.jpg",
@@ -219,6 +284,8 @@
     {
       "id": 12,
       "nom": "Médée",
+      "genre": "Féminin",
+      "pantheon": "Grec",
       "origine": "Fille d'Eétès (roi de Colchide) et de l'océanide Idyie, elle est la nièce de Circé",
       "exploits": "Magicienne aux grands pouvoirs, elle fournit une pommade à Jason pour le rendre invincible et qu'il puisse réussir les épreuves que le roi lui a imposé pour obtenir la toison d'or. Elle tend un piège aux filles du roi d'Iolcos qui le tueront par mégarde, permettant à Jason de reprendre le trône",
       "image": "medee.jpg",
@@ -229,6 +296,8 @@
     {
       "id": 1,
       "nom": "Cerbère",
+      "genre": "Masculin",
+      "pantheon": "Grec",
       "titre": "Le gardien des Enfers",
       "lieu": "Les Enfers",
       "histoire": "Enorme chien à trois têtes, il est le gardien des Enfers, empêchant les vivants d'entrer et les morts de sortir. Il se tient aux côtés d'Hadès mais sera capturé vivant par Héraclès lors de son douzième travail.",
@@ -237,14 +306,18 @@
     {
       "id": 2,
       "nom": "Charybde",
+      "genre": "Féminin",
+      "pantheon": "Grec",
       "titre": "Le gouffre sans fond",
       "lieu": "Détroit de Messine",
-      "histoire": "A l\\'origine une jeune fille, Charybde fut changée en gouffre marin par Zeus pour la punir d'avoir volé une partie du troupeau de Géryon. Avec Scylla, elle faillit engloutir le navire de Jason durant sa quête pour la toison d'or",
+      "histoire": "A l'origine une jeune fille, Charybde fut changée en gouffre marin par Zeus pour la punir d'avoir volé une partie du troupeau de Géryon. Avec Scylla, elle faillit engloutir le navire de Jason durant sa quête pour la toison d'or",
       "image": "charybde.jpg"
     },
     {
       "id": 3,
       "nom": "Scylla",
+      "genre": "Féminin",
+      "pantheon": "Grec",
       "titre": "Le  monstre aux six têtes",
       "lieu": "Détroit de Messine",
       "histoire": "Une nymphe changée en monstre marin par Circé pour avoir tenté de charmer le monstre Glaucos. Elle tua six marins de l'équipage d'Ulysse à l'aide de ses six têtes pourvues de trois rangées de dents",
@@ -252,7 +325,9 @@
     },
     {
       "id": 4,
-      "nom": "Lion de némée",
+      "nom": "Lion de Némée",
+      "genre": "Masculin",
+      "pantheon": "Grec",
       "titre": "A la peau invincible",
       "lieu": "Région de Némée",
       "histoire": "Un immense lion à la peau impénétrable, que Héraclès devait tuer pour son premier travail, il y parviendra en étouffant la bête à mains nues",
@@ -261,6 +336,8 @@
     {
       "id": 5,
       "nom": "Hydre de Lerne",
+      "genre": "Féminin",
+      "pantheon": "Grec",
       "titre": "Le monstre des marais",
       "lieu": "Marais de Lerne",
       "histoire": "Un monstre à plusieurs têtes au souffle toxique qui repoussent den double quand on les tranche. Elle sera tuée lors du deuxième travail de Héraclès, qui brûlait les plaies au fur et à mesure qu'il tranchait ses têtes",
@@ -269,6 +346,8 @@
     {
       "id": 6,
       "nom": "Chimère",
+      "genre": "Féminin",
+      "pantheon": "Grec",
       "titre": "La bête mélangée",
       "lieu": "Région de Lycie",
       "histoire": "Créature au corps de lion, avec une tête de chèvre cracheuse de feu sur le dos et une queue à tête de serpent. Elle fut tuée par Bellérophon chevauchant Pégase",
@@ -277,6 +356,8 @@
     {
       "id": 7,
       "nom": "Gorgones",
+      "genre": "Féminin",
+      "pantheon": "Grec",
       "titre": "Les sœurs serpents",
       "lieu": "Mont Hélicon",
       "histoire": "Elles étaient trois soeurs, des monstres aux cheveux de serpents, et dont le regard changeait en pierre. La plus célèbre, Méduse, fut tuée par Persée, il offrit la tête à Athéna, qui la posa sur son bouclier (l'égide), afin qu'il pétrifie ses adversaires",
@@ -285,6 +366,8 @@
     {
       "id": 8,
       "nom": "Minotaure",
+      "genre": "Masculin",
+      "pantheon": "Grec",
       "titre": "L'homme-taureau",
       "lieu": "Un labyrinthe au centre de la Crête",
       "histoire": "Fils de l'épouse du roi Minos et d'un taureau blanc envoyé par Poséidon, on lui livrait tous les neuf ans sept filles et sept garçons pour qu'il s'en nourrisse. Il sera tué par Thésée qui ira dans le labyrinthe avec une pelote de fil afin de retrouver son chemin",
@@ -293,6 +376,8 @@
     {
       "id": 9,
       "nom": "Sirènes",
+      "genre": "Féminin",
+      "pantheon": "Grec",
       "titre": "Mi-femmes mi-oiseaux",
       "lieu": "Détroit de Messine",
       "histoire": "Créatures mi-femmes mi-oiseaux, elles séduisaient les navigateurs afin de les faire s'échouer et pouvoir dévorer leur corps. Ulysse résista à leur chant en se faisant attacher au mât de son navire et en faisant couler de la cire dans les oreilles de ses hommes",
@@ -301,6 +386,8 @@
     {
       "id": 10,
       "nom": "Sphynx",
+      "genre": "Non défini",
+      "pantheon": "Grec",
       "titre": "Le poseur d'énigmes",
       "lieu": "Thèbes",
       "histoire": "Créature au visage de femme mais au corps de lion et aux ailes d'aigles, il terrorisait Thèbes en tuant quiconque était incapable de résoudre son énigme. C'est Œdipe qui le vaincra en trouvant la réponse, ce qui fera de lui le nouveau roi de Thèbes",
@@ -309,10 +396,19 @@
     {
       "id": 11,
       "nom": "Polyphème",
+      "genre": "Masculin",
+      "pantheon": "Grec",
       "titre": "Le cyclope bavard",
       "lieu": "Pays des Cyclopes en Sicile",
       "histoire": "Il enferma Ulysse et ses hommes dans sa grotte après qu'ils aient mangé sa nourriture sans se poser de question. Il mangea plusieurs hommes avant de se faire crever l'œil par Ulysse, qui réussit à s'échapper en s'accrochant sous les moutons du cyclope lorsqu'il les mène au pâturage",
       "image": "polypheme.jpg"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "pseudo": "Maxime",
+      "password": "azerty"
     }
   ]
 }

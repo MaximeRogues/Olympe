@@ -20,6 +20,26 @@
       Le titre du monstre est requis
     </div>
 
+    <!-- panthéon -->
+    <label for="pantheon">Panthéon du monstre : </label>
+    <select class="form-control" name="pantheon" id="pantheon" required [(ngModel)]="monstre.pantheon" #pantheon="ngModel" >
+      <option *ngFor="let pantheon of pantheons" [value]="pantheon">{{pantheon}}</option>
+    </select>
+    <br>
+    <div [hidden]="pantheon.valid" class="alert alert-danger">
+      Le panthéon du monstre est requis
+    </div>
+
+    <!-- genre -->
+    <label for="genre">Genre du monstre : </label>
+    <select class="form-control" name="genre" id="genre" required [(ngModel)]="monstre.genre" #genre="ngModel" >
+      <option *ngFor="let genre of genres" [value]="genre">{{genre}}</option>
+    </select>
+    <br>
+    <div [hidden]="genre.valid" class="alert alert-danger">
+      Le genre du monstre est requis
+    </div>
+
     <!-- lieu -->
     <label for="lieu">Lieu du monstre : </label>
     <input type="text" class="form-control" name="lieu" id="lieu" required [(ngModel)]="monstre.lieu" #lieu="ngModel">

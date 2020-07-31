@@ -1,20 +1,36 @@
 <br>
 
- <div class="card-body bg-light">
-    <!-- nom du heros -->
+<div class="card-body bg-light" id="divPerso">
+
+  <div id="divImgPerso">
+
+    <!-- image du heros -->
     <img src="../../../assets/images/heros/{{ heros.image }}" alt="Illustration du heros">
     <br>
-    <br>
-    <h4 class="font-weight-bold">{{heros.nom}}</h4>
-    <!-- ses attributs -->
-    <p class="card-text"><span class="font-weight-bold"> Origine :</span> {{heros.origine}}  </p>
-    <!-- son domaine -->
-    <p class="card-text"><span class="font-weight-bold"> Exploits :</span> {{heros.exploits}}  </p>
-    <br>
-    <!-- bouton modifier -->
-    <a class="btn btn-info btn-sm w-50 " [routerLink]="['/edit-heros', heros.id]">Modifier </a>
 
-    <!-- bouton supprimer -->
-    <a class="btn btn-danger btn-sm  text-white w-50 " (click)="deleteHeros(heros.id)">Supprimer</a>
+  </div>
+
+  <div id="infosPerso">
+
+    <br>
+    <!-- nom du héros -->
+    <h4 class="font-weight-bold">{{heros.nom}}</h4>
+    <br>
+    <!-- son panthéon -->
+    <p class="card-text"><span class="font-weight-bold"> Panthéon :</span> {{heros.pantheon}} </p>
+    <!-- son origine -->
+    <p class="card-text"><span class="font-weight-bold"> Origine :</span> {{heros.origine}} </p>
+    <!-- ses exploits -->
+    <p class="card-text"><span class="font-weight-bold"> Exploits :</span> {{heros.exploits}} </p>
+    <br>
+  </div>
+</div>
+<div class="bg-light">
+
+  <!-- bouton modifier -->
+  <a class="btn btn-info btn-sm w-50 " [routerLink]="['/edit-heros', heros.id]">Modifier </a>
+
+  <!-- bouton supprimer -->
+  <a class="btn btn-danger btn-sm  text-white w-50 " (click)="deleteHeros(heros.id)">Supprimer</a>
 
 </div>

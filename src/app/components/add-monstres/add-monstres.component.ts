@@ -15,6 +15,10 @@ export class AddMonstresComponent implements OnInit {
   monstre: Monstres;
   isLoading: boolean;
 
+  pantheons = ['Grec', 'Egyptien', 'Nordique'];
+
+  genres = ['Féminin', 'Masculin', 'Non défini'];
+
   constructor(private monstreService: MonstresService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
