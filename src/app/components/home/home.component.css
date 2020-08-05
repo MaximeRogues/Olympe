@@ -12,7 +12,7 @@ img {
 
 .card {
     width: 8rem;
-    height: 10rem;
+    height: 11rem;
     margin: 0.3rem;
     padding: 0rem;
     margin-bottom: 0.7rem;
@@ -27,7 +27,7 @@ img {
     transition: linear;
     transition-duration: 0.5s;
     width: 10rem;
-    height: 10rem;
+    height: 11rem;
    
 }
 

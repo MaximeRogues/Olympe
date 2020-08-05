@@ -67,14 +67,19 @@ export class HomeComponent implements OnInit {
   // trier par nom de Dieu
   tri() {
     console.log("tri");
+    // met toutes les cards dans un tableau
     [].forEach.call(this.cards, card => {
       this.listeCards.push(card);
-      if(card.className == "Zeus card") {
-        console.log('il y a Zeus');
-        
-      }
     }) 
+
     console.log(this.listeCards);
+
+    // met toutes les cards dans la div #listePersos
+    this.listeCards.forEach(card => {
+      document.getElementById('listePersos').appendChild(card)
+      console.log(card.className);
+      
+    });
     
     
   }
