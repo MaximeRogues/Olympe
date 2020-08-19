@@ -42,7 +42,7 @@
 
       <a class="nav-link">Genre
         <!-- faire un (change)=fonctionTri(valeur) qui change le SELECT * FROM *** WHERE genre == 'valeur' -->
-        <select class="filter" name="genreFilter" id="genreFilter">
+        <select (change)='triGenre($event)' class="filter" name="genreFilter" id="genreFilter">
           <option value="noData">Tous les genres</option>
           <option *ngFor="let genre of genres" value="{{genre}}">{{genre}}</option>
         </select>

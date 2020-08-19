@@ -29,6 +29,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ConnexionComponent } from './components/connexion/connexion.component';
 import { EspaceMembreComponent } from './components/espace-membre/espace-membre.component';
 import { EditEspaceMembreComponent } from './components/edit-espace-membre/edit-espace-membre.component';
+import { SearchComponent } from './components/search/search.component';
 
 
 
@@ -56,6 +57,7 @@ import { EditEspaceMembreComponent } from './components/edit-espace-membre/edit-
     ConnexionComponent,
     EspaceMembreComponent,
     EditEspaceMembreComponent,
+    SearchComponent,
     ],
   imports: [
     BrowserModule,

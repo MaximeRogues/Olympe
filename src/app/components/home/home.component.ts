@@ -64,24 +64,17 @@ export class HomeComponent implements OnInit {
     (<HTMLInputElement>document.getElementById("genreFilter")).value = "noData";
   }
 
-  // trier par nom de Dieu
-  tri() {
-    console.log("tri");
-    // met toutes les cards dans un tableau
-    [].forEach.call(this.cards, card => {
-      this.listeCards.push(card);
-    }) 
-
-    console.log(this.listeCards);
-
-    // met toutes les cards dans la div #listePersos
-    this.listeCards.forEach(card => {
-      document.getElementById('listePersos').appendChild(card)
-      console.log(card.className);
-      
-    });
-    
-    
+  // trier par genre
+  triGenre($event) {
+    console.log("tri", $event.target.value);
+    if($event.target.value === 'noData') {
+      this.dieuService.getAllDieux().subscribe((data: Dieu[]) => {
+        this.listeDieux = data;
+      })    } else {
+        this.dieuService.getDieuByGenre($event.target.value).subscribe((data: Dieu[]) => {
+          this.listeDieux = data;
+        })
+    }
   }
 
   // affiche le critère 'rang du dieu' si 'Dieux' est sélectionné
