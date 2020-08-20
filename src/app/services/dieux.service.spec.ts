@@ -1,6 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 
 import { DieuxService } from './dieux.service';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 describe('DieuxService', () => {
@@ -8,6 +10,10 @@ describe('DieuxService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [
+        FormsModule,
+        HttpClientModule
+      ]
 
     });
     service = TestBed.inject(DieuxService);

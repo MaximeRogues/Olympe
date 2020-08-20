@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MonstreDetailComponent } from './monstre-detail.component';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 
 describe('MonstreDetailComponent', () => {
   let component: MonstreDetailComponent;
@@ -9,6 +12,11 @@ describe('MonstreDetailComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ MonstreDetailComponent ],
+      imports: [
+        HttpClientModule,
+        RouterModule.forRoot([]),
+        ToastrModule.forRoot()
+      ]
 
     })
     .compileComponents();

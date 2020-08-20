@@ -1,9 +1,10 @@
-import {HttpClientTestingModule} from '@angular/common/http/testing/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditHerosComponent } from './edit-heros.component';
-import { FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 
 describe('EditHerosComponent', () => {
   let component: EditHerosComponent;
@@ -14,9 +15,10 @@ describe('EditHerosComponent', () => {
       declarations: [ EditHerosComponent ],
       imports: [
         FormsModule,
-        HttpClientTestingModule,
+        HttpClientModule,
         RouterTestingModule
-        ],
+      ]
+
     })
     .compileComponents();
   }));

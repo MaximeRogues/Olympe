@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MonstresComponent } from './monstres.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 
 
 describe('MonstresComponent', () => {
@@ -10,6 +12,10 @@ describe('MonstresComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ MonstresComponent ],
+      imports: [
+        HttpClientModule,
+        ToastrModule.forRoot(),
+      ]
 
     })
     .compileComponents();

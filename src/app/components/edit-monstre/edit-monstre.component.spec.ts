@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditMonstreComponent } from './edit-monstre.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 describe('EditMonstreComponent', () => {
@@ -10,6 +13,11 @@ describe('EditMonstreComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ EditMonstreComponent ],
+      imports: [
+        FormsModule,
+        HttpClientModule,
+        RouterTestingModule
+      ]
 
     })
     .compileComponents();

@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DieuDetailComponent } from './dieu-detail.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { ToastrModule } from 'ngx-toastr';
 
 
 describe('DieuDetailComponent', () => {
@@ -10,6 +13,11 @@ describe('DieuDetailComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ DieuDetailComponent ],
+      imports: [
+        HttpClientModule,
+        RouterModule.forRoot([]),
+        ToastrModule.forRoot()
+      ]
 
     })
     .compileComponents();

@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HerosDetailComponent } from './heros-detail.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { ToastrModule } from 'ngx-toastr';
 
 
 describe('HerosDetailComponent', () => {
@@ -10,6 +13,11 @@ describe('HerosDetailComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ HerosDetailComponent ],
+      imports: [
+        HttpClientModule,
+        RouterModule.forRoot([]),
+        ToastrModule.forRoot()
+      ]
 
     })
     .compileComponents();

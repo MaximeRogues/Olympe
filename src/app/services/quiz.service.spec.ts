@@ -1,6 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 
 import { QuizService } from './quiz.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 describe('QuizService', () => {
@@ -8,6 +10,10 @@ describe('QuizService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [
+        FormsModule,
+        HttpClientModule
+      ]
 
     });
     service = TestBed.inject(QuizService);

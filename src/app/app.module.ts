@@ -55,7 +55,7 @@ import { EditHerosComponent } from './components/edit-heros/edit-heros.component
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    ToastrModule.forRoot(), // ToastrModule added
+    ToastrModule.forRoot(),
     HttpClientModule
   ],
   providers: [],
