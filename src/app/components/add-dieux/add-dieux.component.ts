@@ -15,6 +15,11 @@ export class AddDieuxComponent implements OnInit {
   dieu: Dieu;
   isLoading: boolean;
 
+  pantheons = ['Grec', 'Egyptien', 'Nordique'];
+
+  genres = ['Féminin', 'Masculin', 'Non défini'];
+
+
   constructor(private dieuxService: DieuxService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {

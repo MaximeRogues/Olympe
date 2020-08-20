@@ -1,0 +1,42 @@
+<br>
+<div class="bg-light">
+    <h2>Modifier les infos du profil : </h2>
+
+    <form #infosForm="ngForm" (ngSubmit)="updateUser()">
+
+      <!-- pseudo -->
+      <label for="pseudo">Pseudo de l'utilisateur : </label>
+      <input type="text" class="form-control" name="pseudo" id="pseudo" required [(ngModel)]="user.pseudo" #pseudo="ngModel"> <br>
+      <div [hidden]="pseudo.valid" class="alert alert-danger">
+        Le pseudo de l'utilisateur est requis
+      </div>
+
+      <!-- password -->
+      <label for="password">password de l'utilisateur : </label>
+      <input type="text" class="form-control" name="password" id="password" required [(ngModel)]="user.password"
+        #password="ngModel"> <br>
+      <div [hidden]="password.valid" class="alert alert-danger">
+        Le mot de passe de l'utilisateur est requis
+      </div>
+
+      <!-- panthéon -->
+      <label for="phoneNumber">phoneNumber de l'utilisateur : </label>
+      <input type="text" class="form-control" name="phoneNumber" id="phoneNumber" required [(ngModel)]="user.phoneNumber"
+        #phoneNumber="ngModel"> <br>
+      <br>
+      <div [hidden]="phoneNumber.valid" class="alert alert-danger">
+        Le numéro de téléphone de l'utilisateur est requis
+      </div>
+
+      <!-- adresseMail -->
+      <label for="adresseMail">adresseMail de l'utilisateur : </label>
+      <input type="text" class="form-control" name="adresseMail" id="adresseMail" required [(ngModel)]="user.adresseMail"
+        #adresseMail="ngModel"> <br>
+      <br>
+      <div [hidden]="adresseMail.valid" class="alert alert-danger">
+        L'adresse mail de l'utilisateur est requis
+      </div>
+
+      <input [disabled]='!infosForm.valid' type="submit" value="Envoyer">
+    </form>
+  </div>

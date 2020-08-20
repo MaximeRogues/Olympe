@@ -1,16 +1,30 @@
 <br>
 
-<div class="card-body bg-light">
-  <!-- nom du monstre -->
+<div class="card-body bg-light" id="divPerso">
+  <div id="divImgPerso">
+
+  <!-- image du monstre -->
   <img src="../../../assets/images/monstres/{{ monstre.image }}" alt="Illustration du monstre">
   <br>
+  </div>
+
+  <div id="infosPerso">
+
   <br>
-  <h3 class="font-weight-bold">{{monstre.nom}}</h3>
-  <!-- ses attributs -->
+    <!-- nom du monstre -->
+  <h4 class="font-weight-bold">{{monstre.nom}}</h4>
+  <!-- son panthéon -->
+  <p class="card-text"><span class="font-weight-bold"> Panthéon :</span> {{monstre.pantheon}}  </p>
+  <!-- son lieu -->
   <p class="card-text"><span class="font-weight-bold"> Lieu :</span> {{monstre.lieu}} </p>
-  <!-- son domaine -->
+  <!-- son histoire -->
   <p class="card-text"><span class="font-weight-bold"> Histoire :</span> {{monstre.histoire}} </p>
   <br>
+  </div>
+</div>
+
+<div class="bg-light">
+
   <!-- Bouton modifier -->
   <a class="btn btn-info btn-sm  w-50 " [routerLink]="['/edit-monstres', monstre.id]">Modifier</a>
 

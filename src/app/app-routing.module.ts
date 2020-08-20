@@ -12,9 +12,12 @@ import { AddDieuxComponent } from './components/add-dieux/add-dieux.component';
 import { AddHerosComponent } from './components/add-heros/add-heros.component';
 import { AddMonstresComponent } from './components/add-monstres/add-monstres.component';
 import { QuizComponent } from './components/quiz/quiz.component';
+import { ConnexionComponent } from './components/connexion/connexion.component';
 import { EditDieuComponent } from './components/edit-dieu/edit-dieu.component';
 import { EditHerosComponent } from './components/edit-heros/edit-heros.component';
 import { EditMonstreComponent } from './components/edit-monstre/edit-monstre.component';
+import { EspaceMembreComponent } from './components/espace-membre/espace-membre.component';
+import { EditEspaceMembreComponent } from './components/edit-espace-membre/edit-espace-membre.component';
 
 
 const routes: Routes = [
@@ -36,6 +39,11 @@ const routes: Routes = [
   { path: 'edit-monstres/:id', component: EditMonstreComponent },
 
   { path: 'quiz', component: QuizComponent },
+
+  { path: 'connexion', component: ConnexionComponent },
+  { path: 'espace-membre/:id', component: EspaceMembreComponent },
+  { path: 'edit-espace-membre/:id', component: EditEspaceMembreComponent },
+
   { path: '**', component: PageNotFoundComponent }
   ];
 

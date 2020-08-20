@@ -13,6 +13,10 @@ export class EditDieuComponent implements OnInit {
   dieu: Dieu;
   isLoading: boolean;
 
+  pantheons = ['Grec', 'Egyptien', 'Nordique'];
+
+  genres = ['Féminin', 'Masculin', 'Non défini'];
+
   constructor(private route: ActivatedRoute, private router: Router, private dieuService: DieuxService) { }
 
   ngOnInit(): void {

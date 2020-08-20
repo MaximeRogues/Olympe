@@ -28,6 +28,26 @@
         Le titre du héros est requis
       </div>
 
+      <!-- panthéon -->
+      <label for="pantheon">Panthéon du heros : </label>
+      <select class="form-control" name="pantheon" id="pantheon" required [(ngModel)]="heros.pantheon" #pantheon="ngModel" >
+        <option *ngFor="let pantheon of pantheons" [value]="pantheon">{{pantheon}}</option>
+      </select>
+      <br>
+      <div [hidden]="pantheon.valid" class="alert alert-danger">
+        Le panthéon du héros est requis
+      </div>
+
+      <!-- genre -->
+      <label for="genre">Genre du héros : </label>
+      <select class="form-control" name="genre" id="genre" required [(ngModel)]="heros.genre" #genre="ngModel" >
+        <option *ngFor="let genre of genres" [value]="genre">{{genre}}</option>
+      </select>
+      <br>
+      <div [hidden]="genre.valid" class="alert alert-danger">
+        Le genre du héros est requis
+      </div>
+
       <!-- origine -->
       <label for="origine">Origine du heros : </label>
       <input type="text" class="form-control" name="origine" id="origine" required [(ngModel)]="heros.origine"

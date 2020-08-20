@@ -13,6 +13,10 @@ export class EditHerosComponent implements OnInit {
   heros: Heros;
   isLoading: boolean;
 
+  pantheons = ['Grec', 'Egyptien', 'Nordique'];
+
+  genres = ['Féminin', 'Masculin', 'Non défini'];
+
   constructor(private route: ActivatedRoute, private router: Router, private herosService: HerosService) { }
 
   ngOnInit(): void {

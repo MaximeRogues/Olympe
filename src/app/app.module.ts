@@ -25,6 +25,11 @@ import { MaPipePipe } from './pipes/ma-pipe.pipe';
 import { EditDieuComponent } from './components/edit-dieu/edit-dieu.component';
 import { EditMonstreComponent } from './components/edit-monstre/edit-monstre.component';
 import { EditHerosComponent } from './components/edit-heros/edit-heros.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ConnexionComponent } from './components/connexion/connexion.component';
+import { EspaceMembreComponent } from './components/espace-membre/espace-membre.component';
+import { EditEspaceMembreComponent } from './components/edit-espace-membre/edit-espace-membre.component';
+import { SearchComponent } from './components/search/search.component';
 
 
 
@@ -49,14 +54,19 @@ import { EditHerosComponent } from './components/edit-heros/edit-heros.component
     EditDieuComponent,
     EditMonstreComponent,
     EditHerosComponent,
+    ConnexionComponent,
+    EspaceMembreComponent,
+    EditEspaceMembreComponent,
+    SearchComponent,
     ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    ToastrModule.forRoot(),
-    HttpClientModule
+    ToastrModule.forRoot(), // ToastrModule added
+    HttpClientModule, 
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

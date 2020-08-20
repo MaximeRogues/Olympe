@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { QuizService } from 'src/app/services/quiz.service';
+import { ConnexionService } from 'src/app/services/connexion.service';
 
 
 @Component({
@@ -8,13 +8,20 @@ import { QuizService } from 'src/app/services/quiz.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  todayDate = new Date();
+  connecte : Boolean = this.connexionService.connecte;
 
-  constructor() { }
+  isCollapsed = true;
+  
+  constructor(private connexionService : ConnexionService) { }
 
   ngOnInit(): void {
+    console.log(this.connexionService.connecte);
+    
+    console.log(this.connecte);
+    
   }
 
-  todayDate = new Date();
-
+  
 
 } 

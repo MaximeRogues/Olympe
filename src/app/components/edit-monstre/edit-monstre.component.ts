@@ -13,6 +13,10 @@ export class EditMonstreComponent implements OnInit {
   monstre: Monstres;
   isLoading: boolean;
 
+  pantheons = ['Grec', 'Egyptien', 'Nordique'];
+
+  genres = ['Féminin', 'Masculin', 'Non défini'];
+
   constructor(private route: ActivatedRoute, private router: Router, private monstreService: MonstresService) { }
 
   ngOnInit(): void {
