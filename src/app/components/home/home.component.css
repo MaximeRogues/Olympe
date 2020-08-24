@@ -40,17 +40,18 @@ img {
 }
 
 #divImgDernierPerso {
-    width: 50%;
+    width: 25%;
     height: 100%;
     margin-right: 1rem;
 }
 
 #imgDernierPerso {
     height: 35rem;
+    width: 25rem;
 }
 
 #infosDernierPerso {
-    width: 50%;
+    width: 75%;
 }
 
 #dernierPerso {

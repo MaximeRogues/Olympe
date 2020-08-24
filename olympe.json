@@ -13,6 +13,34 @@
       "nom": "Nordique"
     }
   ],
+  "genres": [
+    {
+      "id": 1,
+      "nom": "Féminin"
+    },
+    {
+      "id": 2,
+      "nom": "Masculin"
+    },
+    {
+      "id": 3,
+      "nom": "Non défini"
+    }
+  ],
+  "typePersos": [
+    {
+      "id": 1,
+      "nom": "Dieux"
+    },
+    {
+      "id": 2,
+      "nom": "Héros"
+    },
+    {
+      "id": 3,
+      "nom": "Monstres"
+    }
+  ],
   "dieux": [
     {
       "id": 1,

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,6 +16,8 @@ import { MonstresComponent } from './components/monstres/monstres.component';
 import { MonstreDetailComponent } from './components/monstre-detail/monstre-detail.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 import { AddDieuxComponent } from './components/add-dieux/add-dieux.component';
 import { AddHerosComponent } from './components/add-heros/add-heros.component';
@@ -25,7 +28,6 @@ import { MaPipePipe } from './pipes/ma-pipe.pipe';
 import { EditDieuComponent } from './components/edit-dieu/edit-dieu.component';
 import { EditMonstreComponent } from './components/edit-monstre/edit-monstre.component';
 import { EditHerosComponent } from './components/edit-heros/edit-heros.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ConnexionComponent } from './components/connexion/connexion.component';
 import { EspaceMembreComponent } from './components/espace-membre/espace-membre.component';
 import { EditEspaceMembreComponent } from './components/edit-espace-membre/edit-espace-membre.component';

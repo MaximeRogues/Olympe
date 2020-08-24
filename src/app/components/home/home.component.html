@@ -18,9 +18,9 @@
 
       <a class="nav-link">Type de personnage
         <!-- faire un (change)=fonctionTri(valeur) qui change le SELECT * FROM *** WHERE type == 'valeur' -->
-        <select (change)=rangDieu() class="filter" name="typePersoFilter" id="typePersoFilter">
+        <select (change)=rangDieu() class="filter" name="typePersoFilter" id="typePersoFilter" [(ngModel)]="typePersoFilter">
           <option value="noData">Tous les types</option>
-          <option *ngFor="let type of typePerso" value="{{type}}">{{type}}</option>
+          <option *ngFor="let type of listeTypePerso" value="{{type.nom}}">{{type.nom}}</option>
         </select>
       </a>
 
@@ -33,24 +33,24 @@
       </a>
 
       <a class="nav-link">Panthéon
-        <!-- faire un (change)=fonctionTri(valeur) qui change le SELECT * FROM *** WHERE pantheon == 'valeur' -->
-        <select class="filter" name="pantheonFilter" id="pantheonFilter">
+        
+        <select (change)="getFilteredList()" class="filter" name="pantheonFilter"  id="pantheonFilter" [(ngModel)]="pantheonFilter">
           <option value="noData">Tous les panthéons</option>
-          <option *ngFor="let pantheon of pantheons" value="{{pantheon}}">{{pantheon}}</option>
+          <option *ngFor="let pantheon of listePantheons" value="{{pantheon.nom}}">{{pantheon.nom}}</option>
         </select>
       </a>
 
       <a class="nav-link">Genre
-        <!-- faire un (change)=fonctionTri(valeur) qui change le SELECT * FROM *** WHERE genre == 'valeur' -->
-        <select (change)='triGenre($event)' class="filter" name="genreFilter" id="genreFilter">
+        
+        <select (change)="getFilteredList()" class="filter" name="genreFilter" id="genreFilter" [(ngModel)]="genreFilter" >
           <option value="noData">Tous les genres</option>
-          <option *ngFor="let genre of genres" value="{{genre}}">{{genre}}</option>
+          <option *ngFor="let genre of listeGenres" value="{{genre.nom}}">{{genre.nom}}</option>
         </select>
       </a>
 
-      <a class="nav-link btn btn-sm btn-info text-light" (click)="unsetFilters()"> Retirer les filtres</a>
+      <a class="nav-link btn btn-sm btn-info text-light mr-1" (click)="unsetFilters()" > Retirer les filtres</a>
 
-      <a class="nav-link btn btn-sm btn-danger text-light" (click)="tri()"> trier de A à Z</a>
+      <a class="nav-link btn btn-sm btn-danger text-light" > trier de A à Z</a>
 
 
     </div>
@@ -96,7 +96,7 @@
   <!-- rend la div responsive -->
   <div class="liste row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
     <!-- boucle pour générer les cards -->
-    <div *ngFor="let dieu of this.listeDieux" class="card {{dieu.nom}}">
+    <div *ngFor="let dieu of this.listeDieuxFiltree" class="card {{dieu.nom}}">
 
       <a [routerLink]="['/dieux', dieu.id]"> <img src='../../../assets/images/dieux/{{dieu.image}}'
           class="card-img-top img-fluid" alt=""></a>
