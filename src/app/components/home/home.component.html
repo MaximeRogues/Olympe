@@ -18,9 +18,9 @@
 
       <a class="nav-link">Type de personnage
         <!-- faire un (change)=fonctionTri(valeur) qui change le SELECT * FROM *** WHERE type == 'valeur' -->
-        <select (change)=rangDieu() class="filter" name="typePersoFilter" id="typePersoFilter" [(ngModel)]="typePersoFilter">
+        <select (change)=rangDieu() (change)="getFilteredList()" class="filter" name="characterTypeFilter" id="characterTypeFilter" [(ngModel)]="characterTypeFilter">
           <option value="noData">Tous les types</option>
-          <option *ngFor="let type of listeTypePerso" value="{{type.nom}}">{{type.nom}}</option>
+          <option *ngFor="let type of characterTypeList" value="{{type.nom}}">{{type.nom}}</option>
         </select>
       </a>
 
@@ -36,15 +36,15 @@
         
         <select (change)="getFilteredList()" class="filter" name="pantheonFilter"  id="pantheonFilter" [(ngModel)]="pantheonFilter">
           <option value="noData">Tous les panthéons</option>
-          <option *ngFor="let pantheon of listePantheons" value="{{pantheon.nom}}">{{pantheon.nom}}</option>
+          <option *ngFor="let pantheon of pantheonList" value="{{pantheon.nom}}">{{pantheon.nom}}</option>
         </select>
       </a>
 
       <a class="nav-link">Genre
         
-        <select (change)="getFilteredList()" class="filter" name="genreFilter" id="genreFilter" [(ngModel)]="genreFilter" >
+        <select (change)="getFilteredList()" class="filter" name="genderFilter" id="genderFilter" [(ngModel)]="genderFilter" >
           <option value="noData">Tous les genres</option>
-          <option *ngFor="let genre of listeGenres" value="{{genre.nom}}">{{genre.nom}}</option>
+          <option *ngFor="let genre of genderList" value="{{genre.nom}}">{{genre.nom}}</option>
         </select>
       </a>
 
@@ -65,23 +65,23 @@
   <div class="bg-light" id="dernierPerso">
     <div id="divImgDernierPerso">
       <!-- image avec lien vers dieu-detail -->
-    <a [routerLink]="['/dieux', this.listeDieux[0].id]"> <img id="imgDernierPerso"
-        src='../../../assets/images/dieux/{{this.listeDieux[0].image}}' class="card-img-top img-fluid" alt=""></a>
+    <a [routerLink]="['/dieux', this.godList[0].id]"> <img id="imgDernierPerso"
+        src='../../../assets/images/dieux/{{this.godList[0].image}}' class="card-img-top img-fluid" alt=""></a>
     </div>
     
     
     <div id="infosDernierPerso">
       <br>
-      <h3 class="font-weight-bold">{{this.listeDieux[0].nom}}</h3>
+      <h3 class="font-weight-bold">{{this.godList[0].nom}}</h3>
       <br>
 
-      <p class="card-text"><span class="font-weight-bold"> Panthéon :</span> {{this.listeDieux[0].pantheon}} </p>
+      <p class="card-text"><span class="font-weight-bold"> Panthéon :</span> {{this.godList[0].pantheon}} </p>
       <!-- ses attributs -->
-      <p class="card-text"><span class="font-weight-bold"> Attributs :</span> {{this.listeDieux[0].attributs}} </p>
+      <p class="card-text"><span class="font-weight-bold"> Attributs :</span> {{this.godList[0].attributs}} </p>
       <!-- son domaine -->
-      <p class="card-text"><span class="font-weight-bold"> Domaine :</span> {{this.listeDieux[0].domaine}} </p>
+      <p class="card-text"><span class="font-weight-bold"> Domaine :</span> {{this.godList[0].domaine}} </p>
       <!-- ses caracteristiques -->
-      <p class="card-text"><span class="font-weight-bold">Description :</span> {{this.listeDieux[0].cara}} </p>
+      <p class="card-text"><span class="font-weight-bold">Description :</span> {{this.godList[0].cara}} </p>
     </div>
 
   </div>
@@ -96,7 +96,7 @@
   <!-- rend la div responsive -->
   <div class="liste row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
     <!-- boucle pour générer les cards -->
-    <div *ngFor="let dieu of this.listeDieuxFiltree" class="card {{dieu.nom}}">
+    <div *ngFor="let dieu of this.filteredGodList" class="card {{dieu.nom}}">
 
       <a [routerLink]="['/dieux', dieu.id]"> <img src='../../../assets/images/dieux/{{dieu.image}}'
           class="card-img-top img-fluid" alt=""></a>
@@ -111,7 +111,7 @@
     </div>
 
     <!-- boucle pour générer les cards -->
-    <div *ngFor="let heros of this.listeHeros" class="card {{heros.nom}}">
+    <div *ngFor="let heros of this.filteredHeroList" class="card {{heros.nom}}">
 
       <a [routerLink]="['/heros', heros.id]"> <img src='../../../assets/images/heros/{{heros.image}}'
           class="card-img-top img-fluid" alt=""></a>
@@ -126,7 +126,7 @@
     </div>
 
     <!-- boucle pour générer les cards -->
-    <div *ngFor="let monstres of this.listeMonstres" class="card {{monstres.nom}}">
+    <div *ngFor="let monstres of this.filteredMonsterList" class="card {{monstres.nom}}">
 
       <a [routerLink]="['/monstres', monstres.id]"> <img src='../../../assets/images/monstres/{{monstres.image}}'
           class="card-img-top img-fluid" alt=""></a>

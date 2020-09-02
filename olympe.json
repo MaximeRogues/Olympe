@@ -195,6 +195,28 @@
       "cara": "Elle est la seule déesse à rester en permanence sur l'Olympe, elle est décrite comme une déesse vierge et immuable. Elle est la première-née du Titan Cronos",
       "image": "hestia.jpg",
       "titre": "La déesse du foyer"
+    },
+    {
+      "id": 15,
+      "nom": "exemple egyptien",
+      "pantheon": "Egyptien",
+      "genre": "Féminin",
+      "attributs": "Le feu sacré, le foyer, la torche",
+      "domaine": "Le foyer public et familial, la famille",
+      "cara": "Elle est la seule déesse à rester en permanence sur l'Olympe, elle est décrite comme une déesse vierge et immuable. Elle est la première-née du Titan Cronos",
+      "image": "hestia.jpg",
+      "titre": "La déesse du foyer"
+    },
+    {
+      "id": 16,
+      "nom": "exemple nordique",
+      "pantheon": "Nordique",
+      "genre": "Féminin",
+      "attributs": "Le feu sacré, le foyer, la torche",
+      "domaine": "Le foyer public et familial, la famille",
+      "cara": "Elle est la seule déesse à rester en permanence sur l'Olympe, elle est décrite comme une déesse vierge et immuable. Elle est la première-née du Titan Cronos",
+      "image": "hestia.jpg",
+      "titre": "La déesse du foyer"
     }
   ],
   "heros": [
@@ -317,6 +339,26 @@
       "exploits": "Magicienne aux grands pouvoirs, elle fournit une pommade à Jason pour le rendre invincible et qu'il puisse réussir les épreuves que le roi lui a imposé pour obtenir la toison d'or. Elle tend un piège aux filles du roi d'Iolcos qui le tueront par mégarde, permettant à Jason de reprendre le trône",
       "image": "medee.jpg",
       "titre": "La savante"
+    },
+    {
+      "id": 13,
+      "nom": "ex egyptien",
+      "genre": "Masculin",
+      "pantheon": "Egyptien",
+      "origine": "Fils d'Eson (roi d'Iolcos) et de Polymédé",
+      "exploits": "Elevé par le centaure Chiron, il se lança dans la quête de la toison d'or avec un équipage de fiers guerriers, après de rudes épreuves, il déroba la toison au dragon qui la gardait avec l'aide de la magicienne Médée",
+      "image": "jason.jpg",
+      "titre": "Le premier argonaute"
+    },
+    {
+      "id": 14,
+      "nom": "ex nordique",
+      "genre": "Féminin",
+      "pantheon": "Nordique",
+      "origine": "Fils d'Eson (roi d'Iolcos) et de Polymédé",
+      "exploits": "Elevé par le centaure Chiron, il se lança dans la quête de la toison d'or avec un équipage de fiers guerriers, après de rudes épreuves, il déroba la toison au dragon qui la gardait avec l'aide de la magicienne Médée",
+      "image": "jason.jpg",
+      "titre": "Le premier argonaute"
     }
   ],
   "monstres": [
@@ -429,6 +471,26 @@
       "lieu": "Pays des Cyclopes en Sicile",
       "histoire": "Il enferma Ulysse et ses hommes dans sa grotte après qu'ils aient mangé sa nourriture sans se poser de question. Il mangea plusieurs hommes avant de se faire crever l'œil par Ulysse, qui réussit à s'échapper en s'accrochant sous les moutons du cyclope lorsqu'il les mène au pâturage",
       "image": "polypheme.jpg"
+    },
+    {
+      "id": 12,
+      "nom": "ex egyptien",
+      "genre": "Masculin",
+      "pantheon": "Egyptien",
+      "titre": "L'homme-taureau",
+      "lieu": "Un labyrinthe au centre de la Crête",
+      "histoire": "Fils de l'épouse du roi Minos et d'un taureau blanc envoyé par Poséidon, on lui livrait tous les neuf ans sept filles et sept garçons pour qu'il s'en nourrisse. Il sera tué par Thésée qui ira dans le labyrinthe avec une pelote de fil afin de retrouver son chemin",
+      "image": "minotaure.jpg"
+    },
+    {
+      "id": 13,
+      "nom": "ex nordique",
+      "genre": "Masculin",
+      "pantheon": "Nordique",
+      "titre": "L'homme-taureau",
+      "lieu": "Un labyrinthe au centre de la Crête",
+      "histoire": "Fils de l'épouse du roi Minos et d'un taureau blanc envoyé par Poséidon, on lui livrait tous les neuf ans sept filles et sept garçons pour qu'il s'en nourrisse. Il sera tué par Thésée qui ira dans le labyrinthe avec une pelote de fil afin de retrouver son chemin",
+      "image": "minotaure.jpg"
     }
   ],
   "users": [

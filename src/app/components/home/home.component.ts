@@ -29,21 +29,19 @@ export class HomeComponent implements OnInit {
 
 
   // // On déclare une liste de perso vide
-  listeDieux: Dieu[];
-  listeDieuxFiltree: Dieu[];
-  listeHeros: Heros[];
-  listeMonstres: Monstres[];
-  listeGenres: Genres[];
-  listeTypePerso: TypePerso[];
-  listePantheons: Pantheons[];
+  godList: Dieu[];
+  filteredGodList: Dieu[];
+  heroList: Heros[];
+  filteredHeroList: Heros[];
+  monsterList: Monstres[];
+  filteredMonsterList: Monstres[];
+  genderList: Genres[];
+  characterTypeList: TypePerso[];
+  pantheonList: Pantheons[];
 
-  genreFilter: string = "noData";
+  genderFilter: string = "noData";
   pantheonFilter: string = "noData";
-  typePersoFilter: string = "noData";
-
-
-  cards = document.getElementsByClassName("card");
-  listeCards = [];
+  characterTypeFilter: string = "noData";
   
   constructor(private dieuService: DieuxService, private herosService: HerosService, private monstreService: MonstresService, private apiService: ApiService, private genreService: GenresService, private typePersoService: TypePersoService, private pantheonsService: PantheonsService) { }
   
@@ -51,68 +49,91 @@ export class HomeComponent implements OnInit {
 
     // au chargement, on remplit la liste avec la fonction getAllPerso
     this.dieuService.getAllDieux().subscribe((data: Dieu[]) => {
-      this.listeDieux = data['hydra:member'];
-      this.listeDieuxFiltree = this.listeDieux;
+      this.godList = data;
+      this.filteredGodList = data;
     })
 
     // au chargement, on remplit la liste avec la fonction getAllPerso
     this.herosService.getAllHeros().subscribe((data: Heros[]) => {
-      this.listeHeros = data['hydra:member'];
+      this.heroList = data;
+      this.filteredHeroList = data;
     })
 
     // au chargement, on remplit la liste avec la fonction getAllPerso
     this.monstreService.getAllMonstres().subscribe((data: Monstres[]) => {
-      this.listeMonstres = data['hydra:member'];
+      this.monsterList = data;
+      this.filteredMonsterList = data;
     })
 
     // au chargement, on remplit la liste avec la fonction getAllGenres
     this.genreService.getAllGenres().subscribe((data: Genres[]) => {
-      this.listeGenres = data['hydra:member'];
-      
+      this.genderList = data;
     })
 
     // au chargement, on remplit la liste avec la fonction getAllTypes
     this.typePersoService.getAllTypes().subscribe((data: TypePerso[]) => {
-      this.listeTypePerso = data['hydra:member'];
+      this.characterTypeList = data;
     })
 
     // au chargement, on remplit la liste avec la fonction getAllPantheons
     this.pantheonsService.getAllPantheons().subscribe((data: Pantheons[]) => {
-      this.listePantheons = data['hydra:member'];
+      this.pantheonList = data;
     })
 
-  
+    
   }
 
   // remettre les filtres à zéro
   unsetFilters() : void {
-    this.genreFilter = "noData";
+    this.genderFilter = "noData";
     this.pantheonFilter = "noData";
-
+    this.characterTypeFilter = "noData"
     this.getFilteredList();
   }
 
   // fonction pour afficher selon tous les filtres
   getFilteredList() : void {
-    let list = this.listeDieux;
+    // TODO optimiser cette fonction
+    let godListToFilter = this.godList;
+    let heroListToFilter = this.heroList;
+    let monsterListToFilter = this.monsterList;
 
-    if (this.genreFilter !== "noData") {
-      list =  list.filter(dieu => dieu.genre === this.genreFilter);  
+    // tri par genre
+    if (this.genderFilter !== "noData") {
+      godListToFilter =  godListToFilter.filter(dieu => dieu.genre === this.genderFilter);  
+      heroListToFilter =  heroListToFilter.filter(heros => heros.genre === this.genderFilter);  
+      monsterListToFilter =  monsterListToFilter.filter(monstre => monstre.genre === this.genderFilter);       
     }
+
+    // tri par panthéon
     if (this.pantheonFilter !== "noData") {
-      list =  list.filter(dieu => dieu.pantheon === this.pantheonFilter);  
+      godListToFilter =  godListToFilter.filter(dieu => dieu.pantheon === this.pantheonFilter);  
+      heroListToFilter =  heroListToFilter.filter(heros => heros.pantheon === this.pantheonFilter);  
+      monsterListToFilter =  monsterListToFilter.filter(monstre => monstre.pantheon === this.pantheonFilter);  
     }
-    // if (this.typePersoFilter !== "noData") {
-    //   list =  list.filter(dieu => dieu.genre === this.typePersoFilter);  
-    // }
 
-    this.listeDieuxFiltree = list;
+    // tri par type de perso
+    if (this.characterTypeFilter !== "noData") {
+      if(this.characterTypeFilter == "Dieux") {
+        heroListToFilter = [];
+        monsterListToFilter = [];
+      } else if(this.characterTypeFilter == "Héros") {
+        godListToFilter = [];
+        monsterListToFilter = [];
+      } else {
+        heroListToFilter = [];
+        godListToFilter = [];
+      }
+    }
 
+    this.filteredGodList = godListToFilter;
+    this.filteredHeroList = heroListToFilter;
+    this.filteredMonsterList = monsterListToFilter;
   }
 
   // affiche le critère 'rang du dieu' si 'Dieux' est sélectionné
   rangDieu() {
-    if( (<HTMLInputElement>document.getElementById("typePersoFilter")).value == 'Dieux' ) {      
+    if( (<HTMLInputElement>document.getElementById("characterTypeFilter")).value == 'Dieux' ) {      
       this.filtreDieu = true;
     } else {
       this.filtreDieu = false;
