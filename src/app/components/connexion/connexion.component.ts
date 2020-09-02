@@ -24,7 +24,7 @@ export class ConnexionComponent implements OnInit {
 
     // je récupère le User avec l'id 1, et j'injecte ses infos dans this.user
     this.connexionService.getUserByID(1).subscribe((data:User) => {
-      this.user = data;
+      this.user = data['hydra:member'];
       console.log(this.user);
       
     });

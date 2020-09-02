@@ -22,7 +22,7 @@ export class MonstresComponent implements OnInit {
     this.isLoading = true;
     // au chargement, on remplit la liste avec la fonction getAllMonstres
     this.monstreService.getAllMonstres().subscribe((data: Monstres[]) => {
-      this.listeMonstres = data;
+      this.listeMonstres = data['hydra:member'];
       this.isLoading = false
     })
   }

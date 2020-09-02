@@ -51,34 +51,34 @@ export class HomeComponent implements OnInit {
 
     // au chargement, on remplit la liste avec la fonction getAllPerso
     this.dieuService.getAllDieux().subscribe((data: Dieu[]) => {
-      this.listeDieux = data;
+      this.listeDieux = data['hydra:member'];
       this.listeDieuxFiltree = this.listeDieux;
     })
 
     // au chargement, on remplit la liste avec la fonction getAllPerso
     this.herosService.getAllHeros().subscribe((data: Heros[]) => {
-      this.listeHeros = data;
+      this.listeHeros = data['hydra:member'];
     })
 
     // au chargement, on remplit la liste avec la fonction getAllPerso
     this.monstreService.getAllMonstres().subscribe((data: Monstres[]) => {
-      this.listeMonstres = data;
+      this.listeMonstres = data['hydra:member'];
     })
 
     // au chargement, on remplit la liste avec la fonction getAllGenres
     this.genreService.getAllGenres().subscribe((data: Genres[]) => {
-      this.listeGenres = data;
+      this.listeGenres = data['hydra:member'];
       
     })
 
     // au chargement, on remplit la liste avec la fonction getAllTypes
     this.typePersoService.getAllTypes().subscribe((data: TypePerso[]) => {
-      this.listeTypePerso = data;
+      this.listeTypePerso = data['hydra:member'];
     })
 
     // au chargement, on remplit la liste avec la fonction getAllPantheons
     this.pantheonsService.getAllPantheons().subscribe((data: Pantheons[]) => {
-      this.listePantheons = data;
+      this.listePantheons = data['hydra:member'];
     })
 
   

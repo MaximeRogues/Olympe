@@ -24,7 +24,7 @@ export class DieuDetailComponent implements OnInit {
     // on récupère le dieu qui était concerné par le bouton détails
     this.isLoading = true;
     this.dieuService.getDieuByID(+this.route.snapshot.paramMap.get('id')).subscribe((data:Dieu) => {
-      this.dieu = data;
+      this.dieu = data['hydra:member'];
       this.isLoading = false;
     });
 
@@ -32,7 +32,7 @@ export class DieuDetailComponent implements OnInit {
     this.isLoading = true;
     // au chargement, on remplit la liste avec la fonction getAllHeros, pour afficher la liste au retour
     this.dieuService.getAllDieux().subscribe((data: Dieu[]) => {
-      this.listeDieux = data;
+      this.listeDieux = data['hydra:member'];
       this.isLoading = false
     })
   }

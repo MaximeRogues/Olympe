@@ -21,11 +21,11 @@ export class MonstresService {
     // Get server-side error
     errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
-    window.alert(errorMessage);
+    // window.alert(errorMessage);
     return throwError(errorMessage)
   }
 
-  apiUrl = "http://localhost:3000/monstres";
+  apiUrl = "https://localhost:8000/api/monsters";
 
   // on déclare un fonction qui return la liste de monstres en tant qu'observable
   getAllMonstres() : Observable <Monstres[]> {

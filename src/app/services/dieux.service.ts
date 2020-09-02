@@ -28,11 +28,11 @@ export class DieuxService {
     // Get server-side error
     errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
-    window.alert(errorMessage);
+    // window.alert(errorMessage);
     return throwError(errorMessage)
   }
 
-  apiUrl = "http://localhost:3000/dieux";
+  apiUrl = "http://localhost:8000/api/gods";
  
   // on déclare un fonction qui return la liste de dieux en tant qu'observable
   getAllDieux() : Observable <Dieu[]> {

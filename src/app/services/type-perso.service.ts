@@ -28,11 +28,11 @@ export class TypePersoService {
     // Get server-side error
     errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
-    window.alert(errorMessage);
+    // window.alert(errorMessage);
     return throwError(errorMessage)
   }
 
-  apiUrl = "http://localhost:3000/typePersos";
+  apiUrl = "http://localhost:8000/character_types";
  
   // on déclare un fonction qui return la liste de dieux en tant qu'observable
   getAllTypes() : Observable <TypePerso[]> {

@@ -22,11 +22,11 @@ export class HerosService {
     // Get server-side error
     errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
-    window.alert(errorMessage);
+    // window.alert(errorMessage);
     return throwError(errorMessage)
   }
 
-  apiUrl = "http://localhost:3000/heros";
+  apiUrl = "http://localhost:8000/api/heroes";
 
   // on déclare un fonction qui return la liste de héros en tant qu'observable
   getAllHeros(): Observable <Heros[]> {
