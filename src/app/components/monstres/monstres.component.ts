@@ -12,7 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 export class MonstresComponent implements OnInit {
 
   // On déclare une liste de monstres vide
-  listeMonstres: Monstres[];
+  monsterList: Monstres[];
   isLoading: boolean;
 
   constructor(private monstreService: MonstresService, private toastr: ToastrService) { }
@@ -22,17 +22,17 @@ export class MonstresComponent implements OnInit {
     this.isLoading = true;
     // au chargement, on remplit la liste avec la fonction getAllMonstres
     this.monstreService.getAllMonstres().subscribe((data: Monstres[]) => {
-      this.listeMonstres = data['hydra:member'];
+      this.monsterList = data['hydra:member'];
       this.isLoading = false
     })
   }
 
   deleteMonstre(id: number) {
     this.isLoading = true;
-    const nomMonstre = this.listeMonstres.find(monstre => monstre.id === id).nom
+    const nomMonstre = this.monsterList.find(monster => monster.id === id).name
     this.monstreService.deleteMonstre(id).subscribe(then => {
       this.monstreService.getAllMonstres().subscribe((data: Monstres []) => {
-        this.listeMonstres = data;
+        this.monsterList = data['hydra:member'];
         this.isLoading = false;
       })
     });

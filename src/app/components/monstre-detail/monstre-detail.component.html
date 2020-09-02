@@ -4,7 +4,7 @@
   <div id="divImgPerso">
 
   <!-- image du monstre -->
-  <img src="../../../assets/images/monstres/{{ monstre.image }}" alt="Illustration du monstre">
+  <img src="../../../assets/images/monstres/{{ monster.picture }}" alt="Illustration du monstre">
   <br>
   </div>
 
@@ -12,16 +12,16 @@
 
   <br>
     <!-- nom du monstre -->
-  <h2 class="font-weight-bold">{{monstre.nom}}</h2>
+  <h2 class="font-weight-bold">{{monster.name}}</h2>
   <!-- titre du monstre -->
-  <h5 class="font-weight-bold">{{monstre.titre}}</h5>
+  <h5 class="font-weight-bold">{{monster.title}}</h5>
   <br>
   <!-- son panthéon -->
-  <p class="card-text"><span class="font-weight-bold"> Panthéon :</span> {{monstre.pantheon}}  </p>
+  <p class="card-text"><span class="font-weight-bold"> Panthéon :</span> {{monster.pantheon.name}}  </p>
   <!-- son lieu -->
-  <p class="card-text"><span class="font-weight-bold"> Lieu :</span> {{monstre.lieu}} </p>
+  <p class="card-text"><span class="font-weight-bold"> Lieu :</span> {{monster.place}} </p>
   <!-- son histoire -->
-  <p class="card-text"><span class="font-weight-bold"> Histoire :</span> {{monstre.histoire}} </p>
+  <p class="card-text"><span class="font-weight-bold"> Histoire :</span> {{monster.history}} </p>
   <br>
   </div>
 </div>
@@ -29,9 +29,9 @@
 <div class="bg-light">
 
   <!-- Bouton modifier -->
-  <a class="btn btn-info btn-sm  w-50 " [routerLink]="['/edit-monstres', monstre.id]">Modifier</a>
+  <a class="btn btn-info btn-sm  w-50 " [routerLink]="['/edit-monstres', monster.id]">Modifier</a>
 
   <!-- Bouton supprimer -->
-  <a class="btn btn-danger btn-sm  text-white w-50" (click)="deleteMonstre(monstre.id)">Supprimer </a>
+  <a class="btn btn-danger btn-sm  text-white w-50" (click)="deleteMonstre(monster.id)">Supprimer </a>
 
 </div>

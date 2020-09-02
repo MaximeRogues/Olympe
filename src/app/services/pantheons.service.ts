@@ -31,7 +31,7 @@ export class PantheonsService {
       return throwError(errorMessage)
     }
   
-    apiUrl = "http://localhost:8000/api/pantheons";
+    apiUrl = "https://localhost:8000/api/pantheons";
    
     // on déclare un fonction qui return la liste de dieux en tant qu'observable
     getAllPantheons() : Observable <Pantheons[]> {

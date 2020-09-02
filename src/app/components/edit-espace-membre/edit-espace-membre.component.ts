@@ -17,7 +17,7 @@ export class EditEspaceMembreComponent implements OnInit {
   ngOnInit(): void {
 
     this.connexionService.getUserByID(+this.route.snapshot.paramMap.get('id')).subscribe((data: User) => {
-      this.user = data;
+      this.user = data['hydra:member'];
     });
   }
 

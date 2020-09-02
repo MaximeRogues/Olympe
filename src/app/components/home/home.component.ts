@@ -100,16 +100,16 @@ export class HomeComponent implements OnInit {
 
     // tri par genre
     if (this.genderFilter !== "noData") {
-      godListToFilter =  godListToFilter.filter(dieu => dieu.genre === this.genderFilter);  
-      heroListToFilter =  heroListToFilter.filter(heros => heros.genre === this.genderFilter);  
-      monsterListToFilter =  monsterListToFilter.filter(monstre => monstre.genre === this.genderFilter);       
+      godListToFilter =  godListToFilter.filter(god => god.gender.name === this.genderFilter);  
+      heroListToFilter =  heroListToFilter.filter(heros => heros.gender.name === this.genderFilter);  
+      monsterListToFilter =  monsterListToFilter.filter(monstre => monstre.gender.name === this.genderFilter);       
     }
 
     // tri par panthéon
     if (this.pantheonFilter !== "noData") {
-      godListToFilter =  godListToFilter.filter(dieu => dieu.pantheon === this.pantheonFilter);  
-      heroListToFilter =  heroListToFilter.filter(heros => heros.pantheon === this.pantheonFilter);  
-      monsterListToFilter =  monsterListToFilter.filter(monstre => monstre.pantheon === this.pantheonFilter);  
+      godListToFilter =  godListToFilter.filter(dieu => dieu.pantheon.name === this.pantheonFilter);  
+      heroListToFilter =  heroListToFilter.filter(heros => heros.pantheon.name === this.pantheonFilter);  
+      monsterListToFilter =  monsterListToFilter.filter(monstre => monstre.pantheon.name === this.pantheonFilter);  
     }
 
     // tri par type de perso

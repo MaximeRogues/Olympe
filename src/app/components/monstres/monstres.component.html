@@ -10,16 +10,16 @@
   <!-- rend la div responsive -->
   <div class="liste row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
     <!-- boucle pour générer les cards -->
-    <div *ngFor="let monstre of this.listeMonstres" class="card" >
+    <div *ngFor="let monster of this.monsterList" class="card" >
 
-      <a [routerLink]="['/monstres', monstre.id]"> <img src='../../../assets/images/monstres/{{monstre.image}}'
+      <a [routerLink]="['/monstres', monster.id]"> <img src='../../../assets/images/monstres/{{monster.picture}}'
           class="card-img-top img-fluid" alt=""></a>
       <div class="card-body text-center">
         <!-- nom du monstre -->
-        <h3 class="font-weight-bold card-title">{{monstre.nom}}</h3>
-        <h5 class="card-text">{{monstre.titre}}</h5>
+        <h3 class="font-weight-bold card-title">{{monster.name}}</h3>
+        <h5 class="card-text">{{monster.title}}</h5>
         <!-- Bouton aller au component monstreDetail -->
-        <a class="btn btn-secondary btn-sm w-100 " [routerLink]="['/monstres', monstre.id]"> Détails</a>
+        <a class="btn btn-secondary btn-sm w-100 " [routerLink]="['/monstres', monster.id]"> Détails</a>
         
       </div>
     </div>

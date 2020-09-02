@@ -29,17 +29,17 @@ export class HerosDetailComponent implements OnInit {
     this.isLoading = true;
     // au chargement, on remplit la liste avec la fonction getAllHeros, pour afficher la liste au retour
     this.herosService.getAllHeros().subscribe((data: Heros[]) => {
-      this.listeHeros = data;
+      this.listeHeros = data['hydra:member'];
       this.isLoading = false;
     })
   }
 
   deleteHeros(id: number) {
     this.isLoading = true;
-    const nomHeros = this.listeHeros.find(heros => heros.id === id).nom
+    const nomHeros = this.listeHeros.find(heros => heros.id === id).name
     this.herosService.deleteHeros(id).subscribe(then => {
       this.herosService.getAllHeros().subscribe((data: Heros []) => {
-        this.listeHeros = data;
+        this.listeHeros = data['hydra:member'];
         this.isLoading = false;
       })
     });

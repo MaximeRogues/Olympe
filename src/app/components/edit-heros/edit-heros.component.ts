@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HerosService } from 'src/app/services/heros.service';
 import { Heros } from 'src/app/models/heros';
+import { Pantheons } from 'src/app/models/pantheons';
+import { Genres } from 'src/app/models/genres';
+import { GenresService } from 'src/app/services/genres.service';
+import { PantheonsService } from 'src/app/services/pantheons.service';
 
 @Component({
   selector: 'app-edit-heros',
@@ -10,26 +14,35 @@ import { Heros } from 'src/app/models/heros';
 })
 export class EditHerosComponent implements OnInit {
   id: number;
-  heros: Heros;
+  hero: Heros;
   isLoading: boolean;
 
-  pantheons = ['Grec', 'Egyptien', 'Nordique'];
+  pantheons : Pantheons[];
 
-  genres = ['Féminin', 'Masculin', 'Non défini'];
+  genders : Genres[];
 
-  constructor(private route: ActivatedRoute, private router: Router, private herosService: HerosService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private heroService: HerosService, private genderService: GenresService, private pantheonService: PantheonsService) { }
 
   ngOnInit(): void {
     this.isLoading = true;
-    this.herosService.getHerosByID(+this.route.snapshot.paramMap.get('id')).subscribe((data: Heros) => {
-      this.heros = data;
+
+    this.pantheonService.getAllPantheons().subscribe((data: Pantheons[]) => {
+      this.pantheons = data['hydra:member'];
+    });
+
+    this.genderService.getAllGenres().subscribe((data: Genres[]) => {
+      this.genders = data['hydra:member'];
+    });
+
+    this.heroService.getHerosByID(+this.route.snapshot.paramMap.get('id')).subscribe((data: Heros) => {
+      this.hero = data['hydra:member'];
       this.isLoading = false;
     });  }
 
 
   updateHeros() {
     //lance la fonction updateHeros de heros.service
-    this.herosService.updateHeros(this.heros).subscribe(then => {
+    this.heroService.updateHeros(this.hero).subscribe(then => {
       // change l'url avec la route '/heros'
       this.router.navigate(['/heros']);
       });

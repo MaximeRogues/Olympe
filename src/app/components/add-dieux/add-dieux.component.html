@@ -16,16 +16,16 @@
 
 
       <!-- nom -->
-      <label for="nom">Nom du dieu : </label>
-      <input type="text" class="form-control" name="nom" id="nom" required [(ngModel)]="dieu.nom" #nom="ngModel"> <br>
-      <div [hidden]="nom.valid" class="alert alert-danger">
+      <label for="name">Nom du dieu : </label>
+      <input type="text" class="form-control" name="name" id="name" required [(ngModel)]="dieu.name" #name="ngModel"> <br>
+      <div [hidden]="name.valid" class="alert alert-danger">
         Le nom du dieu est requis
       </div>
 
       <!-- titre -->
-      <label for="titre">Titre du dieu : </label>
-      <input type="text" class="form-control" name="titre" id="titre" required [(ngModel)]="dieu.titre" #titre="ngModel"> <br>
-      <div [hidden]="titre.valid" class="alert alert-danger">
+      <label for="title">Titre du dieu : </label>
+      <input type="text" class="form-control" name="title" id="title" required [(ngModel)]="dieu.title" #title="ngModel"> <br>
+      <div [hidden]="title.valid" class="alert alert-danger">
         Le titre du dieu est requis
       </div>
 
@@ -40,44 +40,44 @@
       </div>
 
       <!-- genre -->
-      <label for="genre">Genre du dieu : </label>
-      <select class="form-control" name="genre" id="genre" required [(ngModel)]="dieu.genre" #genre="ngModel" >
-        <option *ngFor="let genre of genres" [value]="genre">{{genre}}</option>
+      <label for="gender">Genre du dieu : </label>
+      <select class="form-control" name="gender" id="gender" required [(ngModel)]="dieu.gender" #gender="ngModel" >
+        <option *ngFor="let genre of genders" [value]="genre">{{genre}}</option>
       </select>
       <br>
-      <div [hidden]="genre.valid" class="alert alert-danger">
+      <div [hidden]="gender.valid" class="alert alert-danger">
         Le genre du dieu est requis
       </div>
 
       <!-- attributs -->
-      <label for="attributs">Attributs du dieu : </label>
-      <input type="text" class="form-control" name="attributs" id="attributs" required [(ngModel)]="dieu.attributs"
-        #attributs="ngModel"> <br>
-      <div [hidden]="attributs.valid" class="alert alert-danger">
+      <label for="attributes">Attributs du dieu : </label>
+      <input type="text" class="form-control" name="attributes" id="attributes" required [(ngModel)]="dieu.attributes"
+        #attributes="ngModel"> <br>
+      <div [hidden]="attributes.valid" class="alert alert-danger">
         Les attributs du dieu sont requis
       </div>
 
       <!-- domaine -->
-      <label for="domaine">Domaine du dieu : </label>
-      <input type="text" class="form-control" name="domaine" id="domaine" required [(ngModel)]="dieu.domaine"
-        #domaine="ngModel"> <br>
-      <div [hidden]="domaine.valid" class="alert alert-danger">
+      <label for="domain">Domaine du dieu : </label>
+      <input type="text" class="form-control" name="domain" id="domain" required [(ngModel)]="dieu.domain"
+        #domain="ngModel"> <br>
+      <div [hidden]="domain.valid" class="alert alert-danger">
         Le domaine du dieu est requis
       </div>
 
       <!-- caractéristiques -->
-      <label for="cara">Caractéristiques du dieu : </label>
-      <input type="text" class="form-control" name="cara" id="cara" required [(ngModel)]="dieu.cara" #cara="ngModel">
+      <label for="history">Caractéristiques du dieu : </label>
+      <input type="text" class="form-control" name="history" id="history" required [(ngModel)]="dieu.history" #history="ngModel">
       <br>
-      <div [hidden]="cara.valid" class="alert alert-danger">
+      <div [hidden]="history.valid" class="alert alert-danger">
         Les caractéristiques du dieu sont requises
       </div>
 
       <!-- image -->
-      <label for="image">Image du dieu : </label>
-      <input type="string" class="form-control" name="image" id="image" required [(ngModel)]="dieu.image"
-        #image="ngModel"> <br>
-      <div [hidden]="image.valid" class="alert alert-danger">
+      <label for="picture">Image du dieu : </label>
+      <input type="string" class="form-control" name="picture" id="picture" required [(ngModel)]="dieu.picture"
+        #picture="ngModel"> <br>
+      <div [hidden]="picture.valid" class="alert alert-danger">
         L'image du dieu est requis
       </div>
 

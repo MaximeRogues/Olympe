@@ -11,9 +11,10 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./dieu-detail.component.css']
 })
 export class DieuDetailComponent implements OnInit {
+  
   id: number;
-  dieu: Dieu;
-  listeDieux: Dieu[];
+  god: Dieu;
+  godList: Dieu[];
   isLoading: boolean;
 
   constructor(private route: ActivatedRoute, private dieuService: DieuxService, private toastr: ToastrService,private router: Router) { 
@@ -24,7 +25,11 @@ export class DieuDetailComponent implements OnInit {
     // on récupère le dieu qui était concerné par le bouton détails
     this.isLoading = true;
     this.dieuService.getDieuByID(+this.route.snapshot.paramMap.get('id')).subscribe((data:Dieu) => {
-      this.dieu = data['hydra:member'];
+      console.log(data);
+      
+      this.god = data;
+      console.log(this.god);
+      
       this.isLoading = false;
     });
 
@@ -32,17 +37,17 @@ export class DieuDetailComponent implements OnInit {
     this.isLoading = true;
     // au chargement, on remplit la liste avec la fonction getAllHeros, pour afficher la liste au retour
     this.dieuService.getAllDieux().subscribe((data: Dieu[]) => {
-      this.listeDieux = data['hydra:member'];
+      this.godList = data['hydra:member'];
       this.isLoading = false
     })
   }
 
   deleteDieu(id: number) {
     this.isLoading = true;
-    const nomDieu = this.listeDieux.find(dieu => dieu.id === id).nom
+    const nomDieu = this.godList.find(god => god.id === id).name
     this.dieuService.deleteDieu(id).subscribe(then => {
       this.dieuService.getAllDieux().subscribe((data: Dieu []) => {
-        this.listeDieux = data;
+        this.godList = data['hydra:member'];
         this.isLoading = false;
       })
     });

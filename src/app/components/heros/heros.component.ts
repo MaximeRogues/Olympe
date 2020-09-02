@@ -22,7 +22,7 @@ export class HerosComponent implements OnInit {
     this.isLoading = true;
     // au chargement, on remplit la liste avec la fonction getAllHeros
     this.herosService.getAllHeros().subscribe((data: Heros[]) => {
-      this.listeHeros = data;
+      this.listeHeros = data['hydra:member'];
       this.isLoading = false
 })
 }

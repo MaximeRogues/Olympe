@@ -12,34 +12,36 @@ import { ToastrService } from 'ngx-toastr';
 export class MonstreDetailComponent implements OnInit {
 
   id: number;
-  monstre: Monstres;
+  monster: Monstres;
   isLoading: boolean;
-  listeMonstres: Monstres[];
+  monsterList: Monstres[];
 
-  constructor(private route: ActivatedRoute, private monstreService: MonstresService, private toastr: ToastrService,private router: Router) { }
+  constructor(private route: ActivatedRoute, private monsterService: MonstresService, private toastr: ToastrService,private router: Router) { }
 
   ngOnInit(): void {
     this.isLoading = true;
-    this.monstreService.getMonstreByID(+this.route.snapshot.paramMap.get('id')).subscribe((data:Monstres) => {
-      this.monstre = data;
+    this.monsterService.getMonstreByID(+this.route.snapshot.paramMap.get('id')).subscribe((data:Monstres) => {
+      this.monster = data;
+      console.log(this.monster);
+      
       this.isLoading = false;
     });
 
     // on initialise isLoading à true, pour dire que la page charge
     this.isLoading = true;
     // au chargement, on remplit la liste avec la fonction getAllHeros
-    this.monstreService.getAllMonstres().subscribe((data: Monstres[]) => {
-      this.listeMonstres = data;
+    this.monsterService.getAllMonstres().subscribe((data: Monstres[]) => {
+      this.monsterList = data['hydra:member'];
       this.isLoading = false
     })
   }
 
   deleteMonstre(id: number) {
     this.isLoading = true;
-    const nomMonstre = this.listeMonstres.find(monstre => monstre.id === id).nom
-    this.monstreService.deleteMonstre(id).subscribe(then => {
-      this.monstreService.getAllMonstres().subscribe((data: Monstres []) => {
-        this.listeMonstres = data;
+    const nomMonstre = this.monsterList.find(monstre => monstre.id === id).name
+    this.monsterService.deleteMonstre(id).subscribe(then => {
+      this.monsterService.getAllMonstres().subscribe((data: Monstres []) => {
+        this.monsterList = data['hydra:member'];
         this.isLoading = false;
       })
     });

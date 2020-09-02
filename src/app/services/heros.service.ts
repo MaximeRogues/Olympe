@@ -26,7 +26,7 @@ export class HerosService {
     return throwError(errorMessage)
   }
 
-  apiUrl = "http://localhost:8000/api/heroes";
+  apiUrl = "https://localhost:8000/api/heroes";
 
   // on déclare un fonction qui return la liste de héros en tant qu'observable
   getAllHeros(): Observable <Heros[]> {

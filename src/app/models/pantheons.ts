@@ -1,10 +1,10 @@
 export class Pantheons {
 
     id: number;
-    nom: string;
+    name: string;
 
-    constructor(id: number = null, nom: string = null) {
+    constructor(id: number = null, name: string = null) {
         this.id = id,
-        this.nom = nom
+        this.name = name
     }
 }

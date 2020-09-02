@@ -1,23 +1,26 @@
+import { Pantheons } from './pantheons';
+import { Genres } from './genres';
+
 export class Dieu {
     id: number;
-    nom:string;
-    pantheon: string;
-    genre: string;
-    attributs: string;
-    domaine: string;
-    cara:string;
-    image: string;
-    titre: string;
+    name:string;
+    pantheon: Pantheons;
+    gender: Genres;
+    attributes: string;
+    domain: string;
+    history:string;
+    picture: string;
+    title: string;
 
-    constructor(id: number = null, nom: string= null, pantheon: string = null, genre:string= null, titre:string =null, attributs: string= null, domaine: string= null, cara:string= null, image: string= null) {
+    constructor(id: number = null, name: string= null, pantheon: Pantheons = null, gender:Genres= null, title:string =null, attributes: string= null, domain: string= null, history:string= null, picture: string= null) {
         this.id = id;
-        this.nom = nom;
+        this.name = name;
         this.pantheon = pantheon;
-        this.genre = genre;
-        this.titre = titre
-        this.attributs = attributs;
-        this.domaine = domaine;
-        this.cara = cara;
-        this.image = image;
+        this.gender = gender;
+        this.title = title
+        this.attributes = attributes;
+        this.domain = domain;
+        this.history = history;
+        this.picture = picture;
     }
 }

@@ -1,21 +1,24 @@
+import { Pantheons } from './pantheons';
+import { Genres } from './genres';
+
 export class Heros {
     id: number;
-    nom:string;
-    pantheon: string;
-    genre: string;
-    origine: string;
+    name:string;
+    pantheon: Pantheons;
+    gender: Genres;
+    origin: string;
     exploits:string;
-    image: string;
-    titre: string;
+    picture: string;
+    title: string;
 
-    constructor(id: number = null, nom: string = null, pantheon: string = null, genre:string= null, titre:string =null, origine: string = null, exploits:string = null, image:string = null) {
+    constructor(id: number = null, name: string = null, pantheon: Pantheons = null, gender:Genres= null, title:string =null, origin: string = null, exploits:string = null, picture:string = null) {
         this.id = id;
-        this.nom = nom;
+        this.name = name;
         this.pantheon = pantheon;
-        this.genre = genre;
-        this.titre = titre;
-        this.origine = origine;
+        this.gender = gender;
+        this.title = title;
+        this.origin = origin;
         this.exploits = exploits;
-        this.image = image;
+        this.picture = picture;
     }
 }

@@ -31,7 +31,7 @@ export class GenresService {
     return throwError(errorMessage)
   }
 
-  apiUrl = "http://localhost:8000/api/genres";
+  apiUrl = "https://localhost:8000/api/genders";
  
   // on déclare un fonction qui return la liste de dieux en tant qu'observable
   getAllGenres() : Observable <Genres[]> {

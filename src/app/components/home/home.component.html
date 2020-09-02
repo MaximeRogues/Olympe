@@ -17,7 +17,6 @@
     <div class="collapse navbar-collapse" id="navbarNav" [ngbCollapse]="filtreIsCollapsed">
 
       <a class="nav-link">Type de personnage
-        <!-- faire un (change)=fonctionTri(valeur) qui change le SELECT * FROM *** WHERE type == 'valeur' -->
         <select (change)=rangDieu() (change)="getFilteredList()" class="filter" name="characterTypeFilter" id="characterTypeFilter" [(ngModel)]="characterTypeFilter">
           <option value="noData">Tous les types</option>
           <option *ngFor="let type of characterTypeList" value="{{type.nom}}">{{type.nom}}</option>
@@ -44,7 +43,7 @@
         
         <select (change)="getFilteredList()" class="filter" name="genderFilter" id="genderFilter" [(ngModel)]="genderFilter" >
           <option value="noData">Tous les genres</option>
-          <option *ngFor="let genre of genderList" value="{{genre.nom}}">{{genre.nom}}</option>
+          <option *ngFor="let gender of genderList" value="{{gender.nom}}">{{gender.nom}}</option>
         </select>
       </a>
 
@@ -66,22 +65,22 @@
     <div id="divImgDernierPerso">
       <!-- image avec lien vers dieu-detail -->
     <a [routerLink]="['/dieux', this.godList[0].id]"> <img id="imgDernierPerso"
-        src='../../../assets/images/dieux/{{this.godList[0].image}}' class="card-img-top img-fluid" alt=""></a>
+        src='../../../assets/images/dieux/{{this.godList[0].picture}}' class="card-img-top img-fluid" alt=""></a>
     </div>
     
     
     <div id="infosDernierPerso">
       <br>
-      <h3 class="font-weight-bold">{{this.godList[0].nom}}</h3>
+      <h3 class="font-weight-bold">{{this.godList[0].name}}</h3>
       <br>
 
       <p class="card-text"><span class="font-weight-bold"> Panthéon :</span> {{this.godList[0].pantheon}} </p>
       <!-- ses attributs -->
-      <p class="card-text"><span class="font-weight-bold"> Attributs :</span> {{this.godList[0].attributs}} </p>
+      <p class="card-text"><span class="font-weight-bold"> Attributs :</span> {{this.godList[0].attributes}} </p>
       <!-- son domaine -->
-      <p class="card-text"><span class="font-weight-bold"> Domaine :</span> {{this.godList[0].domaine}} </p>
+      <p class="card-text"><span class="font-weight-bold"> Domaine :</span> {{this.godList[0].domain}} </p>
       <!-- ses caracteristiques -->
-      <p class="card-text"><span class="font-weight-bold">Description :</span> {{this.godList[0].cara}} </p>
+      <p class="card-text"><span class="font-weight-bold">Description :</span> {{this.godList[0].history}} </p>
     </div>
 
   </div>
@@ -96,13 +95,13 @@
   <!-- rend la div responsive -->
   <div class="liste row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
     <!-- boucle pour générer les cards -->
-    <div *ngFor="let dieu of this.filteredGodList" class="card {{dieu.nom}}">
+    <div *ngFor="let god of this.filteredGodList" class="card {{god.nom}}">
 
-      <a [routerLink]="['/dieux', dieu.id]"> <img src='../../../assets/images/dieux/{{dieu.image}}'
+      <a [routerLink]="['/dieux', god.id]"> <img src='../../../assets/images/dieux/{{god.picture}}'
           class="card-img-top img-fluid" alt=""></a>
       <div class="card-body text-center">
         <!-- nom du perso -->
-        <h6 class="font-weight-bold">{{dieu.nom}}</h6>
+        <h6 class="font-weight-bold">{{god.nom}}</h6>
         <!-- bouton pour aller au component persoDetail -->
         <br>
 

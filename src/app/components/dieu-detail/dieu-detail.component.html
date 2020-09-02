@@ -4,7 +4,7 @@
 
   <div id="divImgPerso">
     <!-- image du dieu -->
-    <img src="../../../assets/images/dieux/{{dieu.image}}" alt="Illustration du dieu">
+    <img src="../../../assets/images/dieux/{{god.picture}}" alt="Illustration du dieu">
     <br>
   </div>
 
@@ -12,26 +12,26 @@
 
     <br>
     <!-- nom du dieu -->
-    <h2 class="font-weight-bold">{{dieu.nom}}</h2>
+    <h2 class="font-weight-bold">{{god.name}}</h2>
     <!-- titre du dieu -->
-    <h5 class="font-weight-bold">{{dieu.titre}}</h5>
+    <h5 class="font-weight-bold">{{god.title}}</h5>
     <br>
     <!-- son panthéon -->
-    <p class="card-text"><span class="font-weight-bold"> Panthéon :</span> {{dieu.pantheon}} </p>
+    <p class="card-text"><span class="font-weight-bold"> Panthéon :</span> {{god.pantheon.name}} </p>
     <!-- ses attributs -->
-    <p class="card-text"><span class="font-weight-bold"> Attributs :</span> {{dieu.attributs}} </p>
+    <p class="card-text"><span class="font-weight-bold"> Attributs :</span> {{god.attributes}} </p>
     <!-- son domaine -->
-    <p class="card-text"><span class="font-weight-bold"> Domaine :</span> {{dieu.domaine}} </p>
+    <p class="card-text"><span class="font-weight-bold"> Domaine :</span> {{god.domain}} </p>
     <!-- ses caracteristiques -->
-    <p class="card-text"><span class="font-weight-bold">Description :</span> {{dieu.cara}} </p>
+    <p class="card-text"><span class="font-weight-bold">Description :</span> {{god.history}} </p>
     <br>
   </div>
 </div>
 
 <div class="bg-light">
   <!-- bouton modifer ce dieu -->
-  <a class="btn btn-info btn-sm w-50" [routerLink]="['/edit-dieu', dieu.id]">Modifier</a>
+  <a class="btn btn-info btn-sm w-50" [routerLink]="['/edit-dieu', god.id]">Modifier</a>
 
   <!-- Bouton supprimer ce dieu -->
-  <a class="btn btn-danger btn-sm text-white w-50" (click)="deleteDieu(dieu.id)">Supprimer</a>
+  <a class="btn btn-danger btn-sm text-white w-50" (click)="deleteDieu(god.id)">Supprimer</a>
 </div>

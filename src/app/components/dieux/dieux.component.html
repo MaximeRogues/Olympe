@@ -11,16 +11,16 @@
   <!-- rend la div responsive -->
   <div class="liste row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
     <!-- boucle pour générer les cards -->
-    <div *ngFor="let dieu of this.listeDieux" class="card">
+    <div *ngFor="let god of this.godList" class="card">
 
-      <a [routerLink]="['/dieux', dieu.id]"> <img src='../../../assets/images/dieux/{{dieu.image}}'
+      <a [routerLink]="['/dieux', god.id]"> <img src='../../../assets/images/dieux/{{god.picture}}'
           class="card-img-top img-fluid" alt=""></a>
       <div class="card-body text-center">
         <!-- nom du dieu -->
-        <h3 class="font-weight-bold">{{dieu.nom}}</h3>
-        <h5>{{dieu.titre}}</h5>
+        <h3 class="font-weight-bold">{{god.name}}</h3>
+        <h5>{{god.title}}</h5>
         <!-- bouton pour aller au component dieuDetail -->
-        <a class="btn btn-secondary btn-sm w-100" [routerLink]="['/dieux', dieu.id]"> Détails </a>
+        <a class="btn btn-secondary btn-sm w-100" [routerLink]="['/dieux', god.id]"> Détails </a>
 
       </div>
     </div>

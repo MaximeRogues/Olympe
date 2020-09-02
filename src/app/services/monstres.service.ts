@@ -39,13 +39,13 @@ export class MonstresService {
   }
 
   // fonction ajouter un monstre au tableau listeMonstres
-  addMonstre(monstre: Monstres) : Observable <Monstres> {
-    return this.http.post<Monstres>(this.apiUrl, monstre).pipe(catchError(this.handleError))
+  addMonstre(monster: Monstres) : Observable <Monstres> {
+    return this.http.post<Monstres>(this.apiUrl, monster).pipe(catchError(this.handleError))
   }
 
   //Fonction pour éditer un monstre
-  updateMonstre(monstre: Monstres) {
-    return this.http.put<Monstres>(this.apiUrl + '/' + monstre.id, monstre).pipe(catchError(this.handleError))
+  updateMonstre(monster: Monstres) {
+    return this.http.put<Monstres>(this.apiUrl + '/' + monster.id, monster).pipe(catchError(this.handleError))
   }
 
   deleteMonstre(id: number): Observable <Monstres> {

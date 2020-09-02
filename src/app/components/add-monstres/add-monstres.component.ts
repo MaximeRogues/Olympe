@@ -3,6 +3,8 @@ import { Monstres } from 'src/app/models/monstres';
 import { MonstresService } from 'src/app/services/monstres.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Genres } from 'src/app/models/genres';
+import { GenresService } from 'src/app/services/genres.service';
 
 
 @Component({
@@ -17,13 +19,16 @@ export class AddMonstresComponent implements OnInit {
 
   pantheons = ['Grec', 'Egyptien', 'Nordique'];
 
-  genres = ['Féminin', 'Masculin', 'Non défini'];
+  genders : Genres[];
 
-  constructor(private monstreService: MonstresService, private router: Router, private toastr: ToastrService) { }
+  constructor(private monstreService: MonstresService, private router: Router, private toastr: ToastrService, private genderService: GenresService) { }
 
   ngOnInit(): void {
     this.isLoading = true;
-    // on déclare un new Monstres vide
+    
+    this.genderService.getAllGenres().subscribe((data: Genres[]) => {
+      this.genders = data['hydra:member'];
+    });    // on déclare un new Monstres vide
     this.monstre = new Monstres();
     this.isLoading = true;
   }

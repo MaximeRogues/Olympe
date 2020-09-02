@@ -11,7 +11,7 @@ import { DieuxService } from 'src/app/services/dieux.service';
 export class DieuxComponent implements OnInit {
 
   // On déclare une liste de dieux vide
-  listeDieux: Dieu[];
+  godList: Dieu[];
   isLoading : boolean;
   
   constructor(private dieuService: DieuxService) { }
@@ -21,7 +21,7 @@ export class DieuxComponent implements OnInit {
     this.isLoading = true;
     // au chargement, on remplit la liste avec la fonction getAllHeros
     this.dieuService.getAllDieux().subscribe((data: Dieu[]) => {
-      this.listeDieux = data;
+      this.godList = data['hydra:member'];
       this.isLoading = false
     })
   }

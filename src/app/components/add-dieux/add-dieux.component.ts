@@ -4,6 +4,10 @@ import { Dieu } from 'src/app/models/dieu';
 import { Router } from '@angular/router';
 
 import { ToastrService } from 'ngx-toastr';
+import { Pantheons } from 'src/app/models/pantheons';
+import { Genres } from 'src/app/models/genres';
+import { GenresService } from 'src/app/services/genres.service';
+import { PantheonsService } from 'src/app/services/pantheons.service';
 
 @Component({
   selector: 'app-add-dieux',
@@ -15,15 +19,24 @@ export class AddDieuxComponent implements OnInit {
   dieu: Dieu;
   isLoading: boolean;
 
-  pantheons = ['Grec', 'Egyptien', 'Nordique'];
+  pantheons : Pantheons[];
 
-  genres = ['Féminin', 'Masculin', 'Non défini'];
+  genders : Genres[];
 
 
-  constructor(private dieuxService: DieuxService, private router: Router, private toastr: ToastrService) { }
+  constructor(private dieuxService: DieuxService, private router: Router, private toastr: ToastrService, private genderService: GenresService, private pantheonService: PantheonsService) { }
 
   ngOnInit(): void {
     this.isLoading = true;
+
+    this.pantheonService.getAllPantheons().subscribe((data: Pantheons[]) => {
+      this.pantheons = data['hydra:member'];
+    });
+
+    this.genderService.getAllGenres().subscribe((data: Genres[]) => {
+      this.genders = data['hydra:member'];
+    });
+
     // on déclare un dieu vide
     this.dieu = new Dieu();    
     this.isLoading = false;

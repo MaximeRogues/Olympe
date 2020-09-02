@@ -3,11 +3,11 @@ import {Dieu } from './dieu';
 
 export class Genres {
 
-    nom: string;
-    dieux: Dieu[];
+    id: number;
+    name: string;
 
-    constructor( nom: string = null, dieux: Dieu[] = []) {
-        this.nom = nom;
-        this.dieux = dieux;
+    constructor( name: string = null, id: number = null) {
+        this.id = id;
+        this.name = name;
     }
 }

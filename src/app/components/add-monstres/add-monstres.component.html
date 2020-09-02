@@ -3,21 +3,21 @@
   <h2>Ajouter un monstre : </h2>
 
   <!-- formulaire Angular, fonction à lancer au submit -->
-  <form #monstreForm="ngForm" (ngSubmit)="submitMonstre()">
+  <form #monsterForm="ngForm" (ngSubmit)="submitMonstre()">
 
-    <!-- nom -->
-    <label for="nom">Nom du monstre : </label>
-    <input type="text" class="form-control" name="nom" id="nom" required [(ngModel)]="monstre.nom" #nom="ngModel"> <br>
-    <div [hidden]="nom.valid" class="alert alert-danger">
-      Le nom du monstre est requis
+    <!-- name -->
+    <label for="name">name du monstre : </label>
+    <input type="text" class="form-control" name="name" id="name" required [(ngModel)]="monstre.name" #name="ngModel"> <br>
+    <div [hidden]="name.valid" class="alert alert-danger">
+      Le name du monstre est requis
     </div>
 
-    <!-- titre -->
-    <label for="titre">Titre du monstre : </label>
-    <input type="text" class="form-control" name="titre" id="titre" required [(ngModel)]="monstre.titre"
-      #titre="ngModel"> <br>
-    <div [hidden]="titre.valid" class="alert alert-danger">
-      Le titre du monstre est requis
+    <!-- title -->
+    <label for="title">title du monstre : </label>
+    <input type="text" class="form-control" name="title" id="title" required [(ngModel)]="monstre.title"
+      #title="ngModel"> <br>
+    <div [hidden]="title.valid" class="alert alert-danger">
+      Le title du monstre est requis
     </div>
 
     <!-- panthéon -->
@@ -30,40 +30,40 @@
       Le panthéon du monstre est requis
     </div>
 
-    <!-- genre -->
-    <label for="genre">Genre du monstre : </label>
-    <select class="form-control" name="genre" id="genre" required [(ngModel)]="monstre.genre" #genre="ngModel" >
-      <option *ngFor="let genre of genres" [value]="genre">{{genre}}</option>
+    <!-- gender -->
+    <label for="gender">gender du monstre : </label>
+    <select class="form-control" name="gender" id="gender" required [(ngModel)]="monstre.gender" #gender="ngModel" >
+      <option *ngFor="let gender of genders" [value]="gender">{{gender}}</option>
     </select>
     <br>
-    <div [hidden]="genre.valid" class="alert alert-danger">
-      Le genre du monstre est requis
+    <div [hidden]="gender.valid" class="alert alert-danger">
+      Le gender du monstre est requis
     </div>
 
-    <!-- lieu -->
-    <label for="lieu">Lieu du monstre : </label>
-    <input type="text" class="form-control" name="lieu" id="lieu" required [(ngModel)]="monstre.lieu" #lieu="ngModel">
+    <!-- place -->
+    <label for="place">place du monstre : </label>
+    <input type="text" class="form-control" name="place" id="place" required [(ngModel)]="monstre.place" #place="ngModel">
     <br>
-    <div [hidden]="lieu.valid" class="alert alert-danger">
-      Le lieu du monstre sont requis
+    <div [hidden]="place.valid" class="alert alert-danger">
+      Le place du monstre sont requis
     </div>
 
-    <!-- histoire -->
-    <label for="histoire">Histoire du monstre : </label>
-    <input type="text" class="form-control" name="histoire" id="histoire" required [(ngModel)]="monstre.histoire"
-      #histoire="ngModel"> <br>
-    <div [hidden]="histoire.valid" class="alert alert-danger">
-      Le histoire du monstre est requis
+    <!-- history -->
+    <label for="history">history du monstre : </label>
+    <input type="text" class="form-control" name="history" id="history" required [(ngModel)]="monstre.history"
+      #history="ngModel"> <br>
+    <div [hidden]="history.valid" class="alert alert-danger">
+      Le history du monstre est requis
     </div>
 
-    <!-- image -->
-    <label for="image">Image du monstre : </label>
-    <input type="text" class="form-control" name="image" id="image" required [(ngModel)]="monstre.image"
-      #image="ngModel"> <br>
-    <div [hidden]="image.valid" class="alert alert-danger">
-      L'image du monstre est requis
+    <!-- picture -->
+    <label for="picture">picture du monstre : </label>
+    <input type="text" class="form-control" name="picture" id="picture" required [(ngModel)]="monstre.picture"
+      #picture="ngModel"> <br>
+    <div [hidden]="picture.valid" class="alert alert-danger">
+      L'picture du monstre est requis
     </div>
 
-    <input [disabled]="!monstreForm.valid" type="submit" value="Envoyer">
+    <input [disabled]="!monsterForm.valid" type="submit" value="Envoyer">
   </form>
 </div>
