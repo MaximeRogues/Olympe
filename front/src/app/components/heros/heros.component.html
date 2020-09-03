@@ -1,0 +1,34 @@
+<br>
+<h2 class="text-light">Les héros et héroïnes</h2>
+
+<!-- s'affiche au chargement -->
+<div *ngIf="isLoading">
+  <h3 class="text-center">Veuillez Patienter</h3>
+</div>
+
+
+<div *ngIf="!isLoading">
+  <!-- rend la div responsive -->
+  <div class="liste row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+    <!-- boucle qui génère les cards -->
+    <div *ngFor="let hero of this.heroList" class="card">
+
+      <a [routerLink]="['/heros', hero.id]"> <img src='../../../assets/images/heros/{{ hero.picture }}'
+          class="card-img-top img-fluid" alt=""></a>
+      <div class="card-body text-center">
+        <!-- nom du héros -->
+        <h3 class="font-weight-bold ">{{hero.name}}</h3>
+        <h5>{{hero.title}}</h5>
+        <!-- bouton vers heros-detail -->
+        
+        <a class="btn btn-secondary btn-sm w-100 " [routerLink]="['/heros', hero.id]">Détails </a>
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <a routerLink="/heros/add">
+    <h3 class="btn btn-primary">Ajouter un héros</h3>
+  </a>
+</div>

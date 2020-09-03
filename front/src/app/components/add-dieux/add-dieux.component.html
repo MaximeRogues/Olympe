@@ -1,0 +1,87 @@
+<br>
+<div class="bg-light">
+  <h2> <i class="fa fa-bolt" aria-hidden="true"></i> Ajouter un dieu : </h2>
+  <!-- s'affiche au chargement -->
+  <div *ngIf="isLoading">
+    <h3 class="text-center">Veuillez Patienter</h3>
+  </div>
+
+  <!-- s'affiche une fois le component chargé -->
+  <div *ngIf="!isLoading">
+
+    <!-- formulaire Angular, fonction à lancer au submit -->
+    <form #dieuForm="ngForm" (ngSubmit)="submitDieux()">
+
+      <!-- [(ngModel)] pour attribuer la valeur à un attribut de l'objet, #truc pour  -->
+
+
+      <!-- nom -->
+      <label for="name">Nom du dieu : </label>
+      <input type="text" class="form-control" name="name" id="name" required [(ngModel)]="dieu.name" #name="ngModel"> <br>
+      <div [hidden]="name.valid" class="alert alert-danger">
+        Le nom du dieu est requis
+      </div>
+
+      <!-- titre -->
+      <label for="title">Titre du dieu : </label>
+      <input type="text" class="form-control" name="title" id="title" required [(ngModel)]="dieu.title" #title="ngModel"> <br>
+      <div [hidden]="title.valid" class="alert alert-danger">
+        Le titre du dieu est requis
+      </div>
+
+      <!-- panthéon -->
+      <label for="pantheon">Panthéon du dieu : </label>
+      <select class="form-control" name="pantheon" id="pantheon" required [(ngModel)]="dieu.pantheon" #pantheon="ngModel" >
+        <option *ngFor="let pantheon of pantheons" [value]="pantheon.id">{{pantheon.name}}</option>
+      </select>
+      <br>
+      <div [hidden]="pantheon.valid" class="alert alert-danger">
+        Le panthéon du dieu est requis
+      </div>
+
+      <!-- genre -->
+      <label for="gender">Genre du dieu : </label>
+      <select class="form-control" name="gender" id="gender" required [(ngModel)]="dieu.gender" #gender="ngModel" >
+        <option *ngFor="let genre of genders" [value]="genre.id">{{genre.name}}</option>
+      </select>
+      <br>
+      <div [hidden]="gender.valid" class="alert alert-danger">
+        Le genre du dieu est requis
+      </div>
+
+      <!-- attributs -->
+      <label for="attributes">Attributs du dieu : </label>
+      <input type="text" class="form-control" name="attributes" id="attributes" required [(ngModel)]="dieu.attributes"
+        #attributes="ngModel"> <br>
+      <div [hidden]="attributes.valid" class="alert alert-danger">
+        Les attributs du dieu sont requis
+      </div>
+
+      <!-- domaine -->
+      <label for="domain">Domaine du dieu : </label>
+      <input type="text" class="form-control" name="domain" id="domain" required [(ngModel)]="dieu.domain"
+        #domain="ngModel"> <br>
+      <div [hidden]="domain.valid" class="alert alert-danger">
+        Le domaine du dieu est requis
+      </div>
+
+      <!-- caractéristiques -->
+      <label for="history">Caractéristiques du dieu : </label>
+      <input type="text" class="form-control" name="history" id="history" required [(ngModel)]="dieu.history" #history="ngModel">
+      <br>
+      <div [hidden]="history.valid" class="alert alert-danger">
+        Les caractéristiques du dieu sont requises
+      </div>
+
+      <!-- image -->
+      <label for="picture">Image du dieu : </label>
+      <input type="string" class="form-control" name="picture" id="picture" required [(ngModel)]="dieu.picture"
+        #picture="ngModel"> <br>
+      <div [hidden]="picture.valid" class="alert alert-danger">
+        L'image du dieu est requis
+      </div>
+
+      <input [disabled]='!dieuForm.valid' id="submitDieux" type="submit" value="Envoyer">
+    </form>
+  </div>
+</div>

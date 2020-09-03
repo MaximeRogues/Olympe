@@ -1,0 +1,79 @@
+<br>
+<div class="bg-light">
+  <h2>Ajouter un heros : </h2>
+
+  <!-- s'affiche au chargement -->
+  <div *ngIf="isLoading">
+    <h3 class="text-center">Veuillez Patienter</h3>
+  </div>
+
+  <!-- s'affiche une fois le component chargé -->
+  <div *ngIf="!isLoading">
+
+    <!-- formulaire Angular, fonction à lancer au submit -->
+    <form #heroForm="ngForm" (ngSubmit)="submitHeros()">
+
+
+      <!-- nom -->
+      <label for="name">Nom du héros : </label>
+      <input type="text" class="form-control" name="name" id="name" required [(ngModel)]="hero.name" #name="ngModel"> <br>
+      <div [hidden]="name.valid" class="alert alert-danger">
+        Le nom du héros est requis
+      </div>
+
+      <!-- title -->
+      <label for="title">title du héros : </label>
+      <input type="text" class="form-control" name="title" id="title" required [(ngModel)]="hero.title" #title="ngModel"> <br>
+      <div [hidden]="title.valid" class="alert alert-danger">
+        Le title du héros est requis
+      </div>
+
+      <!-- panthéon -->
+      <label for="pantheon">Panthéon du heros : </label>
+      <select class="form-control" name="pantheon" id="pantheon" required [(ngModel)]="hero.pantheon" #pantheon="ngModel" >
+        <option *ngFor="let pantheon of pantheons" [value]="pantheon.id">{{pantheon.name}}</option>
+      </select>
+      <br>
+      <div [hidden]="pantheon.valid" class="alert alert-danger">
+        Le panthéon du héros est requis
+      </div>
+
+      <!-- gender -->
+      <label for="gender">gender du héros : </label>
+      <select class="form-control" name="gender" id="gender" required [(ngModel)]="hero.gender" #gender="ngModel" >
+        <option *ngFor="let gender of genders" [value]="gender.id">{{gender.name}}</option>
+      </select>
+      <br>
+      <div [hidden]="gender.valid" class="alert alert-danger">
+        Le gender du héros est requis
+      </div>
+
+      <!-- origine -->
+      <label for="origin">Origine du heros : </label>
+      <input type="text" class="form-control" name="origin" id="origin" required [(ngModel)]="hero.origin"
+        #origin="ngModel">
+      <br>
+      <div [hidden]="origin.valid" class="alert alert-danger">
+        Les origines du heros sont requises
+      </div>
+
+      <!-- exploits -->
+      <label for="exploits">Exploits du heros : </label>
+      <input type="text" class="form-control" name="exploits" id="exploits" required [(ngModel)]="hero.exploits"
+        #exploits="ngModel"> <br>
+      <div [hidden]="exploits.valid" class="alert alert-danger">
+        Les exploits du heros sont requis
+      </div>
+
+      <!-- picture -->
+      <label for="picture">picture du heros : </label>
+      <input type="text" class="form-control" name="picture" id="picture" required [(ngModel)]="hero.picture"
+        #picture="ngModel"> <br>
+      <div [hidden]="picture.valid" class="alert alert-danger">
+        L'picture du heros est requise
+      </div>
+
+      <input [disabled]="!heroForm.valid" type="submit" value="Envoyer">
+    </form>
+  </div>
+</div>
