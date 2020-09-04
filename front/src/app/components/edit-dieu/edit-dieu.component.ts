@@ -35,7 +35,7 @@ export class EditDieuComponent implements OnInit {
     });
 
     this.dieuService.getDieuByID(+this.route.snapshot.paramMap.get('id')).subscribe((data: Dieu) => {
-      this.god = data['hydra:member'];
+      this.god = data;
       this.isLoading = false;
     });
   }

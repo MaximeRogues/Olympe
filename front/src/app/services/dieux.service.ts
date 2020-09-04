@@ -44,14 +44,6 @@ export class DieuxService {
     return this.http.get<Dieu>(this.apiUrl + '/' + id).pipe(retry(1), catchError(this.handleError));
   }
 
-  // //Fonction pour retrouver un dieu par son genre
-  // getDieuByGenre (nomGenre: string): Dieu[] {
-  //   let listeDieux = this.getAllDieux();
-  //   return listeFiltree = listeDieux.filter(dieux.genre => dieux.genre === nomGenre);
-  // }
-
-  
-
   // fonction pour ajouter un dieu au tableau listeDieux
   addDieu(dieu: Dieu): Observable<Dieu> {
     return this.http.post<Dieu>(this.apiUrl ,dieu).pipe(catchError(this.handleError));

@@ -35,7 +35,7 @@ export class EditHerosComponent implements OnInit {
     });
 
     this.heroService.getHerosByID(+this.route.snapshot.paramMap.get('id')).subscribe((data: Heros) => {
-      this.hero = data['hydra:member'];
+      this.hero = data;
       this.isLoading = false;
     });  }
 
