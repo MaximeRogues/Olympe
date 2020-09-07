@@ -22,8 +22,10 @@ export class DieuxComponent implements OnInit {
     // au chargement, on remplit la liste avec la fonction getAllHeros
     this.dieuService.getAllDieux().subscribe((data: Dieu[]) => {
       this.godList = data['hydra:member'];
-      this.isLoading = false
+
     })
+
+    this.isLoading = false
   }
 
   

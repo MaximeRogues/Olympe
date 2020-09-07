@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ConnexionService } from 'src/app/services/connexion.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { EspaceMembreService } from 'src/app/services/espace-membre.service';
 import { User } from 'src/app/models/user';
 
 

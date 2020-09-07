@@ -12,7 +12,6 @@ import { AddDieuxComponent } from './components/add-dieux/add-dieux.component';
 import { AddHerosComponent } from './components/add-heros/add-heros.component';
 import { AddMonstresComponent } from './components/add-monstres/add-monstres.component';
 import { QuizComponent } from './components/quiz/quiz.component';
-import { ConnexionComponent } from './components/connexion/connexion.component';
 import { EditDieuComponent } from './components/edit-dieu/edit-dieu.component';
 import { EditHerosComponent } from './components/edit-heros/edit-heros.component';
 import { EditMonstreComponent } from './components/edit-monstre/edit-monstre.component';
@@ -40,7 +39,6 @@ const routes: Routes = [
 
   { path: 'quiz', component: QuizComponent },
 
-  { path: 'connexion', component: ConnexionComponent },
   { path: 'espace-membre/:id', component: EspaceMembreComponent },
   { path: 'edit-espace-membre/:id', component: EditEspaceMembreComponent },
 

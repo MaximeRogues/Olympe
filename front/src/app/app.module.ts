@@ -28,10 +28,11 @@ import { MaPipePipe } from './pipes/ma-pipe.pipe';
 import { EditDieuComponent } from './components/edit-dieu/edit-dieu.component';
 import { EditMonstreComponent } from './components/edit-monstre/edit-monstre.component';
 import { EditHerosComponent } from './components/edit-heros/edit-heros.component';
-import { ConnexionComponent } from './components/connexion/connexion.component';
 import { EspaceMembreComponent } from './components/espace-membre/espace-membre.component';
 import { EditEspaceMembreComponent } from './components/edit-espace-membre/edit-espace-membre.component';
-import { SearchComponent } from './components/search/search.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 
@@ -56,10 +57,11 @@ import { SearchComponent } from './components/search/search.component';
     EditDieuComponent,
     EditMonstreComponent,
     EditHerosComponent,
-    ConnexionComponent,
     EspaceMembreComponent,
     EditEspaceMembreComponent,
-    SearchComponent,
+    RegisterComponent,
+    LoginComponent,
+    ProfileComponent,
     ],
   imports: [
     BrowserModule,

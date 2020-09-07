@@ -6,6 +6,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "api-platform/core": "^2.5",
+        "lexik/jwt-authentication-bundle": "^2.8",
         "nelmio/cors-bundle": "^2.1",
         "symfony/asset": "5.1.*",
         "symfony/console": "5.1.*",
