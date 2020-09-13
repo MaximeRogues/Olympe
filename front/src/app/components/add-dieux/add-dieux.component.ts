@@ -16,14 +16,14 @@ import { PantheonsService } from 'src/app/services/pantheons.service';
 })
 export class AddDieuxComponent implements OnInit {
 
-  dieu: Dieu;
+  god: Dieu;
   isLoading: boolean;
 
   pantheons : Pantheons[];
 
   genders : Genres[];
 
-  constructor(private dieuxService: DieuxService, private router: Router, private toastr: ToastrService, private genderService: GenresService, private pantheonService: PantheonsService) { }
+  constructor(private godService: DieuxService, private router: Router, private toastr: ToastrService, private genderService: GenresService, private pantheonService: PantheonsService) { }
 
   ngOnInit(): void {
     this.isLoading = true;
@@ -32,18 +32,18 @@ export class AddDieuxComponent implements OnInit {
       this.pantheons = data['hydra:member'];
     });
 
-    this.genderService.getAllGenres().subscribe((data: Genres[]) => {
+    this.genderService.getAllGenders().subscribe((data: Genres[]) => {
       this.genders = data['hydra:member'];
     });
 
     // on déclare un dieu vide
-    this.dieu = new Dieu();    
+    this.god = new Dieu();    
     this.isLoading = false;
   }
 
-  submitDieux() {
+  submitGod() {
   //lance la fonction addDieu de dieux.service
-  this.dieuxService.addDieu(this.dieu).subscribe(then => {
+  this.godService.addGod(this.god).subscribe(then => {
     // change l'url avec la route '/dieux'
     this.router.navigate(['/dieux']);
   });

@@ -14,13 +14,13 @@ export class DieuxComponent implements OnInit {
   godList: Dieu[];
   isLoading : boolean;
   
-  constructor(private dieuService: DieuxService) { }
+  constructor(private godService: DieuxService) { }
   
   ngOnInit(): void {
     // on initialise isLoading à true, pour dire que la page charge
     this.isLoading = true;
     // au chargement, on remplit la liste avec la fonction getAllHeros
-    this.dieuService.getAllDieux().subscribe((data: Dieu[]) => {
+    this.godService.getAllGods().subscribe((data: Dieu[]) => {
       this.godList = data['hydra:member'];
       this.isLoading = false
     })

@@ -20,7 +20,7 @@ export class HerosDetailComponent implements OnInit {
   ngOnInit(): void {
     // on récupère le dieu qui était concerné par le bouton détails
     this.isLoading = true;
-    this.heroService.getHerosByID(+this.route.snapshot.paramMap.get('id')).subscribe((data:Heros) => {
+    this.heroService.getHeroByID(+this.route.snapshot.paramMap.get('id')).subscribe((data:Heros) => {
       this.hero = data;
       this.isLoading = false;
     });
@@ -28,7 +28,7 @@ export class HerosDetailComponent implements OnInit {
     // on initialise isLoading à true, pour dire que la page charge
     this.isLoading = true;
     // au chargement, on remplit la liste avec la fonction getAllHeros, pour afficher la liste au retour
-    this.heroService.getAllHeros().subscribe((data: Heros[]) => {
+    this.heroService.getAllHeroes().subscribe((data: Heros[]) => {
       this.heroList = data['hydra:member'];
       this.isLoading = false;
     })
@@ -39,8 +39,8 @@ export class HerosDetailComponent implements OnInit {
   deleteHero(id: number) {
     this.isLoading = true;
     const heroName = this.heroList.find(heros => heros.id === id).name
-    this.heroService.deleteHeros(id).subscribe();
-    this.heroService.getAllHeros().subscribe((data: Heros []) => {
+    this.heroService.deleteHero(id).subscribe();
+    this.heroService.getAllHeroes().subscribe((data: Heros []) => {
       this.heroList = data['hydra:member'];
     })
     this.router.navigate(['/heros']);

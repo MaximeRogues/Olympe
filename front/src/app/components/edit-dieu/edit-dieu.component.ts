@@ -21,7 +21,7 @@ export class EditDieuComponent implements OnInit {
 
   genders : Genres[];
 
-  constructor(private route: ActivatedRoute, private router: Router, private dieuService: DieuxService, private genderService: GenresService, private pantheonService: PantheonsService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private godService: DieuxService, private genderService: GenresService, private pantheonService: PantheonsService) { }
 
   ngOnInit(): void {
     this.isLoading = true;
@@ -30,19 +30,19 @@ export class EditDieuComponent implements OnInit {
       this.pantheons = data['hydra:member'];
     });
 
-    this.genderService.getAllGenres().subscribe((data: Genres[]) => {
+    this.genderService.getAllGenders().subscribe((data: Genres[]) => {
       this.genders = data['hydra:member'];
     });
 
-    this.dieuService.getDieuByID(+this.route.snapshot.paramMap.get('id')).subscribe((data: Dieu) => {
+    this.godService.getGodByID(+this.route.snapshot.paramMap.get('id')).subscribe((data: Dieu) => {
       this.god = data;
       this.isLoading = false;
     });
   }
 
-  updateDieu() {
+  updateGod() {
      //lance la fonction updateDieu de dieu.service
-     this.dieuService.updateDieu(this.god).subscribe(then => {
+     this.godService.updateGod(this.god).subscribe(then => {
       // change l'url avec la route '/dieu'
       this.router.navigate(['/dieux']);
       });

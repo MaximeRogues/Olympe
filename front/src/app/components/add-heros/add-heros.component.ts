@@ -24,7 +24,7 @@ export class AddHerosComponent implements OnInit {
 
   genders : Genres[];
 
-  constructor(private herosService: HerosService, private router: Router, private toastr: ToastrService, private genderService: GenresService, private pantheonService: PantheonsService) { }
+  constructor(private heroService: HerosService, private router: Router, private toastr: ToastrService, private genderService: GenresService, private pantheonService: PantheonsService) { }
 
   ngOnInit(): void {
     this.isLoading = true;
@@ -32,19 +32,19 @@ export class AddHerosComponent implements OnInit {
     this.pantheonService.getAllPantheons().subscribe((data: Pantheons[]) => {
       this.pantheons = data['hydra:member'];
     });
-
-    this.genderService.getAllGenres().subscribe((data: Genres[]) => {
+    
+    this.genderService.getAllGenders().subscribe((data: Genres[]) => {
       this.genders = data['hydra:member'];
     });
-
+    
     // on déclare un new Heros vide
     this.hero = new Heros();
     this.isLoading = false;
   }
 
-  submitHeros() {
+  submitHero() {
   // fonction de heros.service pour push un héros dans la liste
-  this.herosService.addHeros(this.hero).subscribe(then => {
+  this.heroService.addHero(this.hero).subscribe(then => {
     // naviguer vers la page héros
     this.router.navigate(['/heros']);
   })

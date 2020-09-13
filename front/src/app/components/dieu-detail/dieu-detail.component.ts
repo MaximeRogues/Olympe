@@ -17,14 +17,14 @@ export class DieuDetailComponent implements OnInit {
   godList: Dieu[];
   isLoading: boolean;
 
-  constructor(private route: ActivatedRoute, private dieuService: DieuxService, private toastr: ToastrService,private router: Router) { 
+  constructor(private route: ActivatedRoute, private godService: DieuxService, private toastr: ToastrService,private router: Router) { 
 
   }
   
   ngOnInit(): void {
     // on récupère le dieu qui était concerné par le bouton détails
     this.isLoading = true;
-    this.dieuService.getDieuByID(+this.route.snapshot.paramMap.get('id')).subscribe((data:Dieu) => {      
+    this.godService.getGodByID(+this.route.snapshot.paramMap.get('id')).subscribe((data:Dieu) => {      
       this.god = data;
       this.isLoading = false;
     });
@@ -32,23 +32,23 @@ export class DieuDetailComponent implements OnInit {
     // on initialise isLoading à true, pour dire que la page charge
     this.isLoading = true;
     // au chargement, on remplit la liste avec la fonction getAllHeros, pour afficher la liste au retour
-    this.dieuService.getAllDieux().subscribe((data: Dieu[]) => {
+    this.godService.getAllGods().subscribe((data: Dieu[]) => {
       this.godList = data['hydra:member'];
       this.isLoading = false
     })
   }
 
-  deleteDieu(id: number) {
+  deleteGod(id: number) {
     this.isLoading = true;
-    const nomDieu = this.godList.find(god => god.id === id).name
-    this.dieuService.deleteDieu(id).subscribe();
-    this.dieuService.getAllDieux().subscribe((data: Dieu []) => {
+    const godName = this.godList.find(god => god.id === id).name
+    this.godService.deleteGod(id).subscribe();
+    this.godService.getAllGods().subscribe((data: Dieu []) => {
       this.godList = data['hydra:member'];
       
     });
     this.router.navigate(['/dieux']);
     this.isLoading = false;
-    this.toastr.success(nomDieu + ' a été supprimé(e)', 'Je crois que Kratos est passé par là...');
+    this.toastr.success(godName + ' a été supprimé(e)', 'Je crois que Kratos est passé par là...');
     
   }
   

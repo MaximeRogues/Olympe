@@ -20,7 +20,7 @@ export class MonstreDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.isLoading = true;
-    this.monsterService.getMonstreByID(+this.route.snapshot.paramMap.get('id')).subscribe((data:Monstres) => {
+    this.monsterService.getMonsterByID(+this.route.snapshot.paramMap.get('id')).subscribe((data:Monstres) => {
       this.monster = data;
       console.log(this.monster);
       
@@ -30,7 +30,7 @@ export class MonstreDetailComponent implements OnInit {
     // on initialise isLoading à true, pour dire que la page charge
     this.isLoading = true;
     // au chargement, on remplit la liste avec la fonction getAllHeros
-    this.monsterService.getAllMonstres().subscribe((data: Monstres[]) => {
+    this.monsterService.getAllMonsters().subscribe((data: Monstres[]) => {
       this.monsterList = data['hydra:member'];
       this.isLoading = false
     })
@@ -38,14 +38,14 @@ export class MonstreDetailComponent implements OnInit {
 
   deleteMonstre(id: number) {
     this.isLoading = true;
-    const nomMonstre = this.monsterList.find(monstre => monstre.id === id).name
-    this.monsterService.deleteMonstre(id).subscribe();
-    this.monsterService.getAllMonstres().subscribe((data: Monstres []) => {
+    const monsterName = this.monsterList.find(monstre => monstre.id === id).name
+    this.monsterService.deleteMonster(id).subscribe();
+    this.monsterService.getAllMonsters().subscribe((data: Monstres []) => {
       this.monsterList = data['hydra:member'];
     });
     this.router.navigate(['/monstres']);
     this.isLoading = false;
-    this.toastr.success(nomMonstre + ' a été envoyé(e) au Tartare', 'Heraclès s\'ennuyait...');
+    this.toastr.success(monsterName + ' a été envoyé(e) au Tartare', 'Heraclès s\'ennuyait...');
     
   }
 

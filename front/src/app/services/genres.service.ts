@@ -34,7 +34,7 @@ export class GenresService {
   apiUrl = "https://localhost:8000/api/genders";
  
   // on déclare un fonction qui return la liste de dieux en tant qu'observable
-  getAllGenres() : Observable <Genres[]> {
+  getAllGenders() : Observable <Genres[]> {
     return this.http.get<Genres[]>(this.apiUrl).pipe(retry(1),catchError(this.handleError));
   }
   

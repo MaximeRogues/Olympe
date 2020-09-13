@@ -20,8 +20,8 @@ export class MonstresComponent implements OnInit {
   ngOnInit(): void {
     // on initialise isLoading à true, pour dire que la page charge
     this.isLoading = true;
-    // au chargement, on remplit la liste avec la fonction getAllMonstres
-    this.monstreService.getAllMonstres().subscribe((data: Monstres[]) => {
+    // au chargement, on remplit la liste avec la fonction getAllMonsters
+    this.monstreService.getAllMonsters().subscribe((data: Monstres[]) => {
       this.monsterList = data['hydra:member'];
       this.isLoading = false
     })
@@ -29,14 +29,14 @@ export class MonstresComponent implements OnInit {
 
   deleteMonstre(id: number) {
     this.isLoading = true;
-    const nomMonstre = this.monsterList.find(monster => monster.id === id).name
-    this.monstreService.deleteMonstre(id).subscribe(then => {
-      this.monstreService.getAllMonstres().subscribe((data: Monstres []) => {
+    const monsterName = this.monsterList.find(monster => monster.id === id).name
+    this.monstreService.deleteMonster(id).subscribe(then => {
+      this.monstreService.getAllMonsters().subscribe((data: Monstres []) => {
         this.monsterList = data['hydra:member'];
         this.isLoading = false;
       })
     });
-    this.toastr.success(nomMonstre + ' a été envoyé au Tartare', 'Heraclès s\'ennuyait...');
+    this.toastr.success(monsterName + ' a été envoyé au Tartare', 'Heraclès s\'ennuyait...');
     
   }
 }

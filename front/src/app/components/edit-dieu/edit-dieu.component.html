@@ -9,26 +9,28 @@
   <div class="bg-light">
     <h2>Modifier {{god.name}} : </h2>
 
-    <form #godForm="ngForm" (ngSubmit)="updateDieu()">
+    <form #godForm="ngForm" (ngSubmit)="updateGod()">
 
       <!-- nom -->
       <label for="name">Nom du dieu : </label>
-      <input type="text" class="form-control" name="name" id="name" required [(ngModel)]="god.name" #name="ngModel"> <br>
+      <input type="text" class="form-control" name="name" id="name" required [(ngModel)]="god.name" #name="ngModel">
+      <br>
       <div [hidden]="name.valid" class="alert alert-danger">
         Le nom du dieu est requis
       </div>
 
       <!-- titre -->
       <label for="title">Titre du dieu : </label>
-      <input type="text" class="form-control" name="title" id="title" required [(ngModel)]="god.title"
-        #title="ngModel"> <br>
+      <input type="text" class="form-control" name="title" id="title" required [(ngModel)]="god.title" #title="ngModel">
+      <br>
       <div [hidden]="title.valid" class="alert alert-danger">
         Le titre du dieu est requis
       </div>
 
       <!-- panthéon -->
       <label for="pantheon">Panthéon du dieu : </label>
-      <select class="form-control" name="pantheon" id="pantheon" required [(ngModel)]="god.pantheon" #pantheon="ngModel" >
+      <select class="form-control" name="pantheon" id="pantheon" required [(ngModel)]="god.pantheon"
+        #pantheon="ngModel">
         <option *ngFor="let pantheon of pantheons" [value]="pantheon.id">{{pantheon.name}}</option>
       </select>
       <br>
@@ -38,7 +40,7 @@
 
       <!-- genre -->
       <label for="gender">Genre du dieu : </label>
-      <select class="form-control" name="gender" id="gender" required [(ngModel)]="god.gender" #gender="ngModel" >
+      <select class="form-control" name="gender" id="gender" required [(ngModel)]="god.gender" #gender="ngModel">
         <option *ngFor="let gender of genders" [value]="gender.id">{{gender.name}}</option>
       </select>
       <br>
@@ -63,12 +65,13 @@
         Le domaine du dieu est requis
       </div>
 
-      <!-- caractéristiques -->
-      <label for="history">Caractéristiques du dieu : </label>
-      <input type="text" class="form-control" name="history" id="history" required [(ngModel)]="god.history" #history="ngModel">
+      <!-- histoire -->
+      <label for="history">Histoire du dieu : </label>
+      <textarea type="text" rows="4" class="form-control md-textarea" name="history" id="history" required
+        [(ngModel)]="god.history" #history="ngModel"></textarea>
       <br>
       <div [hidden]="history.valid" class="alert alert-danger">
-        Les caractéristiques du dieu sont requises
+        L'histoire du dieu est requise
       </div>
 
       <!-- image -->
@@ -76,7 +79,7 @@
       <input type="string" class="form-control" name="picture" id="picture" required [(ngModel)]="god.picture"
         #picture="ngModel"> <br>
       <div [hidden]="picture.valid" class="alert alert-danger">
-        L'image du dieu est requis
+        L'image du dieu est requise
       </div>
 
       <input [disabled]='!godForm.valid' type="submit" value="Envoyer">

@@ -16,14 +16,14 @@ import { PantheonsService } from 'src/app/services/pantheons.service';
 })
 export class AddMonstresComponent implements OnInit {
 
-  monstre: Monstres;
+  monster: Monstres;
   isLoading: boolean;
 
   pantheons : Pantheons[];
   
   genders : Genres[];
 
-  constructor(private monstreService: MonstresService, private router: Router, private toastr: ToastrService, private genderService: GenresService, private pantheonService: PantheonsService) { }
+  constructor(private monsterService: MonstresService, private router: Router, private toastr: ToastrService, private genderService: GenresService, private pantheonService: PantheonsService) { }
 
   ngOnInit(): void {
     this.isLoading = true;
@@ -32,17 +32,17 @@ export class AddMonstresComponent implements OnInit {
       this.pantheons = data['hydra:member'];
     });
     
-    this.genderService.getAllGenres().subscribe((data: Genres[]) => {
+    this.genderService.getAllGenders().subscribe((data: Genres[]) => {
       this.genders = data['hydra:member'];
     });  
       // on déclare un new Monstres vide
-    this.monstre = new Monstres();
+    this.monster = new Monstres();
     this.isLoading = true;
   }
 
-  submitMonstre() {
+  submitMonster() {
   // fonction de monstre.service pour push un monstre dans la liste
-  this.monstreService.addMonstre(this.monstre).subscribe(then => {
+  this.monsterService.addMonster(this.monster).subscribe(then => {
     // naviguer vers la page monstres
     this.router.navigate(['/monstres']);   
   })

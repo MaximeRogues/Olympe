@@ -21,7 +21,7 @@ export class EditMonstreComponent implements OnInit {
 
   genders : Genres[];
 
-  constructor(private route: ActivatedRoute, private router: Router, private monstreService: MonstresService, private genderService: GenresService, private pantheonService: PantheonsService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private monsterService: MonstresService, private genderService: GenresService, private pantheonService: PantheonsService) { }
 
   ngOnInit(): void {
     this.isLoading = true;
@@ -30,20 +30,20 @@ export class EditMonstreComponent implements OnInit {
       this.pantheons = data['hydra:member'];
     });
 
-    this.genderService.getAllGenres().subscribe((data: Genres[]) => {
+    this.genderService.getAllGenders().subscribe((data: Genres[]) => {
       this.genders = data['hydra:member'];
     });
 
-    this.monstreService.getMonstreByID(+this.route.snapshot.paramMap.get('id')).subscribe((data: Monstres) => {
+    this.monsterService.getMonsterByID(+this.route.snapshot.paramMap.get('id')).subscribe((data: Monstres) => {
       this.monster = data;
       this.isLoading = false;
     });  
   }
 
 
-  updateMonstre() {
+  updateMonster() {
     //lance la fonction updateMonstre de monstre.service
-    this.monstreService.updateMonstre(this.monster).subscribe(then => {
+    this.monsterService.updateMonster(this.monster).subscribe(then => {
       // change l'url avec la route '/monstre'
       this.router.navigate(['/monstres']);
       });

@@ -23,7 +23,7 @@
     <!-- son domaine -->
     <p class="card-text"><span class="font-weight-bold"> Domaine :</span> {{god.domain}} </p>
     <!-- ses caracteristiques -->
-    <p class="card-text"><span class="font-weight-bold">Description :</span> {{god.history}} </p>
+    <p class="card-text"><span class="font-weight-bold">Histoire :</span> {{god.history}} </p>
     <br>
   </div>
 </div>
@@ -33,5 +33,5 @@
   <a class="btn btn-info btn-sm w-50" [routerLink]="['/edit-dieu', god.id]">Modifier</a>
 
   <!-- Bouton supprimer ce dieu -->
-  <a class="btn btn-danger btn-sm text-white w-50" (click)="deleteDieu(god.id)">Supprimer</a>
+  <a class="btn btn-danger btn-sm text-white w-50" (click)="deleteGod(god.id)">Supprimer</a>
 </div>

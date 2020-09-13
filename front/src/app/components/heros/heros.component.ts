@@ -21,7 +21,7 @@ export class HerosComponent implements OnInit {
     // on initialise isLoading à true, pour dire que la page charge
     this.isLoading = true;
     // au chargement, on remplit la liste avec la fonction getAllHeros
-    this.heroService.getAllHeros().subscribe((data: Heros[]) => {
+    this.heroService.getAllHeroes().subscribe((data: Heros[]) => {
       this.heroList = data['hydra:member'];
       this.isLoading = false
     })

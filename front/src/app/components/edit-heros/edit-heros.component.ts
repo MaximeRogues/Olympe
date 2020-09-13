@@ -30,19 +30,19 @@ export class EditHerosComponent implements OnInit {
       this.pantheons = data['hydra:member'];
     });
 
-    this.genderService.getAllGenres().subscribe((data: Genres[]) => {
+    this.genderService.getAllGenders().subscribe((data: Genres[]) => {
       this.genders = data['hydra:member'];
     });
 
-    this.heroService.getHerosByID(+this.route.snapshot.paramMap.get('id')).subscribe((data: Heros) => {
+    this.heroService.getHeroByID(+this.route.snapshot.paramMap.get('id')).subscribe((data: Heros) => {
       this.hero = data;
       this.isLoading = false;
     });  }
 
 
-  updateHeros() {
+  updateHero() {
     //lance la fonction updateHeros de heros.service
-    this.heroService.updateHeros(this.hero).subscribe(then => {
+    this.heroService.updateHero(this.hero).subscribe(then => {
       // change l'url avec la route '/heros'
       this.router.navigate(['/heros']);
       });

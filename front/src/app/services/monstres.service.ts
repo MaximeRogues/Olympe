@@ -28,27 +28,27 @@ export class MonstresService {
   apiUrl = "https://localhost:8000/api/monsters";
 
   // on déclare un fonction qui return la liste de monstres en tant qu'observable
-  getAllMonstres() : Observable <Monstres[]> {
+  getAllMonsters() : Observable <Monstres[]> {
     return this.http.get<Monstres[]>(this.apiUrl).pipe(retry(1), catchError(this.handleError))
   }
   
 
   //Fonction pour retourver un monstre par son nom
-  getMonstreByID (id: number): Observable <Monstres> {
+  getMonsterByID (id: number): Observable <Monstres> {
     return this.http.get<Monstres>(this.apiUrl + '/' + id).pipe(retry(1), catchError(this.handleError));
   }
 
   // fonction ajouter un monstre au tableau listeMonstres
-  addMonstre(monster: Monstres) : Observable <Monstres> {
+  addMonster(monster: Monstres) : Observable <Monstres> {
     return this.http.post<Monstres>(this.apiUrl, monster).pipe(catchError(this.handleError))
   }
 
   //Fonction pour éditer un monstre
-  updateMonstre(monster: Monstres) {
+  updateMonster(monster: Monstres) {
     return this.http.put<Monstres>(this.apiUrl + '/' + monster.id, monster).pipe(catchError(this.handleError))
   }
 
-  deleteMonstre(id: number): Observable <Monstres> {
+  deleteMonster(id: number): Observable <Monstres> {
     return this.http.delete<Monstres>(this.apiUrl + '/' + id).pipe(catchError(this.handleError))
     }
 }
