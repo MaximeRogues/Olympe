@@ -8,16 +8,16 @@
     <br>
     <h3>Vos informations personnelles :</h3>
     <h4>Pseudo : </h4>
-    <p>{{ user.pseudo }}</p>
+    <p>{{ user.username }}</p>
     <br>
     <h4>Mot de passe : </h4>
     <p>A CHIFFRER : {{ user.password }}</p>
     <br>
     <h4>Adresse mail : </h4>
-    <p>{{ user.adresseMail }}</p>
+    <!-- <p>{{ user.adresseMail }}</p> -->
     <br>
     <h4>N° téléphone : </h4>
-    <p>{{ user.phoneNumber }}</p>
+    <!-- <p>{{ user.phoneNumber }}</p> -->
     <br>
     <button class="btn btn-info " [routerLink]="['/edit-espace-membre', user.id]">Modifier mes informations</button>
 

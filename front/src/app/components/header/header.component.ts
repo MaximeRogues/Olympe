@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConnexionService } from 'src/app/services/connexion.service';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 
 @Component({
@@ -8,18 +9,24 @@ import { ConnexionService } from 'src/app/services/connexion.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  todayDate = new Date();
   connecte : Boolean = this.connexionService.connecte;
+
+  logged: boolean = false;
 
   isCollapsed = true;
   
-  constructor(private connexionService : ConnexionService) { }
+  constructor(private connexionService : ConnexionService, private tokenStorageService: TokenStorageService) { }
 
   ngOnInit(): void {
-
-    
+    if(this.tokenStorageService.getToken()) {
+      this.logged = true;
+    };
   }
 
+  public logout() {
+    this.tokenStorageService.signOut();
+    window.location.reload();
+  }
   
 
 } 

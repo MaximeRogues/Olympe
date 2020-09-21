@@ -4,11 +4,11 @@
 
     <form #infosForm="ngForm" (ngSubmit)="updateUser()">
 
-      <!-- pseudo -->
-      <label for="pseudo">Pseudo de l'utilisateur : </label>
-      <input type="text" class="form-control" name="pseudo" id="pseudo" required [(ngModel)]="user.pseudo" #pseudo="ngModel"> <br>
-      <div [hidden]="pseudo.valid" class="alert alert-danger">
-        Le pseudo de l'utilisateur est requis
+      <!-- username -->
+      <label for="username">username de l'utilisateur : </label>
+      <input type="text" class="form-control" name="username" id="username" required [(ngModel)]="user.username" #username="ngModel"> <br>
+      <div [hidden]="username.valid" class="alert alert-danger">
+        Le username de l'utilisateur est requis
       </div>
 
       <!-- password -->
@@ -19,23 +19,23 @@
         Le mot de passe de l'utilisateur est requis
       </div>
 
-      <!-- panthéon -->
-      <label for="phoneNumber">phoneNumber de l'utilisateur : </label>
+      <!-- phoneNumber -->
+      <!-- <label for="phoneNumber">phoneNumber de l'utilisateur : </label>
       <input type="text" class="form-control" name="phoneNumber" id="phoneNumber" required [(ngModel)]="user.phoneNumber"
         #phoneNumber="ngModel"> <br>
       <br>
       <div [hidden]="phoneNumber.valid" class="alert alert-danger">
         Le numéro de téléphone de l'utilisateur est requis
-      </div>
+      </div> -->
 
       <!-- adresseMail -->
-      <label for="adresseMail">adresseMail de l'utilisateur : </label>
+      <!-- <label for="adresseMail">adresseMail de l'utilisateur : </label>
       <input type="text" class="form-control" name="adresseMail" id="adresseMail" required [(ngModel)]="user.adresseMail"
         #adresseMail="ngModel"> <br>
       <br>
       <div [hidden]="adresseMail.valid" class="alert alert-danger">
         L'adresse mail de l'utilisateur est requis
-      </div>
+      </div> -->
 
       <input [disabled]='!infosForm.valid' type="submit" value="Envoyer">
     </form>
