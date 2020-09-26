@@ -3,6 +3,7 @@ import { Monstres } from 'src/app/models/monstres';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MonstresService } from 'src/app/services/monstres.service';
 import { ToastrService } from 'ngx-toastr';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-monstre-detail',
@@ -15,15 +16,14 @@ export class MonstreDetailComponent implements OnInit {
   monster: Monstres;
   isLoading: boolean;
   monsterList: Monstres[];
+  logged: boolean = false;
 
-  constructor(private route: ActivatedRoute, private monsterService: MonstresService, private toastr: ToastrService,private router: Router) { }
+  constructor(private route: ActivatedRoute, private monsterService: MonstresService, private toastr: ToastrService,private router: Router, private tokenStorageService: TokenStorageService) { }
 
   ngOnInit(): void {
     this.isLoading = true;
     this.monsterService.getMonsterByID(+this.route.snapshot.paramMap.get('id')).subscribe((data:Monstres) => {
-      this.monster = data;
-      console.log(this.monster);
-      
+      this.monster = data;      
       this.isLoading = false;
     });
 
@@ -34,6 +34,10 @@ export class MonstreDetailComponent implements OnInit {
       this.monsterList = data['hydra:member'];
       this.isLoading = false
     })
+
+    if(this.tokenStorageService.getToken()) {
+      this.logged = true;
+    };
   }
 
   deleteMonstre(id: number) {

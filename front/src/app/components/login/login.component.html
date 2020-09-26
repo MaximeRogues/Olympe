@@ -1,10 +1,8 @@
-<div class="col-md-12">
-    <div class="card card-container">
-      <img
-        id="profile-img"
-        src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-        class="profile-img-card"
-      />
+<div class="col-lg-6 mx-auto">
+    <div class="card card-container p-4">
+
+      <h2 class="text-center">Connexion</h2><br>
+
       <form
         *ngIf="!isLoggedIn"
         name="form"
@@ -13,7 +11,7 @@
         novalidate
       >
         <div class="form-group">
-          <label for="username">Username</label>
+          <label for="username">Pseudo</label>
           <input
             type="text"
             class="form-control"
@@ -27,11 +25,11 @@
             role="alert"
             *ngIf="f.submitted && username.invalid"
           >
-            Username is required!
+            Le pseudo est requis 
           </div>
         </div>
         <div class="form-group">
-          <label for="password">Password</label>
+          <label for="password">Mot de passe</label>
           <input
             type="password"
             class="form-control"
@@ -46,30 +44,33 @@
             role="alert"
             *ngIf="f.submitted && password.invalid"
           >
-            <div *ngIf="password.errors.required">Password is required</div>
+            <div *ngIf="password.errors.required">Le mot de passe est requis</div>
             <div *ngIf="password.errors.minlength">
-              Password must be at least 6 characters
+              Le mot de passe doit contenir au moins 6 caractères
             </div>
           </div>
         </div>
         <div class="form-group">
           <button class="btn btn-primary btn-block">
-            Login
+            Connexion
           </button>
         </div>
+
+        <a  class="nav-link" routerLink="/inscription">Pas encore inscrit ?</a>
+
         <div class="form-group">
           <div
             class="alert alert-danger"
             role="alert"
             *ngIf="f.submitted && isLoginFailed"
           >
-            Login failed: {{ errorMessage }}
+            Connexion échouée : {{ errorMessage }}
           </div>
         </div>
       </form>
   
       <div class="alert alert-success" *ngIf="isLoggedIn">
-        Logged in as {{ roles }}.
+        Connecté en tant que {{ roles }}.
       </div>
     </div>
   </div>

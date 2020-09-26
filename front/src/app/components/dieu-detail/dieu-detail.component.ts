@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Dieu } from 'src/app/models/dieu';
 import { DieuxService } from 'src/app/services/dieux.service';
 import { ToastrService } from 'ngx-toastr';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 
 @Component({
@@ -16,8 +17,9 @@ export class DieuDetailComponent implements OnInit {
   god: Dieu;
   godList: Dieu[];
   isLoading: boolean;
+  logged: boolean = false;
 
-  constructor(private route: ActivatedRoute, private godService: DieuxService, private toastr: ToastrService,private router: Router) { 
+  constructor(private route: ActivatedRoute, private godService: DieuxService, private toastr: ToastrService,private router: Router, private tokenStorageService: TokenStorageService) { 
 
   }
   
@@ -36,6 +38,10 @@ export class DieuDetailComponent implements OnInit {
       this.godList = data['hydra:member'];
       this.isLoading = false
     })
+
+    if(this.tokenStorageService.getToken()) {
+      this.logged = true;
+    };
   }
 
   deleteGod(id: number) {

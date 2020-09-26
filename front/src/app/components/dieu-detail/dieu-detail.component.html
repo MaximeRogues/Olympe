@@ -30,8 +30,8 @@
 
 <div class="bg-light">
   <!-- bouton modifer ce dieu -->
-  <a class="btn btn-info btn-sm w-50" [routerLink]="['/edit-dieu', god.id]">Modifier</a>
+  <a class="btn btn-info btn-sm w-50" *ngIf="logged" [routerLink]="['/edit-dieu', god.id]">Modifier</a>
 
   <!-- Bouton supprimer ce dieu -->
-  <a class="btn btn-danger btn-sm text-white w-50" (click)="deleteGod(god.id)">Supprimer</a>
+  <a class="btn btn-danger btn-sm text-white w-50" *ngIf="logged" (click)="deleteGod(god.id)">Supprimer</a>
 </div>

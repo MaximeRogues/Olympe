@@ -1,10 +1,8 @@
-<div class="col-md-12">
-    <div class="card card-container">
-      <img
-        id="profile-img"
-        src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-        class="profile-img-card"
-      />
+<div class="col-lg-6 mx-auto">
+    <div class="card card-container p-4">
+
+      <h2 class="text-center">Inscription</h2><br>
+
       <form
         *ngIf="!isSuccessful"
         name="form"
@@ -12,8 +10,8 @@
         #f="ngForm"
         novalidate
       >
-        <div class="form-group">
-          <label for="username">Username</label>
+        <div class="form-group" >
+          <label for="username">Pseudo</label>
           <input
             type="text"
             class="form-control"
@@ -25,12 +23,12 @@
             #username="ngModel"
           />
           <div class="alert-danger" *ngIf="f.submitted && username.invalid">
-            <div *ngIf="username.errors.required">Username is required</div>
+            <div *ngIf="username.errors.required">Le pseudo est requis</div>
             <div *ngIf="username.errors.minlength">
-              Username must be at least 3 characters
+              Le pseudo doit contenir au moins 3 caractères
             </div>
             <div *ngIf="username.errors.maxlength">
-              Username must be at most 20 characters
+              Le pseudo doit contenir moins de 20 caractères
             </div>
           </div>
         </div>
@@ -55,7 +53,7 @@
         </div> -->
 
         <div class="form-group">
-          <label for="password">Password</label>
+          <label for="password">Mot de passe</label>
           <input
             type="password"
             class="form-control"
@@ -66,23 +64,25 @@
             #password="ngModel"
           />
           <div class="alert-danger" *ngIf="f.submitted && password.invalid">
-            <div *ngIf="password.errors.required">Password is required</div>
+            <div *ngIf="password.errors.required">Le mot de passe est requis</div>
             <div *ngIf="password.errors.minlength">
-              Password must be at least 6 characters
+              Le mot de passe doit contenir au moins 6 caractères
             </div>
           </div>
         </div>
         <div class="form-group">
-          <button class="btn btn-primary btn-block">Sign Up</button>
+          <button class="btn btn-primary btn-block">Inscription</button>
         </div>
+
+        <a  class="nav-link" routerLink="/connexion">Déjà inscrit ?</a>
   
         <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
-          Signup failed!<br />{{ errorMessage }}
+          Inscription échouée : {{ errorMessage }}
         </div>
       </form>
   
       <div class="alert alert-success" *ngIf="isSuccessful">
-        Your registration is successful!
+        Inscription réussie 
       </div>
     </div>
   </div>

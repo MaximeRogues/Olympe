@@ -25,6 +25,7 @@ export class MonstresComponent implements OnInit {
       this.monsterList = data['hydra:member'];
       this.isLoading = false
     })
+    
   }
 
   deleteMonstre(id: number) {

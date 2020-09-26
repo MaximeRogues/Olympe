@@ -3,6 +3,7 @@ import { Heros } from 'src/app/models/heros';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HerosService } from 'src/app/services/heros.service';
 import { ToastrService } from 'ngx-toastr';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-heros-detail',
@@ -14,8 +15,9 @@ export class HerosDetailComponent implements OnInit {
   hero: Heros;
   heroList: Heros[];
   isLoading: boolean;
+  logged: boolean = false;
 
-  constructor(private route: ActivatedRoute, private heroService: HerosService, private toastr: ToastrService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private heroService: HerosService, private toastr: ToastrService, private router: Router, private tokenStorageService: TokenStorageService) { }
 
   ngOnInit(): void {
     // on récupère le dieu qui était concerné par le bouton détails
@@ -32,8 +34,10 @@ export class HerosDetailComponent implements OnInit {
       this.heroList = data['hydra:member'];
       this.isLoading = false;
     })
-    
-    
+
+    if(this.tokenStorageService.getToken()) {
+      this.logged = true;
+    };    
   }
 
   deleteHero(id: number) {

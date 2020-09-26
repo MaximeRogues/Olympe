@@ -16,7 +16,7 @@
   <!-- liste de lien -->
   <div class="collapse navbar-collapse" id="navbarNav" [ngbCollapse]="isCollapsed">
 
-      <a class="nav-link" routerLink="/home">Accueil</a>
+      <a class="nav-link " routerLink="/home">Accueil</a>
 
       <a class="nav-link" routerLink="/dieux">Dieux et déesses</a>
 
@@ -24,16 +24,12 @@
 
       <a class="nav-link" routerLink="/monstres">Les monstres</a>
 
-      <a class="nav-link" routerLink="/quiz">Le quiz </a>
-
-      <p *ngIf="logged">Connecté</p>
-
-      <a  class="nav-link" routerLink="/connexion"> <i class="fas fa-user-circle"></i> Se connecter</a>
-
-      <a  class="nav-link" routerLink="/espace-membre/1"> <i class="fas fa-user-circle"></i> Mon espace</a>
-
-      <a  class="nav-link" (click)=logout()> <i class="fas fa-user-circle"></i> Déconnexion</a>
-
-
+      <a class="nav-link mr-5" routerLink="/quiz">Le quiz </a>
   </div>
+
+  <a  class="nav-link text-right" *ngIf="!logged" routerLink="/connexion"> <i class="fas fa-user-circle"></i> Se connecter</a>
+
+  <a  class="nav-link text-right" *ngIf="logged" routerLink="/espace-membre/1"> <i class="fas fa-user-circle"></i> Mon espace</a>
+
+  <a  class="nav-link text-danger text-right" *ngIf="logged" routerLink="/connexion" (click)=logout()> Déconnexion</a>
 </nav>

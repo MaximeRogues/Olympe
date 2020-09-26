@@ -25,6 +25,7 @@ export class HeaderComponent implements OnInit {
 
   public logout() {
     this.tokenStorageService.signOut();
+    alert('Déconnexion réussie !')
     window.location.reload();
   }
   
