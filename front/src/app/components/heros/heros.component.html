@@ -28,7 +28,7 @@
     </div>
   </div>
 
-  <a routerLink="/heros/add">
+  <a *ngIf="logged" routerLink="/heros/add">
     <h3 class="btn btn-primary">Ajouter un héros</h3>
   </a>
 </div>

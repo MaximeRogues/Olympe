@@ -25,7 +25,7 @@
       </div>
     </div>
   </div>
-  <a routerLink="/dieux/add">
+  <a *ngIf="logged" routerLink="/dieux/add">
     <h3 class="btn btn-primary" id="addDieuxLink">Ajouter un dieu</h3>
   </a>
 </div>

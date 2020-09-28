@@ -49,29 +49,27 @@ export class HomeComponent implements OnInit {
   
   ngOnInit(): void {
     // on initialise isLoading à true, pour dire que la page charge
-    this.isLoading = true;
-    console.log(this.isLoading);
-    
+    this.isLoading = true;    
 
-    // au chargement, on remplit la liste avec la fonction getAllPerso
+    // au chargement, on remplit la liste avec la fonction getAllGods
     this.godService.getAllGods().subscribe((data: Dieu[]) => {
       this.godList = data['hydra:member'];
       this.filteredGodList = data['hydra:member'];
     })
 
-    // au chargement, on remplit la liste avec la fonction getAllPerso
+    // au chargement, on remplit la liste avec la fonction getAllHeroes
     this.herosService.getAllHeroes().subscribe((data: Heros[]) => {
       this.heroList = data['hydra:member'];
       this.filteredHeroList = data['hydra:member'];      
     })
 
-    // au chargement, on remplit la liste avec la fonction getAllPerso
+    // au chargement, on remplit la liste avec la fonction getAllMonsters
     this.monsterService.getAllMonsters().subscribe((data: Monstres[]) => {
       this.monsterList = data['hydra:member'];
       this.filteredMonsterList = data['hydra:member'];
     })
 
-    // au chargement, on remplit la liste avec la fonction getAllGenres
+    // au chargement, on remplit la liste avec la fonction getAllGenders
     this.genreService.getAllGenders().subscribe((data: Genres[]) => {
       this.genderList = data['hydra:member'];
     })

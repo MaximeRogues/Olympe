@@ -7,6 +7,7 @@ import { Genres } from 'src/app/models/genres';
 import { GenresService } from 'src/app/services/genres.service';
 import { Pantheons } from 'src/app/models/pantheons';
 import { PantheonsService } from 'src/app/services/pantheons.service';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 
 @Component({
@@ -23,10 +24,14 @@ export class AddMonstresComponent implements OnInit {
   
   genders : Genres[];
 
-  constructor(private monsterService: MonstresService, private router: Router, private toastr: ToastrService, private genderService: GenresService, private pantheonService: PantheonsService) { }
+  constructor(private monsterService: MonstresService, private router: Router, private toastr: ToastrService, private genderService: GenresService, private pantheonService: PantheonsService, private tokenStorageService: TokenStorageService) { }
 
   ngOnInit(): void {
     this.isLoading = true;
+
+    if(!this.tokenStorageService.getToken()) {
+      this.router.navigate(['/monstres']);
+    };
 
     this.pantheonService.getAllPantheons().subscribe((data: Pantheons[]) => {
       this.pantheons = data['hydra:member'];
