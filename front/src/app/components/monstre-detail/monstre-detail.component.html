@@ -1,33 +1,34 @@
 <br>
 
-<div class="card-body bg-light" id="divPerso">
-  <div id="divImgPerso">
+<div class="card-body bg-light" id="monsterDiv">
 
-  <!-- image du monstre -->
-  <img src="../../../assets/images/monstres/{{ monster.picture }}" alt="Illustration du monstre">
-  <br>
+  <div id="monsterImageDiv">
+    <!-- image du monstre -->
+    <img src="../../../assets/images/monstres/{{ monster.picture }}" alt="Illustration du monstre">
+    <br>
   </div>
 
-  <div id="infosPerso">
+  <div id="monsterInfos">
 
-  <br>
+    <br>
     <!-- nom du monstre -->
-  <h2 class="font-weight-bold">{{monster.name}}</h2>
-  <!-- titre du monstre -->
-  <h5 class="font-weight-bold">{{monster.title}}</h5>
-  <br>
-  <!-- son panthéon -->
-  <p class="card-text"><span class="font-weight-bold"> Panthéon :</span> {{monster.pantheon.name}}  </p>
-  <!-- son lieu -->
-  <p class="card-text"><span class="font-weight-bold"> Lieu :</span> {{monster.place}} </p>
-  <!-- son histoire -->
-  <p class="card-text"><span class="font-weight-bold"> Histoire :</span> {{monster.history}} </p>
-  <br>
+    <h2 class="font-weight-bold" id="monsterName">{{monster.name}}</h2>
+    <!-- titre du monstre -->
+    <h5 class="font-weight-bold" id="monsterTitle">{{monster.title}}</h5>
+    <br>
+    <!-- son panthéon -->
+    <p class="card-text"><span class="font-weight-bold"> Panthéon :</span> {{monster.pantheon.name}} </p>
+    <!-- son lieu -->
+    <p class="card-text"><span class="font-weight-bold"> Lieu :</span> {{monster.place}} </p>
+    <!-- son histoire -->
+    <p class="card-text"><span class="font-weight-bold"> Histoire :</span> {{monster.history}} </p>
+    <br>
   </div>
 </div>
 
 <div class="bg-light">
-
+  <a class="btn btn-success btn-sm text-white w-100" *ngIf="logged">Ajouter</a>
+  <br>
   <!-- Bouton modifier -->
   <a class="btn btn-info btn-sm  w-50 " *ngIf="logged" [routerLink]="['/edit-monstres', monster.id]">Modifier</a>
 

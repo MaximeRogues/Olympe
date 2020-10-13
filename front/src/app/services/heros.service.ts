@@ -51,5 +51,5 @@ export class HerosService {
   // Fonction pour supprimer un héros du tableau listeHeros
   deleteHero(id: number): Observable <Heros> {
     return this.http.delete<Heros>(this.apiUrl + '/' + id).pipe(catchError(this.handleError))
-    }
+  }
 }

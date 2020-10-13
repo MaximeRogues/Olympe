@@ -1,20 +1,20 @@
 <br>
 
-<div class="card-body bg-light" id="divPerso">
+<div class="card-body bg-light" id="godDiv">
 
-  <div id="divImgPerso">
+  <div id="godImageDiv">
     <!-- image du dieu -->
     <img src="../../../assets/images/dieux/{{god.picture}}" alt="Illustration du dieu">
     <br>
   </div>
 
-  <div id="infosPerso">
+  <div id="godInfos">
 
     <br>
     <!-- nom du dieu -->
-    <h2 class="font-weight-bold">{{god.name}}</h2>
+    <h2 class="font-weight-bold" id="godName">{{god.name}}</h2>
     <!-- titre du dieu -->
-    <h5 class="font-weight-bold">{{god.title}}</h5>
+    <h5 class="font-weight-bold" id="godTitle">{{god.title}}</h5>
     <br>
     <!-- son panthéon -->
     <p class="card-text"><span class="font-weight-bold"> Panthéon :</span> {{god.pantheon.name}} </p>
@@ -29,9 +29,12 @@
 </div>
 
 <div class="bg-light">
+  <a class="btn btn-success btn-sm text-white w-100" *ngIf="logged" (click)="addToFavorites(god)">Ajouter</a>
+  <br>
   <!-- bouton modifer ce dieu -->
   <a class="btn btn-info btn-sm w-50" *ngIf="logged" [routerLink]="['/edit-dieu', god.id]">Modifier</a>
 
   <!-- Bouton supprimer ce dieu -->
   <a class="btn btn-danger btn-sm text-white w-50" *ngIf="logged" (click)="deleteGod(god.id)">Supprimer</a>
+
 </div>

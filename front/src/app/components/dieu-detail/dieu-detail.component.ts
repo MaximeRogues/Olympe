@@ -4,6 +4,7 @@ import { Dieu } from 'src/app/models/dieu';
 import { DieuxService } from 'src/app/services/dieux.service';
 import { ToastrService } from 'ngx-toastr';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { UserFavoritesService } from 'src/app/services/user-favorites.service';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class DieuDetailComponent implements OnInit {
   isLoading: boolean;
   logged: boolean = false;
 
-  constructor(private route: ActivatedRoute, private godService: DieuxService, private toastr: ToastrService,private router: Router, private tokenStorageService: TokenStorageService) { 
+  constructor(private route: ActivatedRoute, private godService: DieuxService, private toastr: ToastrService,private router: Router, private tokenStorageService: TokenStorageService,private userFavoritesService:  UserFavoritesService) { 
 
   }
   
@@ -46,7 +47,7 @@ export class DieuDetailComponent implements OnInit {
 
   deleteGod(id: number) {
     this.isLoading = true;
-    const godName = this.godList.find(god => god.id === id).name
+    const godName = this.godList.find(god => god.id === id).name;
     this.godService.deleteGod(id).subscribe();
     this.godService.getAllGods().subscribe((data: Dieu []) => {
       this.godList = data['hydra:member'];
@@ -56,6 +57,13 @@ export class DieuDetailComponent implements OnInit {
     this.isLoading = false;
     this.toastr.success(godName + ' a été supprimé(e)', 'Je crois que Kratos est passé par là...');
     
+  }
+
+
+  addToFavorites(god : Dieu) {
+    this.userFavoritesService.addGodToFavorites(god);
+    this.toastr.success('Ajouté');
+
   }
   
 }

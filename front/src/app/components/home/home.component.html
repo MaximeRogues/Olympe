@@ -39,7 +39,7 @@
         </select>
       </a>
 
-      <a class="nav-link">Genre
+      <a class="nav-link">Genre du personnage
         
         <select (change)="getFilteredList()" class="filter" name="genderFilter" id="genderFilter" [(ngModel)]="genderFilter" >
           <option value="noData">Tous les genres</option>
@@ -64,28 +64,28 @@
 </div>
 
 <div *ngIf="!isLoading" class="bg-light">
-  <h3 class="text-center">Le dernier personnage ajouté :</h3>
+  <h3 class="text-center">Le dernier dieu ajouté :</h3>
 
-  <div class="bg-light " id="dernierPerso">
-    <div id="divImgDernierPerso " class="col-6">
+  <div class="bg-light " id="lastGod">
+    <div id="lastGodImageDiv" >
       <!-- image avec lien vers dieu-detail -->
-    <a [routerLink]="['/dieux', this.godList[0].id]"> <img id="imgDernierPerso"
-        src='../../../assets/images/dieux/{{this.godList[0].picture}}' class="card-img-top img-fluid" alt=""></a>
+    <a [routerLink]="['/dieux', this.godList[(this.godList.length - 1)].id]"> <img id="lastGodImage"
+        src='../../../assets/images/dieux/{{this.godList[(this.godList.length - 1)].picture}}' class="card-img-top img-fluid" alt=""></a>
     </div>
     
     
-    <div id="infosDernierPerso" class="col-6">
+    <div id="lastGodInfos" >
       <br>
-      <h3 class="font-weight-bold">{{this.godList[0].name}}</h3>
+      <h3 class="font-weight-bold" id="lastGodName">{{this.godList[(this.godList.length - 1)].name}}</h3>
       <br>
 
-      <p class="card-text"><span class="font-weight-bold"> Panthéon :</span> {{this.godList[0].pantheon.name}} </p>
+      <p class="card-text"><span class="font-weight-bold"> Panthéon :</span> {{this.godList[(this.godList.length - 1)].pantheon.name}} </p>
       <!-- ses attributs -->
-      <p class="card-text"><span class="font-weight-bold"> Attributs :</span> {{this.godList[0].attributes}} </p>
+      <p class="card-text"><span class="font-weight-bold"> Attributs :</span> {{this.godList[(this.godList.length - 1)].attributes}} </p>
       <!-- son domaine -->
-      <p class="card-text"><span class="font-weight-bold"> Domaine :</span> {{this.godList[0].domain}} </p>
+      <p class="card-text"><span class="font-weight-bold"> Domaine :</span> {{this.godList[(this.godList.length - 1)].domain}} </p>
       <!-- ses caracteristiques -->
-      <p class="card-text"><span class="font-weight-bold">Description :</span> {{this.godList[0].history}} </p>
+      <p class="card-text"><span class="font-weight-bold">Description :</span> {{this.godList[(this.godList.length - 1)].history}} </p>
     </div>
 
   </div>

@@ -33,6 +33,9 @@ export class AddDieuxComponent implements OnInit {
       this.router.navigate(['/dieux']);
     };
 
+    console.log(this.tokenStorageService);
+    
+
     this.pantheonService.getAllPantheons().subscribe((data: Pantheons[]) => {
       this.pantheons = data['hydra:member'];
     });

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ConnexionService } from 'src/app/services/connexion.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 
@@ -15,18 +16,20 @@ export class HeaderComponent implements OnInit {
 
   isCollapsed = true;
   
-  constructor(private connexionService : ConnexionService, private tokenStorageService: TokenStorageService) { }
+  constructor(private connexionService : ConnexionService, private tokenStorageService: TokenStorageService, private router: Router) { }
 
   ngOnInit(): void {
     if(this.tokenStorageService.getToken()) {
       this.logged = true;
     };
+    
   }
 
   public logout() {
     this.tokenStorageService.signOut();
     alert('Déconnexion réussie !')
-    window.location.reload();
+    this.router.navigate(['/home']);
+    
   }
   
 

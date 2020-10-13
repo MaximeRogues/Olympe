@@ -1,20 +1,48 @@
-#divPerso {
+#monsterDiv {
     display: flex;
     flex-flow: row;
 }
 
-#divImgPerso {
+#monsterImageDiv {
     width: 50%;
     height: 100%;
     margin-right: 1rem;
 }
 
-#infosPerso {
+#monsterInfos {
     width: 50%;
 
 }
 
 img {
-    height: 100%;
-    width: 25rem;
+    width: 30rem;
+    height: 45rem;
+}
+
+
+@media screen and (max-width: 500px) {
+    #monsterDiv {
+        display: block;
+    }
+    
+    #monsterImageDiv {
+        width: 100%;
+        height: 22rem;
+    }
+    
+    #monsterInfos {
+        width: 100%;
+    }
+
+    img {
+        width: 100%;
+        height: 22rem;
+    }
+
+    #monsterName, #monsterTitle {
+        text-align: center;
+    }
+
+
+   
 }
