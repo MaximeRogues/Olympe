@@ -4,12 +4,14 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\MonsterRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 
 /**
- * @ApiResource(normalizationContext={"groups"={"getMonsterWithPantheon", "getMonsterWithGender"}},) 
+ * @ApiResource(normalizationContext={"groups"={"getMonsterWithPantheon", "getMonsterWithGender"}}) 
  * @ORM\Entity(repositoryClass=MonsterRepository::class)
  */
 class Monster
@@ -18,59 +20,63 @@ class Monster
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups("getMonsterWithPantheon")
-     * @Groups("getMonsterWithGender")
+     * @Groups({"getMonsterWithPantheon", "getMonsterWithGender"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups("getMonsterWithPantheon")
-     * @Groups("getMonsterWithGender")
+     * @Groups({"getMonsterWithPantheon", "getMonsterWithGender"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups("getMonsterWithPantheon")
-     * @Groups("getMonsterWithGender")
+     * @Groups({"getMonsterWithPantheon", "getMonsterWithGender"})
      */
     private $title;
 
     /**
      * @ORM\ManyToOne(targetEntity=Pantheon::class, inversedBy="monsters")
      * @ORM\JoinColumn(nullable=false)
-     * @Groups("getMonsterWithPantheon")
+     * @Groups({"getMonsterWithPantheon"})
      */
     private $pantheon;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups("getMonsterWithPantheon")
-     * @Groups("getMonsterWithGender")
+     * @Groups({"getMonsterWithPantheon", "getMonsterWithGender"})
      */
     private $place;
 
     /**
      * @ORM\Column(type="string", length=500)
-     * @Groups("getMonsterWithPantheon")
-     * @Groups("getMonsterWithGender")
+     * @Groups({"getMonsterWithPantheon", "getMonsterWithGender"})
      */
     private $history;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups("getMonsterWithPantheon")
-     * @Groups("getMonsterWithGender")
+     * @Groups({"getMonsterWithPantheon", "getMonsterWithGender"})
      */
     private $picture;
 
     /**
      * @ORM\ManyToOne(targetEntity=Gender::class, inversedBy="monsters")
      * @ORM\JoinColumn(nullable=false)
-     * @Groups("getMonsterWithGender")
+     * @Groups({"getMonsterWithGender"})
      */
     private $gender;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=User::class, mappedBy="favoriteMonsters")
+     */
+    private $users;
+
+    public function __construct()
+    {
+        $this->users = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -157,6 +163,34 @@ class Monster
     public function setGender(?Gender $gender): self
     {
         $this->gender = $gender;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|User[]
+     */
+    public function getUsers(): Collection
+    {
+        return $this->users;
+    }
+
+    public function addUser(User $user): self
+    {
+        if (!$this->users->contains($user)) {
+            $this->users[] = $user;
+            $user->addFavoriteMonster($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): self
+    {
+        if ($this->users->contains($user)) {
+            $this->users->removeElement($user);
+            $user->removeFavoriteMonster($this);
+        }
 
         return $this;
     }

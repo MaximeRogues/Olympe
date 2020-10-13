@@ -38,17 +38,22 @@ security:
 
     access_control:
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/register, roles: IS_ADMIN }
+        - { path: ^/register, roles: ROLE_USER }
 
-        - { path: ^/api/pantheons, roles: IS_ADMIN, methods: [PUT, POST, DELETE] }
-        - { path: ^/api/gods, roles: IS_ADMIN, methods: [PUT, POST, DELETE] }
-        - { path: ^/api/heroes, roles: IS_ADMIN, methods: [PUT, POST, DELETE] }
-        - { path: ^/api/monsters, roles: IS_ADMIN, methods: [PUT, POST, DELETE] }
+        # authorised for admins
+        - { path: ^/api/pantheons, roles: ROLE_USER, methods: [PUT, POST, DELETE] }
+        - { path: ^/api/gods, roles: ROLE_USER, methods: [PUT, POST, DELETE] }
+        - { path: ^/api/heroes, roles: ROLE_USER, methods: [PUT, POST, DELETE] }
+        - { path: ^/api/monsters, roles: ROLE_USER, methods: [PUT, POST, DELETE] }
+        - { path: ^/api/character_types, roles: ROLE_USER, methods: [PUT, POST, DELETE] }
+        - { path: ^/api/genders, roles: ROLE_USER, methods: [PUT, POST, DELETE] }
 
-        - { path: ^/api/character_types, roles: IS_ADMIN }
-        - { path: ^/api/genders, roles: IS_ADMIN }
+
+        # authorised for everybody
+        - { path: ^/api/character_types, roles: IS_AUTHENTICATED_ANONYMOUSLY, methods: [GET] }
+        - { path: ^/api/genders, roles: IS_AUTHENTICATED_ANONYMOUSLY, methods: [GET] }
         - { path: ^/api/pantheons, roles: IS_AUTHENTICATED_ANONYMOUSLY, methods: [GET] }
         - { path: ^/api/gods, roles: IS_AUTHENTICATED_ANONYMOUSLY, methods: [GET] }
         - { path: ^/api/heroes, roles: IS_AUTHENTICATED_ANONYMOUSLY, methods: [GET] }
         - { path: ^/api/monsters, roles: IS_AUTHENTICATED_ANONYMOUSLY, methods: [GET] }
-        - { path: ^/api, roles: IS_ADMIN }
+        - { path: ^/api, roles: IS_AUTHENTICATED_ANONYMOUSLY }

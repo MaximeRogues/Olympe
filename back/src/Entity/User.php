@@ -2,14 +2,19 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 use Lexik\Bundle\JWTAuthenticationBundle\Security\User\JWTUser;
 use Lexik\Bundle\JWTAuthenticationBundle\Security\User\JWTUserInterface;
 
-/**
+/** 
+ * @ApiResource()
  * @ORM\Entity(repositoryClass=UserRepository::class)
  */
 class User implements UserInterface
@@ -36,6 +41,28 @@ class User implements UserInterface
      * @ORM\Column(type="string")
      */
     private $password;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=God::class, inversedBy="users")
+     */
+    private $favoriteGods;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Hero::class, inversedBy="users")
+     */
+    private $favoriteHeroes;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Monster::class, inversedBy="users")
+     */
+    private $favoriteMonsters;
+
+    public function __construct()
+    {
+        $this->favoriteGods = new ArrayCollection();
+        $this->favoriteHeroes = new ArrayCollection();
+        $this->favoriteMonsters = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -108,5 +135,83 @@ class User implements UserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    /**
+     * @return Collection|God[]
+     */
+    public function getFavoriteGods(): Collection
+    {
+        return $this->favoriteGods;
+    }
+
+    public function addFavoriteGod(God $favoriteGod): self
+    {
+        if (!$this->favoriteGods->contains($favoriteGod)) {
+            $this->favoriteGods[] = $favoriteGod;
+        }
+
+        return $this;
+    }
+
+    public function removeFavoriteGod(God $favoriteGod): self
+    {
+        if ($this->favoriteGods->contains($favoriteGod)) {
+            $this->favoriteGods->removeElement($favoriteGod);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Hero[]
+     */
+    public function getFavoriteHeroes(): Collection
+    {
+        return $this->favoriteHeroes;
+    }
+
+    public function addFavoriteHero(Hero $favoriteHero): self
+    {
+        if (!$this->favoriteHeroes->contains($favoriteHero)) {
+            $this->favoriteHeroes[] = $favoriteHero;
+        }
+
+        return $this;
+    }
+
+    public function removeFavoriteHero(Hero $favoriteHero): self
+    {
+        if ($this->favoriteHeroes->contains($favoriteHero)) {
+            $this->favoriteHeroes->removeElement($favoriteHero);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Monster[]
+     */
+    public function getFavoriteMonsters(): Collection
+    {
+        return $this->favoriteMonsters;
+    }
+
+    public function addFavoriteMonster(Monster $favoriteMonster): self
+    {
+        if (!$this->favoriteMonsters->contains($favoriteMonster)) {
+            $this->favoriteMonsters[] = $favoriteMonster;
+        }
+
+        return $this;
+    }
+
+    public function removeFavoriteMonster(Monster $favoriteMonster): self
+    {
+        if ($this->favoriteMonsters->contains($favoriteMonster)) {
+            $this->favoriteMonsters->removeElement($favoriteMonster);
+        }
+
+        return $this;
     }
 }

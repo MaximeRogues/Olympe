@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\HeroRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
@@ -18,59 +20,63 @@ class Hero
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups("getHeroWithPantheon")
-     * @Groups("getHeroWithGender")
+     * @Groups({"getHeroWithPantheon", "getHeroWithGender"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups("getHeroWithPantheon")
-     * @Groups("getHeroWithGender")
+     * @Groups({"getHeroWithPantheon", "getHeroWithGender"})
      */
     private $name;
 
     /**
      * @ORM\ManyToOne(targetEntity=Pantheon::class, inversedBy="heroes")
      * @ORM\JoinColumn(nullable=false)
-     * @Groups("getHeroWithPantheon")
+     * @Groups({"getHeroWithPantheon"})
      */
     private $pantheon;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups("getHeroWithPantheon")
-     * @Groups("getHeroWithGender")
+     * @Groups({"getHeroWithPantheon", "getHeroWithGender"})
      */
     private $origin;
 
     /**
      * @ORM\Column(type="string", length=500)
-     * @Groups("getHeroWithPantheon")
-     * @Groups("getHeroWithGender")
+     * @Groups({"getHeroWithPantheon", "getHeroWithGender"})
      */
     private $exploits;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups("getHeroWithPantheon")
-     * @Groups("getHeroWithGender")
+     * @Groups({"getHeroWithPantheon", "getHeroWithGender"})
      */
     private $picture;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups("getHeroWithPantheon")
-     * @Groups("getHeroWithGender")
+     * @Groups({"getHeroWithPantheon", "getHeroWithGender"})
      */
     private $title;
 
     /**
      * @ORM\ManyToOne(targetEntity=Gender::class, inversedBy="heroes")
      * @ORM\JoinColumn(nullable=false)
-     * @Groups("getHeroWithGender")
+     * @Groups({"getHeroWithGender"})
      */
     private $gender;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=User::class, mappedBy="favoriteHeroes")
+     */
+    private $users;
+
+    public function __construct()
+    {
+        $this->users = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -157,6 +163,34 @@ class Hero
     public function setGender(?Gender $gender): self
     {
         $this->gender = $gender;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|User[]
+     */
+    public function getUsers(): Collection
+    {
+        return $this->users;
+    }
+
+    public function addUser(User $user): self
+    {
+        if (!$this->users->contains($user)) {
+            $this->users[] = $user;
+            $user->addFavoriteHero($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): self
+    {
+        if ($this->users->contains($user)) {
+            $this->users->removeElement($user);
+            $user->removeFavoriteHero($this);
+        }
 
         return $this;
     }

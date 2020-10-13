@@ -4,12 +4,14 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\GodRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 
 /**
- * @ApiResource(normalizationContext={"groups"={"getGodWithPantheon", "getGodWithGender"}},) 
+ * @ApiResource(normalizationContext={"groups"={"getGodWithPantheon", "getGodWithGender"}}) 
  * @ORM\Entity(repositoryClass=GodRepository::class)
  */
 class God
@@ -18,66 +20,69 @@ class God
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups("getGodWithPantheon")
-     * @Groups("getGodWithGender")
+     * @Groups({"getGodWithPantheon", "getGodWithGender"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups("getGodWithPantheon")
-     * @Groups("getGodWithGender")
+     * @Groups({"getGodWithPantheon", "getGodWithGender"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups("getGodWithPantheon")
-     * @Groups("getGodWithGender")
+     * @Groups({"getGodWithPantheon", "getGodWithGender"})
      */
     private $title;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups("getGodWithPantheon")
-     * @Groups("getGodWithGender")
+     * @Groups({"getGodWithPantheon", "getGodWithGender"})
      */
     private $domain;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups("getGodWithPantheon")
-     * @Groups("getGodWithGender")
+     * @Groups({"getGodWithPantheon", "getGodWithGender"})
      */
     private $picture;
 
     /**
      * @ORM\ManyToOne(targetEntity=Pantheon::class, inversedBy="gods")
      * @ORM\JoinColumn(nullable=false)
-     * @Groups("getGodWithPantheon")
+     * @Groups({"getGodWithPantheon"})
      */
     private $pantheon;
 
     /**
      * @ORM\ManyToOne(targetEntity=Gender::class, inversedBy="gods")
      * @ORM\JoinColumn(nullable=false)
-     * @Groups("getGodWithGender")
+     * @Groups({"getGodWithGender"})
      */
     private $gender;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups("getGodWithPantheon")
-     * @Groups("getGodWithGender")
+     * @Groups({"getGodWithPantheon", "getGodWithGender"})
      */
     private $attributes;
 
     /**
      * @ORM\Column(type="string", length=500)
-     * @Groups("getGodWithPantheon")
-     * @Groups("getGodWithGender")
+     * @Groups({"getGodWithPantheon", "getGodWithGender"})
      */
     private $history;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=User::class, mappedBy="favoriteGods")
+     */
+    private $users;
+
+    public function __construct()
+    {
+        $this->users = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -176,6 +181,34 @@ class God
     public function setHistory(string $history): self
     {
         $this->history = $history;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|User[]
+     */
+    public function getUsers(): Collection
+    {
+        return $this->users;
+    }
+
+    public function addUser(User $user): self
+    {
+        if (!$this->users->contains($user)) {
+            $this->users[] = $user;
+            $user->addFavoriteGod($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): self
+    {
+        if ($this->users->contains($user)) {
+            $this->users->removeElement($user);
+            $user->removeFavoriteGod($this);
+        }
 
         return $this;
     }
