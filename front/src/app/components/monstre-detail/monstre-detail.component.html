@@ -17,7 +17,11 @@
     <h5 class="font-weight-bold" id="monsterTitle">{{monster.title}}</h5>
     <br>
     <!-- son panthéon -->
-    <p class="card-text"><span class="font-weight-bold"> Panthéon :</span> {{monster.pantheon.name}} </p>
+    <p class="card-text"><span class="font-weight-bold"> Panthéon :</span> {{monster.pantheon.name}} 
+      <img *ngIf="monster.pantheon.name == 'Nordique'" src="../../../assets/images/nordicLogo.png" alt="Logo nordique" class="logo"> 
+      <img *ngIf="monster.pantheon.name == 'Égyptien'" src="../../../assets/images/egyptianLogo.png" alt="Logo égyptien" class="logo"> 
+      <img *ngIf="monster.pantheon.name == 'Grec'" src="../../../assets/images/greekLogo.jpg" alt="Logo grec" class="logo"> 
+    </p>
     <!-- son lieu -->
     <p class="card-text"><span class="font-weight-bold"> Lieu :</span> {{monster.place}} </p>
     <!-- son histoire -->

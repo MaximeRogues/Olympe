@@ -60,6 +60,13 @@ img {
     flex-flow: row;
 }
 
+.logo {
+    display: inline-block;
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-left: 0.5rem;
+} 
+
 @media screen and (max-width: 500px) {
     #lastGodImageDiv {
         width: 100%;

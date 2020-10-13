@@ -18,7 +18,11 @@
     <h5 class="font-weight-bold" id="heroTitle">{{hero.title}}</h5>
     <br>
     <!-- son panthéon -->
-    <p class="card-text"><span class="font-weight-bold"> Panthéon :</span> {{hero.pantheon.name}} </p>
+    <p class="card-text"><span class="font-weight-bold"> Panthéon :</span> {{hero.pantheon.name}} 
+      <img *ngIf="hero.pantheon.name == 'Nordique'" src="../../../assets/images/nordicLogo.png" alt="Logo nordique" class="logo"> 
+      <img *ngIf="hero.pantheon.name == 'Égyptien'" src="../../../assets/images/egyptianLogo.png" alt="Logo égyptien" class="logo"> 
+      <img *ngIf="hero.pantheon.name == 'Grec'" src="../../../assets/images/greekLogo.jpg" alt="Logo grec" class="logo"> 
+    </p>
     <!-- son origine -->
     <p class="card-text"><span class="font-weight-bold"> Origine :</span> {{hero.origin}} </p>
     <!-- ses exploits -->

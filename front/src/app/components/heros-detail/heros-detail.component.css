@@ -4,19 +4,56 @@
 }
 
 #heroImageDiv {
-    width: 50%;
+    width: 30rem;
     height: 100%;
-    margin-right: 1rem;
+    margin-right: 2rem;
 }
 
 #heroInfos {
     width: 50%;
-
 }
 
 img {
-    height: 100%;
-    width: 25rem;
+    width: 100%;
+    height: 45rem;
+}
+
+.logo {
+    display: inline-block;
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-left: 0.5rem;
+} 
+
+
+@media screen and (max-width: 1100px) {
+    #heroDiv {
+        display: flex;
+        flex-flow: row;
+    }
+    
+    #heroImageDiv {
+        width: 30rem;
+        height: 100%;
+        margin-right: 1rem;
+    }
+    
+    #heroInfos {
+        width: 50%;
+    }
+    
+    img {
+        width: 100%;
+        height: 45rem;
+    }
+}
+
+
+@media screen and (max-width: 750px) {
+    img {
+        width: 100%;
+        height: 30rem;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -31,12 +68,11 @@ img {
     
     #heroInfos {
         width: 100%;
-    
     }
     
     img {
-        height: 22rem;
         width: 100%;
+        height: 22rem;
     }
     
     #heroName, #heroTitle {

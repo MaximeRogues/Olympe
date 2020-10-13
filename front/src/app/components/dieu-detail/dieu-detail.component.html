@@ -17,7 +17,11 @@
     <h5 class="font-weight-bold" id="godTitle">{{god.title}}</h5>
     <br>
     <!-- son panthéon -->
-    <p class="card-text"><span class="font-weight-bold"> Panthéon :</span> {{god.pantheon.name}} </p>
+    <p class="card-text"><span class="font-weight-bold"> Panthéon :</span> {{god.pantheon.name}}
+      <img *ngIf="god.pantheon.name == 'Nordique'" src="../../../assets/images/nordicLogo.png" alt="Logo nordique" class="logo"> 
+      <img *ngIf="god.pantheon.name == 'Égyptien'" src="../../../assets/images/egyptianLogo.png" alt="Logo égyptien" class="logo"> 
+      <img *ngIf="god.pantheon.name == 'Grec'" src="../../../assets/images/greekLogo.jpg" alt="Logo grec" class="logo"> 
+    </p>
     <!-- ses attributs -->
     <p class="card-text"><span class="font-weight-bold"> Attributs :</span> {{god.attributes}} </p>
     <!-- son domaine -->
