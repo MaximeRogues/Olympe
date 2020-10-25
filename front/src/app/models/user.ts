@@ -5,6 +5,7 @@ export class User {
     password: string;
     phoneNumber: number;
     adresseMail: string;
+    token: string;
 
     constructor(id: number = null, username: string = null, password: string = null, phoneNumber: number = null, adresseMail: string = null) {
         this.id = id;

@@ -22,8 +22,6 @@ export class LoginComponent implements OnInit {
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getUser().roles;
-      console.log(this.roles);
-      
     }
   }
 
@@ -31,7 +29,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.form).subscribe(
       data => {
         this.tokenStorage.saveToken(data.token);
-        this.tokenStorage.saveUser(data);
+        this.tokenStorage.saveUser(this.form);
 
         this.isLoginFailed = false;
         this.isLoggedIn = true;

@@ -8,6 +8,7 @@ import { GenresService } from 'src/app/services/genres.service';
 import { Pantheons } from 'src/app/models/pantheons';
 import { PantheonsService } from 'src/app/services/pantheons.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { UploadService } from 'src/app/services/upload.service';
 
 
 @Component({
@@ -19,12 +20,11 @@ export class AddMonstresComponent implements OnInit {
 
   monster: Monstres;
   isLoading: boolean;
-
   pantheons : Pantheons[];
-  
   genders : Genres[];
+  file: File;
 
-  constructor(private monsterService: MonstresService, private router: Router, private toastr: ToastrService, private genderService: GenresService, private pantheonService: PantheonsService, private tokenStorageService: TokenStorageService) { }
+  constructor(private monsterService: MonstresService, private router: Router, private toastr: ToastrService, private genderService: GenresService, private pantheonService: PantheonsService, private tokenStorageService: TokenStorageService, private upload: UploadService) { }
 
   ngOnInit(): void {
     this.isLoading = true;
@@ -45,13 +45,23 @@ export class AddMonstresComponent implements OnInit {
     this.isLoading = true;
   }
 
+  onFileChange(event) {
+    this.file = event.target.files[0];
+    console.log('Image récupérée : ' + this.file.name);
+  }
+
   submitMonster() {
-  // fonction de monstre.service pour push un monstre dans la liste
-  this.monsterService.addMonster(this.monster).subscribe(then => {
-    // naviguer vers la page monstres
-    this.router.navigate(['/monstres']);   
-  })
-  this.toastr.success('Aiguisez vos armes !','Un nouveau monstre sème la terreur !')
+    let formData = new FormData();
+    formData.append('file', this.file);
+    this.monster.picture = this.file.name;
+
+    this.upload.uploadFile(formData);
+    // fonction de monstre.service pour push un monstre dans la liste
+    this.monsterService.addMonster(this.monster).subscribe(then => {
+      // naviguer vers la page monstres
+      this.router.navigate(['/monstres']);   
+    })
+    this.toastr.success('Aiguisez vos armes !','Un nouveau monstre sème la terreur !')
   }
 
 }

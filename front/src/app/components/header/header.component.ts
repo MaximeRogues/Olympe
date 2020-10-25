@@ -22,7 +22,9 @@ export class HeaderComponent implements OnInit {
     if(this.tokenStorageService.getToken()) {
       this.logged = true;
     };
-    
+
+    console.log(this.tokenStorageService.getUser());
+    console.log(this.tokenStorageService.getToken());
   }
 
   public logout() {

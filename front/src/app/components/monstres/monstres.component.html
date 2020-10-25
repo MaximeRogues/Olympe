@@ -12,7 +12,7 @@
     <!-- boucle pour générer les cards -->
     <div *ngFor="let monster of this.monsterList" class="card" >
 
-      <a [routerLink]="['/monstres', monster.id]"> <img src='../../../assets/images/monstres/{{monster.picture}}'
+      <a [routerLink]="['/monstres', monster.id]"> <img src='http://localhost:8000/uploads/{{monster.picture}}'
           class="card-img-top img-fluid" alt=""></a>
       <div class="card-body text-center">
         <!-- nom du monstre -->

@@ -7,6 +7,7 @@ import { GenresService } from 'src/app/services/genres.service';
 import { Pantheons } from 'src/app/models/pantheons';
 import { PantheonsService } from 'src/app/services/pantheons.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { UploadService } from 'src/app/services/upload.service';
 
 @Component({
   selector: 'app-edit-monstre',
@@ -17,12 +18,11 @@ export class EditMonstreComponent implements OnInit {
   id: number;
   monster: Monstres;
   isLoading: boolean;
-
   pantheons : Pantheons[];
-
   genders : Genres[];
+  file: File;
 
-  constructor(private route: ActivatedRoute, private router: Router, private monsterService: MonstresService, private genderService: GenresService, private pantheonService: PantheonsService, private tokenStorageService: TokenStorageService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private monsterService: MonstresService, private genderService: GenresService, private pantheonService: PantheonsService, private tokenStorageService: TokenStorageService, private upload: UploadService) { }
 
   ngOnInit(): void {
     this.isLoading = true;
@@ -45,8 +45,16 @@ export class EditMonstreComponent implements OnInit {
     });  
   }
 
+  onFileChange(event) {
+    this.file = event.target.files[0];
+    console.log('Image récupérée : ' + this.file.name);
+  }
 
   updateMonster() {
+    let formData = new FormData();
+    formData.append('file', this.file);
+    this.monster.picture = this.file.name;
+    
     //lance la fonction updateMonstre de monstre.service
     this.monsterService.updateMonster(this.monster).subscribe(then => {
       // change l'url avec la route '/monstre'

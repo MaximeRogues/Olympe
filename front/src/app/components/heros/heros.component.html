@@ -13,7 +13,7 @@
     <!-- boucle qui génère les cards -->
     <div *ngFor="let hero of this.heroList" class="card">
 
-      <a [routerLink]="['/heros', hero.id]"> <img src='../../../assets/images/heros/{{ hero.picture }}'
+      <a [routerLink]="['/heros', hero.id]"> <img src='http://localhost:8000/uploads/{{ hero.picture }}'
           class="card-img-top img-fluid" alt=""></a>
       <div class="card-body text-center">
         <!-- nom du héros -->

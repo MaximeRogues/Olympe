@@ -7,6 +7,7 @@ import { Genres } from 'src/app/models/genres';
 import { GenresService } from 'src/app/services/genres.service';
 import { PantheonsService } from 'src/app/services/pantheons.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { UploadService } from 'src/app/services/upload.service';
 
 @Component({
   selector: 'app-edit-heros',
@@ -17,12 +18,11 @@ export class EditHerosComponent implements OnInit {
   id: number;
   hero: Heros;
   isLoading: boolean;
-
   pantheons : Pantheons[];
-
   genders : Genres[];
+  file: File;
 
-  constructor(private route: ActivatedRoute, private router: Router, private heroService: HerosService, private genderService: GenresService, private pantheonService: PantheonsService, private tokenStorageService: TokenStorageService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private heroService: HerosService, private genderService: GenresService, private pantheonService: PantheonsService, private tokenStorageService: TokenStorageService, private upload: UploadService) { }
 
   ngOnInit(): void {
     this.isLoading = true;
@@ -42,10 +42,19 @@ export class EditHerosComponent implements OnInit {
     this.heroService.getHeroByID(+this.route.snapshot.paramMap.get('id')).subscribe((data: Heros) => {
       this.hero = data;
       this.isLoading = false;
-    });  }
+    });  
+  }
 
+  onFileChange(event) {
+    this.file = event.target.files[0];
+    console.log('Image récupérée : ' + this.file.name);
+  }
 
   updateHero() {
+    let formData = new FormData();
+    formData.append('file', this.file);
+    this.hero.picture = this.file.name;
+    
     //lance la fonction updateHeros de heros.service
     this.heroService.updateHero(this.hero).subscribe(then => {
       // change l'url avec la route '/heros'

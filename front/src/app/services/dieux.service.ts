@@ -15,8 +15,7 @@ export class DieuxService {
     })
   };
 
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) { }
 
   //  Fonction en cas d'erreur http
   handleError(error) {

@@ -9,6 +9,7 @@ import { Genres } from 'src/app/models/genres';
 import { PantheonsService } from 'src/app/services/pantheons.service';
 import { GenresService } from 'src/app/services/genres.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { UploadService } from 'src/app/services/upload.service';
 
 
 @Component({
@@ -20,12 +21,11 @@ export class AddHerosComponent implements OnInit {
 
   hero: Heros;
   isLoading: boolean;
-
   pantheons : Pantheons[];
-
   genders : Genres[];
+  file: File;
 
-  constructor(private heroService: HerosService, private router: Router, private toastr: ToastrService, private genderService: GenresService, private pantheonService: PantheonsService, private tokenStorageService: TokenStorageService) { }
+  constructor(private heroService: HerosService, private router: Router, private toastr: ToastrService, private genderService: GenresService, private pantheonService: PantheonsService, private tokenStorageService: TokenStorageService, private upload: UploadService) { }
 
   ngOnInit(): void {
     this.isLoading = true;
@@ -47,7 +47,17 @@ export class AddHerosComponent implements OnInit {
     this.isLoading = false;
   }
 
+  onFileChange(event) {
+    this.file = event.target.files[0];
+    console.log('Image récupérée : ' + this.file.name);
+  }
+
   submitHero() {
+  let formData = new FormData();
+  formData.append('file', this.file);
+  this.hero.picture = this.file.name;
+
+  this.upload.uploadFile(formData);
   // fonction de heros.service pour push un héros dans la liste
   this.heroService.addHero(this.hero).subscribe(then => {
     // naviguer vers la page héros

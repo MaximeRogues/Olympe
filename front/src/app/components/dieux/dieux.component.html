@@ -13,7 +13,7 @@
     <!-- boucle pour générer les cards -->
     <div *ngFor="let god of this.godList" class="card">
 
-      <a [routerLink]="['/dieux', god.id]"> <img src='../../../assets/images/dieux/{{god.picture}}'
+      <a [routerLink]="['/dieux', god.id]"> <img src='http://localhost:8000/uploads/{{god.picture}}'
           class="card-img-top img-fluid" alt=""></a>
       <div class="card-body text-center">
         <!-- nom du dieu -->

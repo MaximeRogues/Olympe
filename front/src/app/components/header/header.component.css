@@ -1,3 +1,16 @@
 div {
     padding: 0.5rem;
 }
+
+#connectButtonsDiv {
+    justify-content: end;
+    width: 50%;
+
+}
+
+@media screen and (max-width: 990px) {
+    #connectButtonsDiv {
+        justify-content: end;
+        width: 100%;
+    }
+}

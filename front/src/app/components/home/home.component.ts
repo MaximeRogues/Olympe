@@ -103,19 +103,17 @@ export class HomeComponent implements OnInit {
     let monsterListToFilter = this.monsterList;
 
     // tri par genre
-    if (this.genderFilter !== "noData") {
-      console.log(this.genderFilter);
-      
+    if (this.genderFilter !== "noData") {      
       godListToFilter =  godListToFilter.filter(god => god.gender.name === this.genderFilter);  
-      heroListToFilter =  heroListToFilter.filter(heros => heros.gender.name === this.genderFilter);  
-      monsterListToFilter =  monsterListToFilter.filter(monstre => monstre.gender.name === this.genderFilter);       
+      heroListToFilter =  heroListToFilter.filter(hero => hero.gender.name === this.genderFilter);  
+      monsterListToFilter =  monsterListToFilter.filter(monster => monster.gender.name === this.genderFilter);       
     }
 
     // tri par panthéon
     if (this.pantheonFilter !== "noData") {
-      godListToFilter =  godListToFilter.filter(dieu => dieu.pantheon.name === this.pantheonFilter);  
-      heroListToFilter =  heroListToFilter.filter(heros => heros.pantheon.name === this.pantheonFilter);  
-      monsterListToFilter =  monsterListToFilter.filter(monstre => monstre.pantheon.name === this.pantheonFilter);  
+      godListToFilter =  godListToFilter.filter(god => god.pantheon.name === this.pantheonFilter);  
+      heroListToFilter =  heroListToFilter.filter(hero => hero.pantheon.name === this.pantheonFilter);  
+      monsterListToFilter =  monsterListToFilter.filter(monster => monster.pantheon.name === this.pantheonFilter);  
     }
 
     // tri par type de perso

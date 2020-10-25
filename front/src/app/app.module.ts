@@ -68,9 +68,9 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule,
     ToastrModule.forRoot(), // ToastrModule added
     HttpClientModule, 
     NgbModule

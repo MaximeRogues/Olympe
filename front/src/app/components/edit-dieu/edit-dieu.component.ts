@@ -7,6 +7,7 @@ import { PantheonsService } from 'src/app/services/pantheons.service';
 import { Pantheons } from 'src/app/models/pantheons';
 import { Genres } from 'src/app/models/genres';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
+import { UploadService } from 'src/app/services/upload.service';
 
 @Component({
   selector: 'app-edit-dieu',
@@ -17,12 +18,11 @@ export class EditDieuComponent implements OnInit {
   id: number;
   god: Dieu;
   isLoading: boolean;
-
   pantheons : Pantheons[];
-
   genders : Genres[];
+  file: File;
 
-  constructor(private route: ActivatedRoute, private router: Router, private godService: DieuxService, private genderService: GenresService, private pantheonService: PantheonsService, private tokenStorageService: TokenStorageService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private godService: DieuxService, private genderService: GenresService, private pantheonService: PantheonsService, private tokenStorageService: TokenStorageService, private upload: UploadService) { }
 
   ngOnInit(): void {
     this.isLoading = true;
@@ -45,7 +45,16 @@ export class EditDieuComponent implements OnInit {
     });
   }
 
+  onFileChange(event) {
+    this.file = event.target.files[0];
+    console.log('Image récupérée : ' + this.file.name);
+  }
+
   updateGod() {
+    let formData = new FormData();
+    formData.append('file', this.file);
+    this.god.picture = this.file.name;
+
      //lance la fonction updateDieu de dieu.service
      this.godService.updateGod(this.god).subscribe(then => {
       // change l'url avec la route '/dieu'

@@ -47,9 +47,9 @@
         </select>
       </a>
 
-      <a class="nav-link btn btn-sm btn-info text-light mr-1" (click)="unsetFilters()" > Retirer les filtres</a>
+      <a class="nav-link btn btn-sm btn-info text-light mr-1" id="unsetFilterButton" (click)="unsetFilters()" > Retirer les filtres</a>
 
-      <a class="nav-link btn btn-sm btn-danger text-light" > trier de A à Z</a>
+      <!-- <a class="nav-link btn btn-sm btn-danger text-light"  > trier de A à Z</a> -->
 
 
     </div>
@@ -64,13 +64,13 @@
 </div>
 
 <div *ngIf="!isLoading" class="bg-light">
-  <h3 class="text-center">Le dernier dieu ajouté :</h3>
+  <h3 class="text-center mt-3">Le dernier dieu ajouté :</h3>
 
   <div class="bg-light " id="lastGod">
     <div id="lastGodImageDiv" >
       <!-- image avec lien vers dieu-detail -->
     <a [routerLink]="['/dieux', this.godList[(this.godList.length - 1)].id]"> <img id="lastGodImage"
-        src='../../../assets/images/dieux/{{this.godList[(this.godList.length - 1)].picture}}' class="card-img-top img-fluid" alt=""></a>
+        src='http://localhost:8000/uploads/{{this.godList[(this.godList.length - 1)].picture}}' class="card-img-top img-fluid" alt=""></a>
     </div>
     
     
@@ -106,7 +106,7 @@
     <!-- boucle pour générer les cards -->
     <div *ngFor="let god of this.filteredGodList" class="card">
 
-      <a [routerLink]="['/dieux', god.id]"> <img src='../../../assets/images/dieux/{{god.picture}}'
+      <a [routerLink]="['/dieux', god.id]"> <img src='http://localhost:8000/uploads/{{god.picture}}'
           class="card-img-top img-fluid" alt=""></a>
       <div class="card-body text-center">
         <!-- nom du perso -->
@@ -121,7 +121,7 @@
     <!-- boucle pour générer les cards -->
     <div *ngFor="let hero of this.filteredHeroList" class="card">
 
-      <a [routerLink]="['/heros', hero.id]"> <img src='../../../assets/images/heros/{{hero.picture}}'
+      <a [routerLink]="['/heros', hero.id]"> <img src='http://localhost:8000/uploads/{{hero.picture}}'
           class="card-img-top img-fluid" alt=""></a>
       <div class="card-body text-center">
         <!-- nom du perso -->
@@ -136,7 +136,7 @@
     <!-- boucle pour générer les cards -->
     <div *ngFor="let monster of this.filteredMonsterList" class="card">
 
-      <a [routerLink]="['/monstres', monster.id]"> <img src='../../../assets/images/monstres/{{monster.picture}}'
+      <a [routerLink]="['/monstres', monster.id]"> <img src='http://localhost:8000/uploads/{{monster.picture}}'
           class="card-img-top img-fluid" alt=""></a>
       <div class="card-body text-center">
         <!-- nom du perso -->
