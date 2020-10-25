@@ -38,7 +38,7 @@ security:
 
     access_control:
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/register, roles: ROLE_USER }
+        - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
 
         # authorised for admins
         - { path: ^/api/pantheons, roles: ROLE_USER, methods: [PUT, POST, DELETE] }

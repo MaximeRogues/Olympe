@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -27,6 +28,11 @@ class AuthController extends AbstractController
         $em->flush();
 
         return new Response(sprintf('User %s successfully created', $user->getUsername()));
+    }
+
+    public function getUserByUsername(UserRepository $userRepo)
+    {
+        return $user = $this->userRepo->getUserByUsername();
     }
 
     public function api()
