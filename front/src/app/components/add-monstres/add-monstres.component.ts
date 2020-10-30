@@ -49,7 +49,9 @@ export class AddMonstresComponent implements OnInit {
 
   onFileChange(event) {
     this.file = event.target.files[0];
-    console.log('Image récupérée : ' + this.file.name);
+    if(this.validFileTypes.includes(this.file.type)) {
+      this.validPicture = true;
+    }
   }
 
   submitMonster() {

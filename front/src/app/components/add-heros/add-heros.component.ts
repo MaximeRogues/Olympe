@@ -51,7 +51,9 @@ export class AddHerosComponent implements OnInit {
 
   onFileChange(event) {
     this.file = event.target.files[0];
-    this.validPicture = true;
+    if(this.validFileTypes.includes(this.file.type)) {
+      this.validPicture = true;
+    }
   }
 
   submitHero() {
