@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
-        this.reloadPage();
+        window.location.href = "http://localhost:4200/home";
       },
       err => {
         this.errorMessage = err.error.message;

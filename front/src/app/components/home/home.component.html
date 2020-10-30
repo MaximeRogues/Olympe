@@ -17,19 +17,19 @@
     <div class="collapse navbar-collapse" id="navbarNav" [ngbCollapse]="filtreIsCollapsed">
 
       <a class="nav-link">Type de personnage
-        <select (change)=rangDieu() (change)="getFilteredList()" class="filter" name="characterTypeFilter" id="characterTypeFilter" [(ngModel)]="characterTypeFilter">
+        <select (change)="getFilteredList()" class="filter" name="characterTypeFilter" id="characterTypeFilter" [(ngModel)]="characterTypeFilter">
           <option value="noData">Tous les types</option>
           <option *ngFor="let type of characterTypeList" value="{{type.name}}">{{type.name}}</option>
         </select>
       </a>
 
-      <a *ngIf="filtreDieu" class="nav-link">Rang du dieu
+      <!-- <a *ngIf="filtreDieu" class="nav-link">Rang du dieu -->
         <!-- faire un (change)=fonctionTri(valeur) qui change le SELECT * FROM *** WHERE type == 'valeur' -->
-        <select class="filter" name="rangDieuFilter" id="rangDieuFilter">
+        <!-- <select class="filter" name="rangDieuFilter" id="rangDieuFilter">
           <option value="noData">Tous les rangs</option>
-          <option *ngFor="let rang of rangsDieu" value="{{rang}}">{{rang}}</option>
+          <option *ngFor="let rang of rangsDieu" value="{{}}">{{}}</option>
         </select>
-      </a>
+      </a> -->
 
       <a class="nav-link">Panthéon
         
@@ -103,47 +103,61 @@
 
   <!-- rend la div responsive -->
   <div class="liste row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+    
     <!-- boucle pour générer les cards -->
-    <div *ngFor="let god of this.filteredGodList" class="card">
+    <div *ngFor="let god of this.filteredGodList" class="card" [routerLink]="['/dieux', god.id]">
 
-      <a [routerLink]="['/dieux', god.id]"> <img src='http://localhost:8000/uploads/{{god.picture}}'
+      <a> <img src='http://localhost:8000/uploads/{{god.picture}}'
           class="card-img-top img-fluid" alt=""></a>
       <div class="card-body text-center">
         <!-- nom du perso -->
         <h6 class="font-weight-bold">{{god.name}}</h6>
-        <!-- bouton pour aller au component persoDetail -->
+        <p>{{god.title}}</p>
+        <hr>
         <br>
-
-
+        <img *ngIf="god.pantheon.name == 'Nordique'" src="../../../assets/images/nordicLogo.png" alt="Logo nordique" class="logo"> 
+        <img *ngIf="god.pantheon.name == 'Égyptien'" src="../../../assets/images/egyptianLogo.png" alt="Logo égyptien" class="logo"> 
+        <img *ngIf="god.pantheon.name == 'Grec'" src="../../../assets/images/greekLogo.jpg" alt="Logo grec" class="logo"> 
+        <br><br>
+        <p> {{god.pantheon.name}} </p>
       </div>
     </div>
 
     <!-- boucle pour générer les cards -->
-    <div *ngFor="let hero of this.filteredHeroList" class="card">
+    <div *ngFor="let hero of this.filteredHeroList" class="card" [routerLink]="['/heros', hero.id]">
 
-      <a [routerLink]="['/heros', hero.id]"> <img src='http://localhost:8000/uploads/{{hero.picture}}'
+      <a > <img src='http://localhost:8000/uploads/{{hero.picture}}'
           class="card-img-top img-fluid" alt=""></a>
       <div class="card-body text-center">
         <!-- nom du perso -->
         <h6 class="font-weight-bold">{{hero.name}}</h6>
-        <!-- bouton pour aller au component persoDetail -->
+        <p>{{hero.title}}</p>
+        <hr>
         <br>
-
-
+        <img *ngIf="hero.pantheon.name == 'Nordique'" src="../../../assets/images/nordicLogo.png" alt="Logo nordique" class="logo"> 
+        <img *ngIf="hero.pantheon.name == 'Égyptien'" src="../../../assets/images/egyptianLogo.png" alt="Logo égyptien" class="logo"> 
+        <img *ngIf="hero.pantheon.name == 'Grec'" src="../../../assets/images/greekLogo.jpg" alt="Logo grec" class="logo"> 
+        <br><br>
+        <p>{{hero.pantheon.name}} </p>
       </div>
     </div>
 
     <!-- boucle pour générer les cards -->
-    <div *ngFor="let monster of this.filteredMonsterList" class="card">
+    <div *ngFor="let monster of this.filteredMonsterList" class="card" [routerLink]="['/monstres', monster.id]">
 
-      <a [routerLink]="['/monstres', monster.id]"> <img src='http://localhost:8000/uploads/{{monster.picture}}'
+      <a> <img src='http://localhost:8000/uploads/{{monster.picture}}'
           class="card-img-top img-fluid" alt=""></a>
       <div class="card-body text-center">
         <!-- nom du perso -->
         <h6 class="font-weight-bold">{{monster.name}}</h6>
-        <!-- bouton pour aller au component persoDetail -->
+        <p>{{monster.title}}</p>
+        <hr>
         <br>
-
+        <img *ngIf="monster.pantheon.name == 'Nordique'" src="../../../assets/images/nordicLogo.png" alt="Logo nordique" class="logo"> 
+        <img *ngIf="monster.pantheon.name == 'Égyptien'" src="../../../assets/images/egyptianLogo.png" alt="Logo égyptien" class="logo"> 
+        <img *ngIf="monster.pantheon.name == 'Grec'" src="../../../assets/images/greekLogo.jpg" alt="Logo grec" class="logo"> 
+        <br><br>
+        <p>{{monster.pantheon.name}} </p>
       </div>
     </div>
   </div>

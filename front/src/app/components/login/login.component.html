@@ -60,7 +60,7 @@
 
         <div class="form-group">
           <div
-            class="alert alert-danger"
+            class="alert alert-danger text-center"
             role="alert"
             *ngIf="f.submitted && isLoginFailed"
           >
@@ -69,8 +69,8 @@
         </div>
       </form>
   
-      <div class="alert alert-success" *ngIf="isLoggedIn">
-        Connecté en tant que {{ roles }}.
+      <div class="alert alert-success text-center" *ngIf="isLoggedIn">
+        Connexion réussie
       </div>
     </div>
   </div>

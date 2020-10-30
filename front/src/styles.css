@@ -3,7 +3,10 @@
 
 body {
   padding: 2rem;
-  background-image: url('/assets/images/montOlympe.jpg');
+  background: url('/assets/images/montOlympe.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
   font-family: 'Cinzel', serif;
 }
@@ -18,7 +21,6 @@ th {
   margin: 1rem;
   padding: 1rem;
 }
-
 
 
 .liste {

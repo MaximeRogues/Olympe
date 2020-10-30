@@ -12,22 +12,30 @@ import { TypePerso } from 'src/app/models/type-perso';
 import { Pantheons } from 'src/app/models/pantheons';
 import { TypePersoService } from 'src/app/services/type-perso.service';
 import { PantheonsService } from 'src/app/services/pantheons.service';
+import { DomSanitizer } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  // animations: [
+  //   trigger('extendImage', [
+  //     state('open', style({
+  //       height: '11rem'
+  //     })),
+  //     state('closed', style({
+  //       height: ''
+  //     }))
+  //   ])
+  // ]
 })
 export class HomeComponent implements OnInit {
 
   filtreIsCollapsed = true;
-
   filtreDieu: boolean = false;
-
   isLoading: boolean;
-
-
-  rangsDieu = ['Majeur', 'Mineur'];
+  // rangsDieu = ['Majeur', 'Mineur'];
 
 
   // // On déclare une liste de perso vide
@@ -45,7 +53,7 @@ export class HomeComponent implements OnInit {
   pantheonFilter: string = "noData";
   characterTypeFilter: string = "noData";
   
-  constructor(private godService: DieuxService, private herosService: HerosService, private monsterService: MonstresService, private apiService: ApiService, private genreService: GenresService, private typePersoService: TypePersoService, private pantheonsService: PantheonsService) { }
+  constructor(private sanitizer: DomSanitizer, private godService: DieuxService, private herosService: HerosService, private monsterService: MonstresService, private apiService: ApiService, private genreService: GenresService, private typePersoService: TypePersoService, private pantheonsService: PantheonsService) { }
   
   ngOnInit(): void {
     // on initialise isLoading à true, pour dire que la page charge

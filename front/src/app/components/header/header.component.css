@@ -14,3 +14,7 @@ div {
         width: 100%;
     }
 }
+
+.nav-link {
+    white-space: nowrap;
+}

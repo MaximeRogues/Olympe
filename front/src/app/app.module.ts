@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,7 +17,6 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-
 import { AddDieuxComponent } from './components/add-dieux/add-dieux.component';
 import { AddHerosComponent } from './components/add-heros/add-heros.component';
 import { AddMonstresComponent } from './components/add-monstres/add-monstres.component';
@@ -28,13 +26,9 @@ import { MaPipePipe } from './pipes/ma-pipe.pipe';
 import { EditDieuComponent } from './components/edit-dieu/edit-dieu.component';
 import { EditMonstreComponent } from './components/edit-monstre/edit-monstre.component';
 import { EditHerosComponent } from './components/edit-heros/edit-heros.component';
-import { EspaceMembreComponent } from './components/espace-membre/espace-membre.component';
-import { EditEspaceMembreComponent } from './components/edit-espace-membre/edit-espace-membre.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
-import { ProfileComponent } from './components/profile/profile.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
-
 
 
 
@@ -60,11 +54,8 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     EditDieuComponent,
     EditMonstreComponent,
     EditHerosComponent,
-    EspaceMembreComponent,
-    EditEspaceMembreComponent,
     RegisterComponent,
     LoginComponent,
-    ProfileComponent,
     ],
   imports: [
     BrowserModule,

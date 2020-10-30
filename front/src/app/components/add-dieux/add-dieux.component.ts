@@ -63,7 +63,7 @@ export class AddDieuxComponent implements OnInit {
       this.router.navigate(['/dieux']);
     });
     this.toastr.success('Ajoutez un siège sur l\'Olympe !','Quoi ?! Un nouveau dieu !')
-    }
+  }
   
   
 }

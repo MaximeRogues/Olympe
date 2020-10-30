@@ -8,6 +8,11 @@
 
 <!-- s'affiche une fois le component chargé -->
 <div *ngIf="!isLoading">
+  
+  <a *ngIf="logged" routerLink="/dieux/add">
+    <h3 class="btn btn-secondary" id="addDieuxLink">Ajouter un dieu</h3>
+  </a>
+
   <!-- rend la div responsive -->
   <div class="liste row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
     <!-- boucle pour générer les cards -->
@@ -25,7 +30,5 @@
       </div>
     </div>
   </div>
-  <a *ngIf="logged" routerLink="/dieux/add">
-    <h3 class="btn btn-primary" id="addDieuxLink">Ajouter un dieu</h3>
-  </a>
+ 
 </div>

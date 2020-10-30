@@ -15,8 +15,6 @@ import { QuizComponent } from './components/quiz/quiz.component';
 import { EditDieuComponent } from './components/edit-dieu/edit-dieu.component';
 import { EditHerosComponent } from './components/edit-heros/edit-heros.component';
 import { EditMonstreComponent } from './components/edit-monstre/edit-monstre.component';
-import { EspaceMembreComponent } from './components/espace-membre/espace-membre.component';
-import { EditEspaceMembreComponent } from './components/edit-espace-membre/edit-espace-membre.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -45,9 +43,6 @@ const routes: Routes = [
   { path: 'edit-monstres/:id', component: EditMonstreComponent },
 
   { path: 'quiz', component: QuizComponent },
-
-  { path: 'espace-membre/:id', component: EspaceMembreComponent },
-  { path: 'edit-espace-membre/:id', component: EditEspaceMembreComponent },
 
   { path: '**', component: PageNotFoundComponent }
   ];
