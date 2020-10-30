@@ -30,15 +30,11 @@
     <p class="card-text"><span class="font-weight-bold">Histoire :</span> {{god.history}} </p>
     <br>
   </div>
-</div>
 
-<div class="bg-light">
-  <a class="btn btn-success btn-sm text-white w-100" *ngIf="logged" (click)="addToFavorites(god)">Ajouter</a>
-  <br>
+
   <!-- bouton modifer ce dieu -->
-  <a class="btn btn-info btn-sm w-50" *ngIf="logged" [routerLink]="['/edit-dieu', god.id]">Modifier</a>
+  <a class="btn btn-info btn-sm " *ngIf="logged" [routerLink]="['/edit-dieu', god.id]">Modifier</a>
 
   <!-- Bouton supprimer ce dieu -->
-  <a class="btn btn-danger btn-sm text-white w-50" *ngIf="logged" (click)="deleteGod(god.id)">Supprimer</a>
-
+  <a class="btn btn-danger btn-sm text-white " *ngIf="logged" (click)="deleteGod(god.id)">Supprimer</a>
 </div>

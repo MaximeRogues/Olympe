@@ -25,6 +25,11 @@ img {
     margin-left: 0.5rem;
 } 
 
+.btn {
+    float: right;
+    height: 2rem;
+}
+
 @media screen and (max-width: 1100px) {
     #godDiv {
         display: flex;
@@ -77,6 +82,11 @@ img {
 
     #godName, #godTitle {
         text-align: center;
+    }
+
+    .btn {
+        float: none;
+        height: 2rem;
     }
 }
 

@@ -30,6 +30,7 @@ hr {
     background-color: #141722c9;
     color: whitesmoke;
     transition: all ease 0.4s;
+    cursor: pointer;
 }
 
 .card:hover .card-body{

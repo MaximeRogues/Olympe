@@ -28,15 +28,11 @@
     <p class="card-text"><span class="font-weight-bold"> Histoire :</span> {{monster.history}} </p>
     <br>
   </div>
-</div>
 
-<div class="bg-light">
-  <a class="btn btn-success btn-sm text-white w-100" *ngIf="logged">Ajouter</a>
-  <br>
   <!-- Bouton modifier -->
-  <a class="btn btn-info btn-sm  w-50 " *ngIf="logged" [routerLink]="['/edit-monstres', monster.id]">Modifier</a>
+  <a class="btn btn-info btn-sm" *ngIf="logged" [routerLink]="['/edit-monstres', monster.id]">Modifier</a>
 
   <!-- Bouton supprimer -->
-  <a class="btn btn-danger btn-sm  text-white w-50" *ngIf="logged" (click)="deleteMonstre(monster.id)">Supprimer </a>
+  <a class="btn btn-danger btn-sm  text-white " *ngIf="logged" (click)="deleteMonstre(monster.id)">Supprimer </a>
 
 </div>
