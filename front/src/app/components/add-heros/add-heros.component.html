@@ -70,7 +70,7 @@
       <label for="picture">Image du héros : </label>
       <input type="file" class="form-control" name="picture" id="picture" required 
         #picture (change)="onFileChange($event)"> <br>
-      <div [hidden]="picture.valid" class="alert alert-danger">
+      <div [hidden]="validPicture" class="alert alert-danger">
         L'image du héros est requise
       </div>
 

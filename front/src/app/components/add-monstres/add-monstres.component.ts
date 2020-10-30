@@ -23,6 +23,8 @@ export class AddMonstresComponent implements OnInit {
   pantheons : Pantheons[];
   genders : Genres[];
   file: File;
+  validPicture: boolean = false;
+  validFileTypes = ["image/jpeg", "image/png"];
 
   constructor(private monsterService: MonstresService, private router: Router, private toastr: ToastrService, private genderService: GenresService, private pantheonService: PantheonsService, private tokenStorageService: TokenStorageService, private upload: UploadService) { }
 
@@ -51,6 +53,11 @@ export class AddMonstresComponent implements OnInit {
   }
 
   submitMonster() {
+    if(this.file == undefined || this.file == null || !this.validFileTypes.includes(this.file.type) ) {
+      alert("Format d'image non valide, veuillez utiliser un fichier jpg ou png");
+      window.location.reload();
+      return;
+    }
     let formData = new FormData();
     formData.append('file', this.file);
     this.monster.picture = this.file.name;

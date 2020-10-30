@@ -24,6 +24,8 @@ export class AddHerosComponent implements OnInit {
   pantheons : Pantheons[];
   genders : Genres[];
   file: File;
+  validPicture: boolean = false;
+  validFileTypes = ["image/jpeg", "image/png"];
 
   constructor(private heroService: HerosService, private router: Router, private toastr: ToastrService, private genderService: GenresService, private pantheonService: PantheonsService, private tokenStorageService: TokenStorageService, private upload: UploadService) { }
 
@@ -49,10 +51,15 @@ export class AddHerosComponent implements OnInit {
 
   onFileChange(event) {
     this.file = event.target.files[0];
-    console.log('Image récupérée : ' + this.file.name);
+    this.validPicture = true;
   }
 
   submitHero() {
+  if(this.file == undefined || this.file == null || !this.validFileTypes.includes(this.file.type) ) {
+    alert("Format d'image non valide, veuillez utiliser un fichier jpg ou png");
+    window.location.reload();
+    return;
+  }
   let formData = new FormData();
   formData.append('file', this.file);
   this.hero.picture = this.file.name;
