@@ -25,6 +25,8 @@
         "symfony/yaml": "5.1.*"
     },
     "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "^3.4",
+        "easycorp/easy-deploy-bundle": "^1.0",
         "symfony/maker-bundle": "^1.21"
     },
     "config": {

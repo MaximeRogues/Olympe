@@ -40,6 +40,9 @@
     "doctrine/common": {
         "version": "3.0.2"
     },
+    "doctrine/data-fixtures": {
+        "version": "1.4.4"
+    },
     "doctrine/dbal": {
         "version": "2.10.3"
     },
@@ -56,6 +59,18 @@
             "./config/packages/prod/doctrine.yaml",
             "./src/Entity/.gitignore",
             "./src/Repository/.gitignore"
+        ]
+    },
+    "doctrine/doctrine-fixtures-bundle": {
+        "version": "3.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.0",
+            "ref": "e5b542d4ef47d8a003c91beb35650c76907f7e53"
+        },
+        "files": [
+            "./src/DataFixtures/AppFixtures.php"
         ]
     },
     "doctrine/doctrine-migrations-bundle": {
@@ -97,6 +112,9 @@
     },
     "doctrine/sql-formatter": {
         "version": "1.1.1"
+    },
+    "easycorp/easy-deploy-bundle": {
+        "version": "v1.0.6"
     },
     "fig/link-util": {
         "version": "1.1.1"
@@ -299,6 +317,9 @@
     },
     "symfony/polyfill-php80": {
         "version": "v1.18.1"
+    },
+    "symfony/process": {
+        "version": "v5.1.8"
     },
     "symfony/property-access": {
         "version": "v5.1.4"
