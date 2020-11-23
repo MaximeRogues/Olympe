@@ -47,4 +47,13 @@ class HeroRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findAll(): ?Hero
+    {
+        return $this->createQueryBuilder('hero')
+            ->orderBy('hero.name')
+            ->getQuery()
+            ->getArrayResult()
+        ;
+    }
 }

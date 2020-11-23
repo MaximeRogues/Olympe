@@ -47,4 +47,13 @@ class MonsterRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findAll(): ?Monster
+    {
+        return $this->createQueryBuilder('monster')
+            ->orderBy('monster.name')
+            ->getQuery()
+            ->getArrayResult()
+        ;
+    }
 }

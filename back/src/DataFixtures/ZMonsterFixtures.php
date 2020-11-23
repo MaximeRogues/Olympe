@@ -183,7 +183,7 @@ class ZMonsterFixtures extends Fixture
         
         $serpopard = new Monster();
         $serpopard->setName("Serpopard");
-        $serpopard->setTitle("La chimére antique");
+        $serpopard->setTitle("La chimère antique");
         $serpopard->setPlace("Egypte et Mésopotamie");
         $serpopard->setHistory("Serpopard est un terme moderne qui désigne un animal mythique, une chimère connue en Égypte ancienne et en Mésopotamie. C'est un mot-valise constitué d'une partie du mot « serpent » et du mot « léopard ». Il utilise la combinaison de deux animaux, l'un étant le corps d'un léopard, l'autre le long cou et la tête d'un serpent. Cependant, on peut interpréter le terme comme étant un lion à cou de serpent. Il n'y a pas de nom connu dans les textes anciens pour une telle créature.
         Il a été suggéré que dans l'art de l'Égypte antique les serpopards représentent « un symbole du chaos qui régnait le long des frontières de l'Égypte », situation que le roi devait dominer. Ils sont normalement exhibés comme conquis ou enchaînés, comme sur la palette de Narmer ou attaquant d'autres animaux. Mais dans l'art de Mésopotamie, ils sont représentés par paires, avec des cous entrelacés.");
@@ -279,7 +279,7 @@ class ZMonsterFixtures extends Fixture
         $manager->persist($sleipnir);
 
         $corbeaux = new Monster();
-        $corbeaux->setName("Huginn et Muninn");
+        $corbeaux->setName("Huginn & Muninn");
         $corbeaux->setTitle("Les corbeaux qui voient tout");
         $corbeaux->setPlace("Asgard");
         $corbeaux->setHistory("Huginn, du vieux Norrois pour 'pensée', et Muninn, du vieux Norrois pour 'esprit', sont deux corbeaux qui volent autour de Midgard et apportent des nouvelles des affaires des hommes à Odin. Grâce à leurs voyages quotidiens, Odin pouvait garder un œil sur ses hommes et devenir sage.
