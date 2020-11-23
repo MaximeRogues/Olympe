@@ -16,7 +16,7 @@
   <!-- rend la div responsive -->
   <div class="liste row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
     <!-- boucle pour générer les cards -->
-    <div *ngFor="let god of this.godList" class="card">
+    <div *ngFor="let god of this.godList" class="card" id="godCard">
 
       <a [routerLink]="['/dieux', god.id]"> <img src='http://localhost:8000/uploads/{{god.picture}}'
           class="card-img-top img-fluid" alt=""></a>

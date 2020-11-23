@@ -11,6 +11,9 @@ img {
     padding-bottom: 0.5rem;
 }
 
+#godCard {
+    height: auto;
+}
 /* .card:hover {
     width: 18rem;
     height: 31rem;

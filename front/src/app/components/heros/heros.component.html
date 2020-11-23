@@ -16,7 +16,7 @@
   <!-- rend la div responsive -->
   <div class="liste row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
     <!-- boucle qui génère les cards -->
-    <div *ngFor="let hero of this.heroList" class="card">
+    <div *ngFor="let hero of this.heroList" class="card" id="heroCard">
 
       <a [routerLink]="['/heros', hero.id]"> <img src='http://localhost:8000/uploads/{{ hero.picture }}'
           class="card-img-top img-fluid" alt=""></a>

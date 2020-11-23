@@ -20,7 +20,6 @@ export class DieuxComponent implements OnInit {
   constructor(private godService: DieuxService, private tokenStorageService: TokenStorageService) { }
   
   ngOnInit(): void {
-    
     // on initialise isLoading à true, pour dire que la page charge
     this.isLoading = true;
 
@@ -28,13 +27,13 @@ export class DieuxComponent implements OnInit {
       this.logged = true;
     };
 
-    // au chargement, on remplit la liste avec la fonction getAllHeros
+    // au chargement, on remplit la liste avec la fonction getAllGods
     this.godService.getAllGods().subscribe((data: Dieu[]) => {
       this.godList = data['hydra:member'];
-
+      this.isLoading = false
     })
 
-    this.isLoading = false
+    
   }
 
   

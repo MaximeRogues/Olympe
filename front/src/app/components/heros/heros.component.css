@@ -10,3 +10,7 @@ img {
 .card-body {
     padding-bottom: 0.5rem;
 }
+
+#heroCard {
+    height: auto;
+}
