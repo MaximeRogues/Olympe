@@ -10,7 +10,7 @@
 <div *ngIf="!isLoading">
   
   <a *ngIf="logged" routerLink="/dieux/add">
-    <h3 class="btn btn-secondary" id="addDieuxLink">Ajouter un dieu</h3>
+    <h3 class="btn addButton" id="addDieuxLink">Ajouter un dieu</h3>
   </a>
 
   <!-- rend la div responsive -->
@@ -25,7 +25,7 @@
         <h3 class="font-weight-bold">{{god.name}}</h3>
         <h5>{{god.title}}</h5>
         <!-- bouton pour aller au component dieuDetail -->
-        <a class="btn btn-secondary btn-sm w-100" [routerLink]="['/dieux', god.id]"> Détails </a>
+        <a class="btn btn-sm w-100 detailsButton" [routerLink]="['/dieux', god.id]"> Détails </a>
 
       </div>
     </div>

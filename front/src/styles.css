@@ -36,6 +36,38 @@ h4 {
   margin-bottom: 1rem;
 }
 
+.btn {
+  border-radius: 0.25rem;
+  border: 2px solid #6c757d;
+  color: black !important;
+  transition: 0.60s;
+  width: auto;
+}
+
+.btn:hover {
+  text-decoration: none;
+  box-shadow: inset #6c757d 10rem 0 0 0 ;
+  color: white !important;
+}
+
+.detailsButton:hover,
+.addButton:hover {
+  box-shadow: inset #6c757d 17rem 0 0 0 ;
+}
+
+select {
+  color: #007bff;
+  border: 0;
+  border-bottom: lightgrey solid 2px;
+  transition: ease 0.5s;
+  background-color: #f8f9fa;
+}
+
+select:active, select:focus {
+  outline: 0;
+  border-bottom-color: #007bff;
+  background-color: #f8f9fa;
+}
 
 
 /* based on angular-toastr css https://github.com/Foxandxss/angular-toastr/blob/cb508fe6801d6b288d3afc525bb40fee1b101650/dist/angular-toastr.css */

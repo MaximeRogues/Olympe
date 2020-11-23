@@ -71,6 +71,9 @@ hr {
     margin-left: 0.5rem;
 }
 
+#unsetFilterButton {
+    width: 10rem;
+}
 
 @media screen and (max-width: 650px) {
     #lastGodImageDiv {

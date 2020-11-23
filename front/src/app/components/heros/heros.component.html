@@ -10,7 +10,7 @@
 <div *ngIf="!isLoading">
 
   <a *ngIf="logged" routerLink="/heros/add">
-    <h3 class="btn btn-secondary">Ajouter un héros</h3>
+    <h3 class="btn addButton">Ajouter un héros</h3>
   </a>
   
   <!-- rend la div responsive -->
@@ -26,7 +26,7 @@
         <h5>{{hero.title}}</h5>
         <!-- bouton vers heros-detail -->
         
-        <a class="btn btn-secondary btn-sm w-100 " [routerLink]="['/heros', hero.id]">Détails </a>
+        <a class="btn btn-sm w-100 detailsButton" [routerLink]="['/heros', hero.id]">Détails </a>
         
         
       </div>

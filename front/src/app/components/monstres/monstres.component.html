@@ -9,7 +9,7 @@
 <div *ngIf="!isLoading">
 
   <a *ngIf="logged" routerLink="/monstres/add">
-    <h3 class="btn btn-secondary">Ajouter un monstre</h3>
+    <h3 class="btn addButton">Ajouter un monstre</h3>
   </a>
   
   <!-- rend la div responsive -->
@@ -24,7 +24,7 @@
         <h3 class="font-weight-bold card-title">{{monster.name}}</h3>
         <h5 class="card-text">{{monster.title}}</h5>
         <!-- Bouton aller au component monstreDetail -->
-        <a class="btn btn-secondary btn-sm w-100 " [routerLink]="['/monstres', monster.id]"> Détails</a>
+        <a class="btn btn-sm w-100 detailsButton" [routerLink]="['/monstres', monster.id]"> Détails</a>
         
       </div>
     </div>

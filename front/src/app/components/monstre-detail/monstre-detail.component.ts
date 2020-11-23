@@ -23,7 +23,7 @@ export class MonstreDetailComponent implements OnInit {
   ngOnInit(): void {
     this.isLoading = true;
     this.monsterService.getMonsterByID(+this.route.snapshot.paramMap.get('id')).subscribe((data:Monstres) => {
-      this.monster = data;      
+      this.monster = data;  
       this.isLoading = false;
     });
 
@@ -34,6 +34,8 @@ export class MonstreDetailComponent implements OnInit {
       this.monsterList = data['hydra:member'];
       this.isLoading = false
     })
+
+    
 
     if(this.tokenStorageService.getToken()) {
       this.logged = true;
