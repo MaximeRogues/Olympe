@@ -11,7 +11,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 
 
 /**
- * @ApiResource(normalizationContext={"groups"={"getGodWithPantheon", "getGodWithGender"}}) 
+ * @ApiResource(normalizationContext={"groups"={"getGodWithPantheon", "getGodWithGender"}}, attributes={"order"={"name": "ASC"}}) 
  * @ORM\Entity(repositoryClass=GodRepository::class)
  */
 class God
@@ -69,7 +69,7 @@ class God
     private $attributes;
 
     /**
-     * @ORM\Column(type="string", length=500)
+     * @ORM\Column(type="string", length=2000)
      * @Groups({"getGodWithPantheon", "getGodWithGender"})
      */
     private $history;

@@ -47,4 +47,15 @@ class GodRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    
+    public function findAll(): ?God
+    {
+        return $this->createQueryBuilder('god')
+            ->orderBy('god.name')
+            ->getQuery()
+            ->getArrayResult()
+        ;
+    }
+    
 }

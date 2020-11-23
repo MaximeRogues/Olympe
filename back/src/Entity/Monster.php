@@ -11,7 +11,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 
 
 /**
- * @ApiResource(normalizationContext={"groups"={"getMonsterWithPantheon", "getMonsterWithGender"}}) 
+ * @ApiResource(normalizationContext={"groups"={"getMonsterWithPantheon", "getMonsterWithGender"}}, attributes={"order"={"name": "ASC"}}) 
  * @ORM\Entity(repositoryClass=MonsterRepository::class)
  */
 class Monster
@@ -50,7 +50,7 @@ class Monster
     private $place;
 
     /**
-     * @ORM\Column(type="string", length=500)
+     * @ORM\Column(type="string", length=2000)
      * @Groups({"getMonsterWithPantheon", "getMonsterWithGender"})
      */
     private $history;

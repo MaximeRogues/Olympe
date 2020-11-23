@@ -32,6 +32,8 @@ class ZHeroFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
+        // Grec
+
         $heracles = new Hero();
         $heracles->setName('Héraclès');
         $heracles->setTitle("La gloire d'Héra");
@@ -151,6 +153,47 @@ class ZHeroFixtures extends Fixture
         $medee->setGender($this->genderRepository->findOneBy(['name' => 'Féminin']));
         $medee->setPantheon($this->pantheonRepository->findOneBy(['name' => 'Grec']));
         $manager->persist($medee);
+
+        // Nordique 
+
+        $arngrim = new Hero();
+        $arngrim->setName('Arngrim');
+        $arngrim->setTitle("Le berserker");
+        $arngrim->setOrigin("Inconnue");
+        $arngrim->setExploits("Selon les versions H et U de la saga, le guerrier Arngrim partit pour un raid de pillage dans la région de Garðaríki (aujourd'hui la région de Novgorod en Russie). Le roi de Garðaríki, Svafrlami, qui possédait l'épée magique Tyrfing, lutta contre lui. Durant le combat, l'épée Tyrfing transperça le bouclier d'Arngrim et se planta dans le sol. Aussitôt, Arngrim trancha la main de Svafrlami, saisit l'épée Tyrfing, puis tua le roi avec sa propre épée. Après sa victoire sur Svafrlami, Arngrim enleva sa fille Eyfura et l'épousa de force.
+
+        La version R de la saga est différente. Dans cette version Arngrim fut engagé comme chef de guerre par le vieux roi Sigrlami. Il gagna de nombreuses batailles et conquit pour son roi de vastes territoires et de nombreux sujets. En récompense, Sigrlami lui accorda une place éminente dans son royaume, la main de sa fille Eyfura et l'épée magique Tyrfing.
+        
+        Dans toutes les versions de la saga, Arngrim retourna vivre chez lui avec son épouse Eyfura. Dans les versions H et U il s'agit de l'île de Bolm au Hålogaland (aujourd'hui en Norvège). Dans la version R il s'agit de l'île de Bolmsö au Småland (aujourd'hui en Suède). Ils eurent douze fils, qui tous suivirent l'exemple de leur père et devinrent berserk. Leurs noms varient selon les versions :
+        
+        version H : Angantyr, Hjorvard, Hervard, Hrani, Brami, Barri, Reifnir, Tind, Saeming, Bui et les deux Haddings.
+        version U : Angantyr, Hjörvard, Hervard, Hrani, Barri, Tyrfing, Tind, les deux Haddings, Bui, Bild et Toki.
+        version R, seuls six fils sont nommés : Angantyr, Hjörvard, Hervard, Hrani et les deux Haddings.");
+        $arngrim->setPicture("arngrim.jpg");
+        $arngrim->setGender($this->genderRepository->findOneBy(['name' => 'Masculin']));
+        $arngrim->setPantheon($this->pantheonRepository->findOneBy(['name' => 'Nordique']));
+        $manager->persist($arngrim);
+
+        $beowulf = new Hero();
+        $beowulf->setName('Beowulf');
+        $beowulf->setTitle("Le tueur de monstres");
+        $beowulf->setOrigin("Inconnue");
+        $beowulf->setExploits("Beowulf est un poème d’exception dans le corpus de la littérature anglo-saxonne. Plutôt que de choisir un sujet chrétien, le poème retrace les hauts faits du héros éponyme, et ses trois principaux combats : Beowulf est un puissant guerrier goth (« Geat », une peuplade au sud de la Suède) qui voyage au Danemark pour débarrasser la cour du roi Hrothgar d’un terrible monstre mangeur d’hommes nommé Grendel. Après l’avoir vaincu, Beowulf double la mise en tuant la mère de Grendel, puis retourne dans les pays des Goths pour se mettre au service de son peuple et de son roi, Hygelac. Bien plus tard, après avoir succédé au monarque, il meurt lors d’un ultime combat contre un dragon cracheur de feu");
+        $beowulf->setPicture("beowulf.jpg");
+        $beowulf->setGender($this->genderRepository->findOneBy(['name' => 'Masculin']));
+        $beowulf->setPantheon($this->pantheonRepository->findOneBy(['name' => 'Nordique']));
+        $manager->persist($beowulf);
+
+        $siegfried = new Hero();
+        $siegfried->setName('Siegfried');
+        $siegfried->setTitle("Le prince guerrier");
+        $siegfried->setOrigin("Inconnue");
+        $siegfried->setExploits("Sigurd-Siegfried est un prince guerrier d'une puissance supérieure, responsable de nombreux exploits, comme le meurtre d'un dragon (Fáfnir dans la mythologie nordique). Certaines traditions rapportent qu'il est devenu invulnérable, notamment en se baignant dans le sang du monstre, sauf dans un endroit précis du dos qui n'était pas trempé, et il est tué tragiquement à cause de cette faiblesse, ce qui lui a valu des comparaisons avec d'autres personnages mythiques, en particulier Achille.");
+        $siegfried->setPicture("siegfried.jpg");
+        $siegfried->setGender($this->genderRepository->findOneBy(['name' => 'Masculin']));
+        $siegfried->setPantheon($this->pantheonRepository->findOneBy(['name' => 'Nordique']));
+        $manager->persist($siegfried);
+
 
         $manager->flush();
     }
