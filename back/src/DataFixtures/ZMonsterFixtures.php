@@ -162,9 +162,7 @@ class ZMonsterFixtures extends Fixture
         $criosphinx->setName("Criosphinx");
         $criosphinx->setTitle("Le monstre à tête de bélier");
         $criosphinx->setPlace("Partout");
-        $criosphinx->setHistory("Le criosphinx ou sphinx criocéphale se caractérise par un corps de lion accroupi ou couché aux longues pattes et une tête de bélier aux cornes recourbées. Il fait référence au dieu Amon-Rê et symbolise à la fois la puissance physique et l'énergie fécondante. Ainsi l’animal réunit en lui la force du lion et l’ardeur du bélier, ce qui en fait un être exceptionnel.
-
-        On peut en voir notamment le long du dromos du temple d'Amon à Karnak ou encore le long du dromos du temple d'Amon à Napata où les criosphinx étaient représentés couchés, les pattes avant repliées et le pelage du corps figuré.");
+        $criosphinx->setHistory("Le criosphinx ou sphinx criocéphale se caractérise par un corps de lion accroupi ou couché aux longues pattes et une tête de bélier aux cornes recourbées. Il fait référence au dieu Amon-Rê et symbolise à la fois la puissance physique et l'énergie fécondante. Ainsi l’animal réunit en lui la force du lion et l’ardeur du bélier, ce qui en fait un être exceptionnel. On peut en voir notamment le long du dromos du temple d'Amon à Karnak ou encore le long du dromos du temple d'Amon à Napata où les criosphinx étaient représentés couchés, les pattes avant repliées et le pelage du corps figuré.");
         $criosphinx->setPicture("criosphinx.jpg");
         $criosphinx->setGender($this->genderRepository->findOneBy(['name' => 'Non défini']));
         $criosphinx->setPantheon($this->pantheonRepository->findOneBy(['name' => 'Égyptien']));
