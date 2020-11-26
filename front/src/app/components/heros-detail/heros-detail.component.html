@@ -1,6 +1,6 @@
 <br>
 
-<div class="card-body bg-light" id="heroDiv">
+<div *ngIf="!isLoading" class="card-body bg-light" id="heroDiv">
 
   <div id="heroImageDiv">
 
@@ -31,9 +31,9 @@
   </div>
 
   <!-- bouton modifier -->
-  <a class="btn btn-info btn-sm " *ngIf="logged" [routerLink]="['/edit-heros', hero.id]">Modifier </a>
+  <a class="btn btn-sm " *ngIf="logged" [routerLink]="['/edit-heros', hero.id]">Modifier </a>
 
   <!-- bouton supprimer -->
-  <a class="btn btn-danger btn-sm  text-white " *ngIf="logged" (click)="deleteHero(hero.id)">Supprimer</a>
+  <a class="btn btn-sm" *ngIf="logged" (click)="deleteHero(hero.id)">Supprimer</a>
 
 </div>

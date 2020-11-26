@@ -32,12 +32,10 @@ export class DieuDetailComponent implements OnInit {
       this.isLoading = false;
     });
 
-    // on initialise isLoading à true, pour dire que la page charge
-    this.isLoading = true;
+
     // au chargement, on remplit la liste avec la fonction getAllHeros, pour afficher la liste au retour
     this.godService.getAllGods().subscribe((data: Dieu[]) => {
       this.godList = data['hydra:member'];
-      this.isLoading = false
     })
 
     if(this.tokenStorageService.getToken()) {

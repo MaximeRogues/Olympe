@@ -27,12 +27,9 @@ export class MonstreDetailComponent implements OnInit {
       this.isLoading = false;
     });
 
-    // on initialise isLoading à true, pour dire que la page charge
-    this.isLoading = true;
     // au chargement, on remplit la liste avec la fonction getAllHeros
     this.monsterService.getAllMonsters().subscribe((data: Monstres[]) => {
       this.monsterList = data['hydra:member'];
-      this.isLoading = false
     })
 
     

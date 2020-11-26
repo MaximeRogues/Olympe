@@ -63,6 +63,7 @@ export class HomeComponent implements OnInit {
     this.godService.getAllGods().subscribe((data: Dieu[]) => {
       this.godList = data['hydra:member'];
       this.filteredGodList = data['hydra:member'];
+      this.isLoading = false;
     })
 
     // au chargement, on remplit la liste avec la fonction getAllHeroes
@@ -92,7 +93,7 @@ export class HomeComponent implements OnInit {
       this.pantheonList = data['hydra:member'];
     })
 
-    this.isLoading = false;    
+        
   }
 
   // remettre les filtres à zéro
