@@ -2,6 +2,10 @@ div {
     padding: 0.5rem;
 }
 
+#filtersDiv > * {
+    margin: auto;
+}
+
 #listePersos {
     padding: 1rem;
 }

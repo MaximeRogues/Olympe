@@ -4,9 +4,10 @@ div {
 
 #connectButtonsDiv {
     justify-content: end;
-    width: 50%;
-
+    float: right;
+    margin-left: auto;
 }
+
 
 @media screen and (max-width: 990px) {
     #connectButtonsDiv {

@@ -63,6 +63,7 @@ export class AddDieuxComponent implements OnInit {
     }
     let formData = new FormData();
     formData.append('file', this.file);
+    
     this.god.picture = this.file.name;
     
     this.upload.uploadFile(formData);

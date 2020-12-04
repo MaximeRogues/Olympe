@@ -14,9 +14,9 @@
     </button>
 
     <!-- liste de filtres -->
-    <div class="collapse navbar-collapse" id="navbarNav" [ngbCollapse]="filtreIsCollapsed">
+    <div class="collapse navbar-collapse" id="filtersDiv" [ngbCollapse]="filtreIsCollapsed">
 
-      <a class="nav-link">Type de personnage
+      <a class="nav-link">Type de personnage : 
         <select (change)="getFilteredList()" class="filter" name="characterTypeFilter" id="characterTypeFilter" [(ngModel)]="characterTypeFilter">
           <option value="noData">Tous les types</option>
           <option *ngFor="let type of characterTypeList" value="{{type.name}}">{{type.name}}</option>
@@ -31,7 +31,7 @@
         </select>
       </a> -->
 
-      <a class="nav-link">Panthéon
+      <a class="nav-link">Panthéon : 
         
         <select (change)="getFilteredList()" class="filter" name="pantheonFilter"  id="pantheonFilter" [(ngModel)]="pantheonFilter">
           <option value="noData">Tous les panthéons</option>
@@ -39,7 +39,7 @@
         </select>
       </a>
 
-      <a class="nav-link">Genre du personnage
+      <a class="nav-link">Genre du personnage : 
         
         <select (change)="getFilteredList()" class="filter" name="genderFilter" id="genderFilter" [(ngModel)]="genderFilter" >
           <option value="noData">Tous les genres</option>
