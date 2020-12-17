@@ -23,7 +23,7 @@ se placer dans le dossier back puis taper ces commandes :
  - php bin/console doctrine:fixtures:load
  - symfony serve
 ~~~
-
+Dans un autre terminal : 
 ~~~
 se placer dans le dossier front et taper ces commandes :
  - npm install 
