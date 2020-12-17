@@ -7,7 +7,7 @@ Possibilité de trier les personnages par panthéon, genre ou type (dieu, héros
 Ajout d'un personnage avec upload d'une image stockée en back. 
 Connexion obligatoire pour gérer les personnages (génération d'un token).
 
-[Screenshot](https://github.com/MaximeRogues/Olympe/blob/master/front/src/assets/images/BC.PNG)
+![Screenshot](/front/src/assets/images/BC.PNG)
 
 ### Pour essayer le projet : 
 
