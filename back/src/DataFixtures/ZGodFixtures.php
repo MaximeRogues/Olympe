@@ -178,7 +178,7 @@ class ZGodFixtures extends Fixture
         $manager->persist($demeter);
 
         $hestia = new God();
-        $hestia->setName('hestia');
+        $hestia->setName('Hestia');
         $hestia->setTitle("La déesse du foyer");
         $hestia->setDomain("Le foyer public et familial, la famille");
         $hestia->setAttributes("Le feu sacré, le foyer, la torche");

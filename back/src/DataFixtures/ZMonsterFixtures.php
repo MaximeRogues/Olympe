@@ -193,7 +193,7 @@ class ZMonsterFixtures extends Fixture
         // Nordique
 
         $elfe = new Monster();
-        $elfe->setName("Les elfes");
+        $elfe->setName("Elfe");
         $elfe->setTitle("Les habitants d'Alfheim");
         $elfe->setPlace("Alfheim");
         $elfe->setHistory("Dit pour habiter le royaume d'Alfheim, sous la domination de la déesse Freyr, les Elfes étaient de grands et minces demi-dieux à la peau et aux cheveux clairs, qui étaient plus beaux que le soleil.
@@ -206,7 +206,7 @@ class ZMonsterFixtures extends Fixture
         $manager->persist($elfe);
 
         $nains = new Monster();
-        $nains->setName("Les nains");
+        $nains->setName("Nain");
         $nains->setTitle("Les forgerons");
         $nains->setPlace("Svartalfheim");
         $nains->setHistory("Contrairement à nos représentations modernes, il n'y a aucune preuve que les Nains étaient des êtres courts et robustes. Au lieu de cela, ils sont considérés comme des êtres 'inférieurs' et certains peuvent donc les avoir déformés en 'courts'.
@@ -219,7 +219,7 @@ class ZMonsterFixtures extends Fixture
         $manager->persist($nains);
 
         $jotnar = new Monster();
-        $jotnar->setName("Les Jötnar");
+        $jotnar->setName("Jötunn");
         $jotnar->setTitle("Les géants nordiques");
         $jotnar->setPlace("Jötunheim");
         $jotnar->setHistory("Les Jötnar (singulier Jötunn) sont un groupe étrange et difficile à définir. Bien qu'ils soient généralement traduits par 'géants', ils ont généralement la même taille que les humains.
@@ -233,7 +233,7 @@ class ZMonsterFixtures extends Fixture
         $manager->persist($jotnar);
 
         $valkyrie = new Monster();
-        $valkyrie->setName("Les valkyries");
+        $valkyrie->setName("Valkyrie");
         $valkyrie->setTitle("Guides des âmes");
         $valkyrie->setPlace("Valhalla");
         $valkyrie->setHistory("Ce sont les femmes d'Odin qui aident les esprits qui sont dépeintes comme d'élégantes demoiselles qui transportent les morts au Valhalla. Une bonne histoire mais, comme toujours, ce n'est pas si simple !
@@ -300,7 +300,7 @@ class ZMonsterFixtures extends Fixture
         $manager->persist($ratatoskr);
 
         $kraken = new Monster();
-        $kraken->setName("Le Kraken");
+        $kraken->setName("Kraken");
         $kraken->setTitle("La terreur des marins");
         $kraken->setPlace("La mer");
         $kraken->setHistory("Généralement dépeint comme un calmar géant ou une pieuvre - mais parfois plus comme un crabe - le Kraken est la grande bête de la mer du folklore. On dit qu'il mesure plus d'un mille, son corps est si énorme que lorsqu'en surface, on peut le confondre avec une île.
@@ -316,7 +316,7 @@ class ZMonsterFixtures extends Fixture
         $manager->persist($kraken);
 
         // $acephale = new Monster();
-        // $acephale->setName("acephale");
+        // $acephale->setName("");
         // $acephale->setTitle("");
         // $acephale->setPlace("");
         // $acephale->setHistory("");
