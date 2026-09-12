@@ -4,6 +4,7 @@ import { QuizService } from 'src/app/services/quiz.service';
 
 @Component({
   selector: 'app-quiz',
+  standalone: false,
   templateUrl: './quiz.component.html',
   styleUrls: ['./quiz.component.css']
 })

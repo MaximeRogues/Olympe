@@ -11,6 +11,7 @@ import { UploadService } from 'src/app/services/upload.service';
 
 @Component({
   selector: 'app-edit-heros',
+  standalone: false,
   templateUrl: './edit-heros.component.html',
   styleUrls: ['./edit-heros.component.css']
 })
@@ -51,12 +52,12 @@ export class EditHerosComponent implements OnInit {
   }
 
   updateHero() {
-    let formData = new FormData();
+    const formData = new FormData();
     formData.append('file', this.file);
     this.hero.picture = this.file.name;
     
     //lance la fonction updateHeros de heros.service
-    this.heroService.updateHero(this.hero).subscribe(then => {
+    this.heroService.updateHero(this.hero).subscribe(() => {
       // change l'url avec la route '/heros'
       this.router.navigate(['/heros']);
       });

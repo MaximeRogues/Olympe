@@ -15,7 +15,6 @@ import { QuizComponent } from './components/quiz/quiz.component';
 import { EditDieuComponent } from './components/edit-dieu/edit-dieu.component';
 import { EditHerosComponent } from './components/edit-heros/edit-heros.component';
 import { EditMonstreComponent } from './components/edit-monstre/edit-monstre.component';
-import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 

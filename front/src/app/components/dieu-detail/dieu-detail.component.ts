@@ -9,6 +9,7 @@ import { UserFavoritesService } from 'src/app/services/user-favorites.service';
 
 @Component({
   selector: 'app-dieu-detail',
+  standalone: false,
   templateUrl: './dieu-detail.component.html',
   styleUrls: ['./dieu-detail.component.css']
 })
@@ -18,7 +19,7 @@ export class DieuDetailComponent implements OnInit {
   god: Dieu;
   godList: Dieu[];
   isLoading: boolean;
-  logged: boolean = false;
+  logged = false;
 
   constructor(private route: ActivatedRoute, private godService: DieuxService, private toastr: ToastrService,private router: Router, private tokenStorageService: TokenStorageService,private userFavoritesService:  UserFavoritesService) { 
 

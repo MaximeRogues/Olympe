@@ -6,6 +6,7 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-monstres',
+  standalone: false,
   templateUrl: './monstres.component.html',
   styleUrls: ['./monstres.component.css']
 })

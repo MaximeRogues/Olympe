@@ -11,6 +11,7 @@ import { UploadService } from 'src/app/services/upload.service';
 
 @Component({
   selector: 'app-edit-dieu',
+  standalone: false,
   templateUrl: './edit-dieu.component.html',
   styleUrls: ['./edit-dieu.component.css']
 })
@@ -51,12 +52,12 @@ export class EditDieuComponent implements OnInit {
   }
 
   updateGod() {
-    let formData = new FormData();
+    const formData = new FormData();
     formData.append('file', this.file);
     this.god.picture = this.file.name;
 
      //lance la fonction updateDieu de dieu.service
-     this.godService.updateGod(this.god).subscribe(then => {
+     this.godService.updateGod(this.god).subscribe(() => {
       // change l'url avec la route '/dieu'
       this.router.navigate(['/dieux']);
       });

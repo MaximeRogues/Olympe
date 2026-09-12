@@ -6,6 +6,7 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-heros',
+  standalone: false,
   templateUrl: './heros.component.html',
   styleUrls: ['./heros.component.css']
 })

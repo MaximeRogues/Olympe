@@ -7,6 +7,7 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-heros-detail',
+  standalone: false,
   templateUrl: './heros-detail.component.html',
   styleUrls: ['./heros-detail.component.css']
 })
@@ -15,7 +16,7 @@ export class HerosDetailComponent implements OnInit {
   hero: Heros;
   heroList: Heros[];
   isLoading: boolean;
-  logged: boolean = false;
+  logged = false;
 
   constructor(private route: ActivatedRoute, private heroService: HerosService, private toastr: ToastrService, private router: Router, private tokenStorageService: TokenStorageService) { }
 

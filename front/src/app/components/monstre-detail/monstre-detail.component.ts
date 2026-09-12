@@ -7,6 +7,7 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-monstre-detail',
+  standalone: false,
   templateUrl: './monstre-detail.component.html',
   styleUrls: ['./monstre-detail.component.css']
 })
@@ -16,7 +17,7 @@ export class MonstreDetailComponent implements OnInit {
   monster: Monstres;
   isLoading: boolean;
   monsterList: Monstres[];
-  logged: boolean = false;
+  logged = false;
 
   constructor(private route: ActivatedRoute, private monsterService: MonstresService, private toastr: ToastrService,private router: Router, private tokenStorageService: TokenStorageService) { }
 

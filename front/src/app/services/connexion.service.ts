@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../models/user';
 import { throwError, Observable } from 'rxjs';
-import { catchError, retry } from 'rxjs/internal/operators';
+import { catchError, retry } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class ConnexionService {
     })
   };
 
-  connecte : Boolean ;
+  connecte = false;
 
   constructor(private http: HttpClient) { }
 

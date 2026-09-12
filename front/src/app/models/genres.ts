@@ -1,6 +1,4 @@
 
-import {Dieu } from './dieu';
-
 export class Genres {
 
     id: number;
