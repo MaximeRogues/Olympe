@@ -6,19 +6,21 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-header',
+  standalone: false,
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  connecte : Boolean = this.connexionService.connecte;
+  connecte = false;
 
-  logged: boolean = false;
+  logged = false;
 
   isCollapsed = true;
   
   constructor(private connexionService : ConnexionService, private tokenStorageService: TokenStorageService, private router: Router) { }
 
   ngOnInit(): void {
+    this.connecte = this.connexionService.connecte;
     if(this.tokenStorageService.getToken()) {
       this.logged = true;
     };

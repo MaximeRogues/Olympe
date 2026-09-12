@@ -17,6 +17,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
+  standalone: false,
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   // animations: [
@@ -33,7 +34,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class HomeComponent implements OnInit {
 
   filtreIsCollapsed = true;
-  filtreDieu: boolean = false;
+  filtreDieu = false;
   isLoading: boolean;
   // rangsDieu = ['Majeur', 'Mineur'];
 
@@ -49,9 +50,9 @@ export class HomeComponent implements OnInit {
   characterTypeList: TypePerso[];
   pantheonList: Pantheons[];
 
-  genderFilter: string = "noData";
-  pantheonFilter: string = "noData";
-  characterTypeFilter: string = "noData";
+  genderFilter = "noData";
+  pantheonFilter = "noData";
+  characterTypeFilter = "noData";
   
   constructor(private sanitizer: DomSanitizer, private godService: DieuxService, private herosService: HerosService, private monsterService: MonstresService, private apiService: ApiService, private genreService: GenresService, private typePersoService: TypePersoService, private pantheonsService: PantheonsService) { }
   
@@ -146,7 +147,8 @@ export class HomeComponent implements OnInit {
 
   // affiche le critère 'rang du dieu' si 'Dieux' est sélectionné
   rangDieu() {
-    if( (<HTMLInputElement>document.getElementById("characterTypeFilter")).value == 'Dieux' ) {      
+    const input = document.getElementById('characterTypeFilter') as HTMLInputElement;
+    if (input.value === 'Dieux') {
       this.filtreDieu = true;
     } else {
       this.filtreDieu = false;

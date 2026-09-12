@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Dieu } from 'src/app/models/dieu';
-import { User } from 'src/app/models/user';
 import { DieuxService } from 'src/app/services/dieux.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 
 @Component({
   selector: 'app-dieux',
+  standalone: false,
   templateUrl: './dieux.component.html',
   styleUrls: ['./dieux.component.css']
 })

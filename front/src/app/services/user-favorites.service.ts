@@ -1,10 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/internal/operators';
+import { catchError, retry } from 'rxjs/operators';
 import { Dieu } from '../models/dieu';
-import { Heros } from '../models/heros';
-import { User } from '../models/user';
 import { TokenStorageService } from './token-storage.service';
 
 @Injectable({

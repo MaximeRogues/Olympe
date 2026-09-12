@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Heros } from 'src/app/models/heros';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { throwError, Observable } from 'rxjs';
-import { catchError, retry } from 'rxjs/internal/operators';
+import { catchError, retry } from 'rxjs/operators';
 
 
 @Injectable({

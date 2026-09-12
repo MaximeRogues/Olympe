@@ -13,6 +13,7 @@ import { UploadService } from 'src/app/services/upload.service';
 
 @Component({
   selector: 'app-add-dieux',
+  standalone: false,
   templateUrl: './add-dieux.component.html',
   styleUrls: ['./add-dieux.component.css']
 })
@@ -23,7 +24,7 @@ export class AddDieuxComponent implements OnInit {
   pantheons : Pantheons[];
   genders : Genres[];
   file: File;
-  validPicture: boolean = false;
+  validPicture = false;
   validFileTypes = ["image/jpeg", "image/png"];
 
   constructor(private godService: DieuxService, private router: Router, private toastr: ToastrService, private genderService: GenresService, private pantheonService: PantheonsService, private tokenStorageService: TokenStorageService, private upload: UploadService) { }
@@ -61,14 +62,14 @@ export class AddDieuxComponent implements OnInit {
       window.location.reload();
       return;
     }
-    let formData = new FormData();
+    const formData = new FormData();
     formData.append('file', this.file);
     
     this.god.picture = this.file.name;
     
     this.upload.uploadFile(formData);
     //lance la fonction addDieu de dieux.service
-    this.godService.addGod(this.god).subscribe(then => {
+    this.godService.addGod(this.god).subscribe(() => {
       // change l'url avec la route '/dieux'
       this.router.navigate(['/dieux']);
     });

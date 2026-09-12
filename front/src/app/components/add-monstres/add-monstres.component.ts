@@ -13,6 +13,7 @@ import { UploadService } from 'src/app/services/upload.service';
 
 @Component({
   selector: 'app-add-monstres',
+  standalone: false,
   templateUrl: './add-monstres.component.html',
   styleUrls: ['./add-monstres.component.css']
 })
@@ -23,7 +24,7 @@ export class AddMonstresComponent implements OnInit {
   pantheons : Pantheons[];
   genders : Genres[];
   file: File;
-  validPicture: boolean = false;
+  validPicture = false;
   validFileTypes = ["image/jpeg", "image/png"];
 
   constructor(private monsterService: MonstresService, private router: Router, private toastr: ToastrService, private genderService: GenresService, private pantheonService: PantheonsService, private tokenStorageService: TokenStorageService, private upload: UploadService) { }
@@ -60,13 +61,13 @@ export class AddMonstresComponent implements OnInit {
       window.location.reload();
       return;
     }
-    let formData = new FormData();
+    const formData = new FormData();
     formData.append('file', this.file);
     this.monster.picture = this.file.name;
 
     this.upload.uploadFile(formData);
     // fonction de monstre.service pour push un monstre dans la liste
-    this.monsterService.addMonster(this.monster).subscribe(then => {
+    this.monsterService.addMonster(this.monster).subscribe(() => {
       // naviguer vers la page monstres
       this.router.navigate(['/monstres']);   
     })

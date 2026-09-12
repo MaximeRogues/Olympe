@@ -14,6 +14,7 @@ import { UploadService } from 'src/app/services/upload.service';
 
 @Component({
   selector: 'app-add-heros',
+  standalone: false,
   templateUrl: './add-heros.component.html',
   styleUrls: ['./add-heros.component.css']
 })
@@ -24,7 +25,7 @@ export class AddHerosComponent implements OnInit {
   pantheons : Pantheons[];
   genders : Genres[];
   file: File;
-  validPicture: boolean = false;
+  validPicture = false;
   validFileTypes = ["image/jpeg", "image/png"];
 
   constructor(private heroService: HerosService, private router: Router, private toastr: ToastrService, private genderService: GenresService, private pantheonService: PantheonsService, private tokenStorageService: TokenStorageService, private upload: UploadService) { }
@@ -62,13 +63,13 @@ export class AddHerosComponent implements OnInit {
     window.location.reload();
     return;
   }
-  let formData = new FormData();
+  const formData = new FormData();
   formData.append('file', this.file);
   this.hero.picture = this.file.name;
 
   this.upload.uploadFile(formData);
   // fonction de heros.service pour push un héros dans la liste
-  this.heroService.addHero(this.hero).subscribe(then => {
+  this.heroService.addHero(this.hero).subscribe(() => {
     // naviguer vers la page héros
     this.router.navigate(['/heros']);
   })

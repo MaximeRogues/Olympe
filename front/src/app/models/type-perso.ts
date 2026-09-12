@@ -4,7 +4,7 @@ export class TypePerso {
     name: string;
 
     constructor(id: number = null, name: string = null) {
-        this.id = id,
-        this.name = name
+        this.id = id;
+        this.name = name;
     }
 }

@@ -11,6 +11,7 @@ import { UploadService } from 'src/app/services/upload.service';
 
 @Component({
   selector: 'app-edit-monstre',
+  standalone: false,
   templateUrl: './edit-monstre.component.html',
   styleUrls: ['./edit-monstre.component.css']
 })
@@ -51,12 +52,12 @@ export class EditMonstreComponent implements OnInit {
   }
 
   updateMonster() {
-    let formData = new FormData();
+    const formData = new FormData();
     formData.append('file', this.file);
     this.monster.picture = this.file.name;
     
     //lance la fonction updateMonstre de monstre.service
-    this.monsterService.updateMonster(this.monster).subscribe(then => {
+    this.monsterService.updateMonster(this.monster).subscribe(() => {
       // change l'url avec la route '/monstre'
       this.router.navigate(['/monstres']);
       });

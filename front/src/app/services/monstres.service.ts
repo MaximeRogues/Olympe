@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Monstres } from '../models/monstres';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { throwError, Observable } from 'rxjs';
-import { catchError, retry } from 'rxjs/internal/operators';
+import { catchError, retry } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
